@@ -169,11 +169,11 @@ class News extends Model{
         $query = 'SELECT news.*, sections.`nom` AS section, sections.`nom` AS tag , users.nom AS auteur, users.droit AS droit ';
         $query .= 'FROM news INNER JOIN users ON news.auteur = users.id ';
         $query .= 'JOIN `sections` ON `news`.section = `sections`.id ';
-        $query .= 'WHERE ';        
+        // $query .= 'WHERE ';        
         if($section > 0)
         // if($section!='all')
-            // $query .= 'WHERE `sections`.tag='.$this->db->quote($section);        
-            $query .= ' `sections`.id='.$this->db->quote($section);        
+            $query .= 'WHERE `sections`.tag='.$this->db->quote($section);        
+            // $query .= ' `sections`.id='.$this->db->quote($section);        
 
         $query .= ' ORDER BY date DESC LIMIT ' . $offset .', '. $config['news_par_page'];
         // echo "query:" . $query . "<br/>"; 
