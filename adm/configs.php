@@ -97,8 +97,8 @@ switch ($_GET['action']) {
 	case 'list':
 		// chargement de la liste des configuration en fonction des droits
 		if($_SESSION['droit'] <=1){
-			$type = isset($_GET['type'])?$_GET['type']:'';
-			$list_configs = $oConfigs->getListAll($type);
+			$type_config = isset($_GET['type'])?$_GET['type']:'';
+			$list_configs = $oConfigs->getListAll($type_config);
 		}
 		else
 			$list_configs = $oConfigs->getListClient();
