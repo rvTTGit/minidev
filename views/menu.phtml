@@ -1,0 +1,14 @@
+<?php
+
+?>
+
+<ul>
+	<?php for($i=0;$i<count($menu); $i++) : ?> 
+		<li <?= ($nav_en_cours == $menu[$i]['tag'])? ' class="activeMenu"' : '' ?>>
+			<a href="<?= $menu[$i]['tag']?>.html"><?= $menu[$i]['nom']?></a>
+		</li>
+		<?php if($i != (count($menu)-1)) :?>
+			<li><?=$config['separateur_menu']?></li>
+		<?php endif ?>
+	<?php endfor ?>
+</ul>

@@ -1,0 +1,76 @@
+<?php include('header_admin.phtml') ?>
+<?php 
+// var_dump($valeurs_tableau_form);
+// var_dump($oConfigs);
+?>
+<h2><?= $action_txt ?> une option de configuration</h2>
+
+<?php if($erreur) : ?>
+<div class="alert alert-danger" role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <?= $erreur ?>
+</div>
+<?php endif ?>
+
+<form method="post">
+<?php if($_GET['action'] =='del') : ?>
+    <div class="well">
+        <h3>Voulez-vous réellement supprimer l'option "<?= $oConfigs->fields['tag'] ?>" ?</h3>
+    </div>    
+    <!-- formulaire suprression -->
+    <input type="hidden" name="id" value="<?= $oConfigs->fields['id'] ?>" />
+   
+<?php else : ?>
+    <!-- formulaire ajout / édition -->
+    <div class="form-group<?= isset($erreurs_champs_form['tag']) ? ' has-error' : '' ?>">
+        <label for="id_tag" class="control-label">tag:</label>
+    <?php if($_SESSION['droit'] <=1) : ?>
+        <input type="text" id="id_tag" name="tag" class="form-control" value="<?= $valeurs_tableau_form['tag']?>" />
+        <?php if(isset($erreurs_champs_form['tag'])) :?>
+            <p class="help-block"><?= $erreurs_champs_form['tag'] ?> </p>
+        <?php endif; ?>
+    <?php else : ?>
+        <p><?= $valeurs_tableau_form['tag']?></p>
+        <input type="hidden" name="tag" value="<?= $valeurs_tableau_form['tag']?>" />
+    <?php endif ?>
+    </div>
+
+    <div class="form-group<?= isset($erreurs_champs_form['valeur']) ? ' has-error' : '' ?>">
+        <label for="id_tag" class="control-label">valeur:</label>
+        <input type="text" id="id_tag" name="valeur" class="form-control" value="<?= $valeurs_tableau_form['valeur']?>" />
+        <?php if(isset($erreurs_champs_form['valeur'])) :?>
+            <p class="help-block"><?= $erreurs_champs_form['valeur'] ?> </p>
+        <?php endif; ?>
+    </div>
+    
+    <div class="form-group<?= isset($erreurs_champs_form['description']) ? ' has-error' : '' ?>">
+        <label for="id_tag" class="control-label">description:</label>
+        <input type="text" id="id_tag" name="description" class="form-control" value="<?= $valeurs_tableau_form['description']?>" />
+        <?php if(isset($erreurs_champs_form['description'])) :?>
+            <p class="help-block"><?= $erreurs_champs_form['description'] ?> </p>
+        <?php endif; ?>
+    </div>
+    <?php if($_SESSION['droit'] <=1) : ?>
+    <div class="form-group">
+        <label class="control-label">Modifiable par le client? </label>
+        <label class="radio-inline">
+            <input type="radio" name="acces_client" id="inlineRadio1" value="1" <?=($valeurs_tableau_form['acces_client']) ? '  checked' : '' ?>> Oui
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="acces_client" id="inlineRadio2" value="0" <?= !($valeurs_tableau_form['acces_client']) ? '  checked' : '' ?>> Non
+        </label>  
+    </div>
+    <?php else : ?>
+    <input type="hidden" name="acces_client" value="0" />
+    <?php endif ?>
+
+<?php endif ?>
+
+    <div class="form-group">
+        <input type="submit" value="<?= $action_txt ?>" class="btn btn-primary"/>
+        <a href="configs/list/" class="btn btn-default">Annuler</a>
+    </div>
+</form>
+
+
+<?php include('footer_admin.phtml'); ?>

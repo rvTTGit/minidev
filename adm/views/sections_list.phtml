@@ -1,0 +1,123 @@
+<?php
+include('header_admin.phtml'); ?>
+
+<h2>Liste des Sections</h2>
+<?php 
+if($erreur != ""):
+?>
+<div class="alert alert-danger" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+        <?= $erreur ?>
+</div> 
+<?php endif ?>
+
+<?php if(isset($_SESSION['message']) && $_SESSION['message']!= ''): ?>
+<div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+        <?php echo $_SESSION['message'];
+        $_SESSION['message'] = '';
+        ?>
+</div>
+<?php endif ;
+
+// echo '<pre>'.var_dump($list_sections).'</pre>';
+?>
+<p><a href="sections/add/" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Créer une section</a></p>
+
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Nom</th>
+            <th>Nombre de News</th>
+            <th>meta-description</th>
+            <th>meta-keywords</th>
+            <th>Ecran 2</th>
+            <th>Ecran 3</th>
+            <th>Menu</th>
+            <th>Position</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($list_sections as $section) : ?>
+        <tr>
+            <td>
+                <?php if($section['image'] != ''):?>
+                    <img src="../img/<?= $section['image']?>" alt="<?= $section['titre']?>" height="50"> 
+                <?php else : ?>
+                    <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
+                <?php endif?>
+
+            </td>
+            <td>
+                <a href="../<?= $section['tag']?>.html" title="Accéder à la section" target="_blank"><?= $section['nom']?></a>
+            </td>
+            <td>
+                <!-- si on a la clef correspondant à l id section, on affiche le nombre de news, 0 sinon (toutes les sections ne peuvent avoir de news) -->
+                <?= isset($tab_news[$section['id']]) ? $tab_news[$section['id']] : '0'?>
+            </td>
+            <td>
+                <?php if($section['meta-description'] != ''):?>
+                    <span class="glyphicon glyphicon-ok-circle" style="color:green"></span>
+                <?php else : ?>
+                    <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
+                <?php endif?>
+            </td>
+            <td>
+                <?php if($section['meta-keywords'] != ''):?>
+                    <div class="alert alert-success"><span class="glyphicon glyphicon-ok-circle"></span></div>
+                <?php else : ?>
+                    <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
+                <?php endif?>
+            </td>
+            <td>
+                <?php if($section['inScreen2']):?>
+                    <span class="glyphicon glyphicon-ok-circle" style="color:green"></span>
+                <?php else : ?>
+                    <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
+                <?php endif?>
+            </td>
+            <td>
+                <?php if($section['inScreen3']):?>
+                    <span class="glyphicon glyphicon-ok-circle" style="color:green"></span>
+                <?php else : ?>
+                    <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
+                <?php endif?>
+            </td>
+            <td>
+                <?php if($section['menu']):?>
+                    <span class="glyphicon glyphicon-ok-circle" style="color:green"></span>
+                <?php else : ?>
+                    <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
+                <?php endif?>
+            </td>
+            <td>
+                <?php if($section['position'] != ''):?>
+                    <?= $section['position']?>
+                <?php else : ?>
+                    <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
+                <?php endif?>            </td>
+            <td>
+                <?php if($section['auteur'] == $_SESSION['login'] || $_SESSION['droit'] ==1) :?>
+                    <?php if($section['delete']):?>
+                        <a href="sections/del/<?= $section['id']?>/" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                    <?php endif?>
+                    &nbsp;
+                    <?php if($section['modify']):?>
+                        <a href="sections/mod/<?= $section['id']?>/" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <?php endif?>
+                <?php else : ?>
+                    /
+                <?php endif?>
+            </td>
+        </tr>
+    <?php endforeach ?>
+    </tbody>
+</table>
+
+<?php include('footer_admin.phtml');?>

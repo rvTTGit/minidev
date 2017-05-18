@@ -1,0 +1,48 @@
+<?php include('header.phtml') ?>
+<main>
+	<img id="logoBG" src="img/logoBG.png">
+	<!-- <h2 class="titrePage">Contact</h2> -->
+
+     <div id="contactPage">
+          <!-- form contact -->
+         <?php if($erreur) : ?>
+         <span style="color:red;"><?= $erreur ?></span>
+         <?php else : ?>
+         <?= $message; ?> 
+         <?php endif ?>          
+
+          <h4>Nous Situer</h4>
+          <!-- carte -->
+          <iframe src="<?=$config['url_google_map']?>" width="50%" height="50%" frameborder="0" allowfullscreen>
+          </iframe>
+
+          <!-- infos -->
+          <p><?=$config['nom_site']?>
+          </br><?=$config['adresse']?> </br> <?=$config['cp']?> <?=$config['ville']?>
+          </br><?=$config['tel']?>
+          </br>
+          </br>
+          </br>Nos horaires :
+          </br>Lundi : Fermé
+          </br>Mardi, Mercredi, Jeudi et Vendredi : 9h00 à 12h00 - 14h00 à 19h00
+          </br>Samedi : 10h00 à 14h00 
+          </br>Dimanche : Fermé</p>
+          </br>
+          
+          <div class="clear"></div>
+          <!-- form contact -->
+          <?php
+          if($tab_modules['form_contact']) 
+               include('form_contact.phtml') 
+          ?>
+     </div>
+
+<div class="clear"></div>
+
+<?php if($tab_modules['livreor']) : ?>
+     <div class="boutonOr lienLivreOrContact"><a href="livreor.html">Ecrivez dans le Livre d'Or</a></div>
+<?php endif ?>
+</main>
+
+
+<?php include('footer.phtml') ?>

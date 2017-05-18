@@ -1,0 +1,44 @@
+allow from all
+
+
+#order deny,allow
+#deny from all
+#allow from 192.168.10.54
+#ip ofee
+#allow from 176.155.82.179
+#piencourt
+#allow from 62.147.174.114
+
+
+#Personnalisation de l'erreur 404
+#exemple si on tape : "http://localhost/wonder/blig.php"
+#il faut mettre le chemin complet depuis la racine du serveur apache
+ErrorDocument 404 /arbreetnature/adm/404.php
+
+#gestion de l'erreur 403 (Forbidden) et redirection ver la 404 :
+ErrorDocument 403 /arbreetnature/adm/404.php
+
+#RewriteRule "([a-z]+)/([a-z]+)/(.*).php"  "index.php"  [QSA,L]
+
+#RewriteRule "([a-z]+)/([a-z]+)/(.*).php"  "index.php"  [QSA,L]
+
+RewriteRule users/([a-z]+)/([0-9]+)/  users.php?action=$1&id=$2  [QSA,L]
+RewriteRule users/([a-z]+)/  users.php?action=$1  [QSA,L]
+
+RewriteRule configs/([a-z]+)/([0-9]+)/  configs.php?action=$1&id=$2  [QSA,L]
+RewriteRule configs/([a-z]+)/  configs.php?action=$1  [QSA,L]
+
+RewriteRule sections/([a-z]+)/([0-9]+)/  sections.php?action=$1&id=$2  [QSA,L]
+RewriteRule sections/([a-z]+)/  sections.php?action=$1  [QSA,L]
+
+RewriteRule tarifs/([a-z]+)/([0-9]+)/  tarifs.php?action=$1&id=$2  [QSA,L]
+RewriteRule tarifs/([a-z]+)/  tarifs.php?action=$1  [QSA,L]
+
+RewriteRule articles/([a-z]+)/([0-9]+)/  articles.php?action=$1&id=$2  [QSA,L]
+RewriteRule articles/([a-z]+)/  articles.php?action=$1  [QSA,L]
+
+RewriteRule livreor/([a-z]+)/([0-9]+)/  livreor.php?action=$1&id=$2  [QSA,L]
+RewriteRule livreor/([a-z]+)/  livreor.php?action=$1  [QSA,L]
+
+RewriteRule contacts/([a-z]+)/([0-9]+)/  contacts.php?action=$1&id=$2  [QSA,L]
+RewriteRule contacts/([a-z]+)/  contacts.php?action=$1  [QSA,L]

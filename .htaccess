@@ -1,0 +1,27 @@
+allow from all
+
+
+#order deny,allow
+#deny from all
+#allow from 192.168.10.54
+#ip ofee
+#allow from 176.155.82.179
+#piencourt
+#allow from 62.147.174.114
+
+
+#Personnalisation de l'erreur 404
+#exemple si on tape : "http://localhost/wonder/blig.php"
+#il faut mettre le chemin complet depuis la racine du serveur apache
+ErrorDocument 404 /arbreetnature/404.html
+
+#gestion de l'erreur 403 (Forbidden) et redirection ver la 404 :
+ErrorDocument 403 /arbreetnature/404.php
+
+
+#re ecriture des urls, transforme nimportequoi.html en paramètre pour l index
+RewriteEngine on
+RewriteRule "item/([0-9]+)/"  "index.php?section=item&id=$1"  [QSA,L]
+RewriteRule "(.*).html"  "index.php?section=$1"  [QSA,L]
+
+#RewriteRule "item.html/([0-9]+)/"  "index.php?section=item&id=$1"  [QSA,L]

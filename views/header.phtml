@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>
+    <?= $oSections->fields['nom'] ?> <?=$config['separateur_menu']?> <?=$config['nom_site']?>
+  </title>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html"/>
+  <!-- <base href="/arbreetnature/"> -->
+  <base href="<?=str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME'])?>">
+
+  <meta name="description" content="<?= $oSections->fields['meta-description'] ?>"/>
+  <meta name="keywords" content="<?= $oSections->fields['meta-keywords'] ?>"/>
+  
+  <link rel="icon" type="image/png" href="img/logoFavicon.png" />
+  <link rel="stylesheet" href="css/flexslider.css" type="text/css">
+  <link rel="stylesheet" href="fancyBox/jquery.fancybox.css" type="text/css" media="screen" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" ></script> 
+  <script src="modules/jQuery.js"></script>
+  <script src="modules/jquery.flexslider.js"></script>
+  <script type="text/javascript" src="fancyBox/jquery.fancybox.pack.js"></script>
+  <?php include('custom_css.phtml') ?>
+  <link type="text/css" rel="stylesheet" href="css/arbreetnature.css" />
+  <script type="text/javascript" charset="utf-8">
+    $(window).load(function() {
+
+
+//plugin flexslider
+      //simple FlexSlider call
+      $('.flexslider').flexslider();
+      // more complex call
+      $('.flexslider').flexslider({
+          animation: "slide",
+          controlsContainer: ".flex-container",
+          start: function(slider) {
+            $('.total-slides').text(slider.count);
+          },
+          after: function(slider) {
+          $('.current-slide').text(slider.currentSlide);
+          }
+      });
+
+//plugin fancy Box
+    $("#gourmandVisage, #oval, #hydra, #peeling, #energisant, #yeux, #correcteur, #collagene, #secretVisage, #secretCorps, #signature, #minceurCorps, #lienGourmand").fancybox({
+      openEffect  : 'elastic',
+      closeEffect : 'elastic',
+
+      helpers : {
+        title : {
+          type : 'inside'
+        }, 
+        overlay: {
+          locked: false
+        } 
+      }
+
+    });
+
+//plugin fancy Box
+  $(".maquillageFancybox").fancybox({
+      openEffect  : 'elastic',
+      closeEffect : 'elastic',
+
+      helpers : {
+        title : {
+          type : 'inside'
+        }, 
+        overlay: {
+          locked: false
+        } 
+      }
+  });
+
+  //Menu déroulant
+          $(function(){
+        $('#btnMenu').on('click touch', function(e){
+            $('#navMobile').slideToggle();
+            e.preventDefault();
+          });
+        });
+
+
+});
+
+</script>
+  
+
+
+</head>
+
+<body>
+<header>
+      <a class="btn btn-navbar" id="btnMenu" href="#menuBas">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </a>
+  <nav id="navMobile">
+    <?php include('menu.phtml');?>
+  </nav>
+      
+  <h1><img id="logoPage" src="img/logo.png" alt="Logo <?=$config['nom_site']?>" /><?=$config['nom_site']?></h1>
+  <!-- <nav class="navPcPage"> -->
+  <nav class="navPcPage">
+    <?php include('menu.phtml');?>
+  </nav>
+  <div class="clear"></div>
+
+</header>

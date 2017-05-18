@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html id="indexHtml">
+<head>
+  <title><?= $oSections->fields['nom'] ?> <?=$config['separateur_menu']?> <?=$config['nom_site']?></title>
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html" />
+  <meta name="description" content="<?= $oSections->fields['meta-description'] ?>"/>
+  <meta name="keywords" content="<?= $oSections->fields['meta-keywords'] ?>"/>
+
+  <link rel="icon" type="image/png" href="img/logoFavicon.png"/>
+  <link type="text/css" rel="stylesheet" href="css/arbreetnature.css" />
+
+  <link rel="stylesheet" href="css/flexslider.css" type="text/css">
+  <link rel="stylesheet" href="fancyBox/jquery.fancybox.css" type="text/css" media="screen" />
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" ></script> 
+  <script src="modules/jQuery.js"></script>
+  <script src="modules/jquery.flexslider.js"></script>
+  <script type="text/javascript" src="fancyBox/jquery.fancybox.pack.js"></script>
+  
+  <script type="text/javascript" charset="utf-8">
+    $(window).load(function() {
+      
+
+
+          
+          //plugin flexslider
+          //simple FlexSlider call
+          $('.flexslider').flexslider();
+          // more complex call
+          $('.flexslider').flexslider({
+              animation: "slide",
+              controlsContainer: ".flex-container",
+              start: function(slider) {
+                $('.total-slides').text(slider.count);
+              },
+              after: function(slider) {
+              $('.current-slide').text(slider.currentSlide);
+              }
+          });
+
+//Menu déroulant
+          $(function(){
+        $('#btnMenu').on('click touch', function(e){
+            $('#navMobile').slideToggle();
+            e.preventDefault();
+          });
+        });
+
+//plugin fancy Box
+    $(".soinGourmandFancybox").fancybox({
+      openEffect  : 'elastic',
+      closeEffect : 'elastic',
+
+      helpers : {
+        title : {
+          type : 'inside'
+        }
+      }
+    });
+
+});
+      </script>
+  
+<?php include('custom_css.phtml') ?>  
+
+</head>
+<body>
+
+<header>
+  <a class="btn btn-navbar" id="btnMenu" href="#menuBas">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </a>
+  <nav id="navMobile">
+    <?php include('menu.phtml');?>
+  </nav>
+</header>
+  <div class="spacer s0"></div>
+
+
+  <div id="parallax1" class="parallaxParent">
+    <div id="ecran1">
+    <?php include('ecran1.phtml');?>
+    </div>
+  </div>
+
+
+  <div class="spacer s1">
+    <h2><?=$config['txt_inter1']?></h2>
+  </div>
+  <div class="spacer s0"></div>
+
+
+  <div id="parallax2" class="parallaxParent">
+    <div id="ecran2">
+    <?php include('ecran2.phtml');?>
+    </div>
+  </div>
+
+
+  <div class="spacer s1">
+    <h2><?=$config['txt_inter2']?></h2>
+  </div>
+  <div class="spacer s0"></div>
+
+
+  <div id="parallax3" class="parallaxParent">
+    <div id="ecran3">
+    <?php include('ecran3.phtml');?>
+    </div>
+  </div>
+
+  <div class="spacer s1">
+    <h2>Contact</h2>
+  </div>
+   
+  <div class="spacer s0"></div>
+
+  <div id="parallax4" class="parallaxParent">
+    <div id="ecran4">
+    <?php include('ecran_contact.phtml');?>
+    </div>
+  </div>
+
+  <!-- <div class="spacer s2"></div> -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+    <script src="scrollMagic/ScrollMagic.js"></script>
+    <script src="scrollMagic/debug.addIndicators.js"></script>
+    <script src="scrollMagic/animation.gsap.js"></script>
+    <script src="script/beautespaceScript.js"></script>
+    <!-- <script src="functions.js" async="async"></script> -->
+<?php include('footer.phtml') ?>

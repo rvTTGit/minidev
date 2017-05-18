@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>
+    404 <?=$config['separateur_menu']?> <?=$config['nom_site']?>
+  </title>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html"/>
+  <base href="<?=str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME'])?>">
+
+  <meta name="description" content="404"/>
+  <meta name="keywords" content="404"/>
+  
+  <link rel="icon" type="image/png" href="img/logoFavicon.png" />
+  <?php include('custom_css.phtml') ?>
+  <link type="text/css" rel="stylesheet" href="css/arbreetnature.css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" ></script> 
+  <script src="modules/jQuery.js"></script>
+</head>
+
+<body>
+<header>
+      <a class="btn btn-navbar" id="btnMenu" href="#menuBas">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </a>
+  <nav id="navMobile">
+    <?php include('menu.phtml');?>
+  </nav>
+      
+  <h1><img id="logoPage" src="img/logo.png" alt="Logo <?=$config['nom_site']?>" /><?=$config['nom_site']?></h1>
+  <nav class="navPcPage">
+    <?php include('menu.phtml');?>
+  </nav>
+  <div class="clear"></div>
+
+</header>
+
+<main>
+	<!-- <img id="logoBG" src="img/logoBG.png"> -->
+	<h2>Erreur 404 </h2>
+	<p>La page que vous demandez n'existe pas.</p>
+
+</main>
+
+
+<?php
+include('footer.phtml'); 
+?>

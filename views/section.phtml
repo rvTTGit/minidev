@@ -1,0 +1,40 @@
+<?php
+include('header.phtml'); 
+// var_dump($oSections);
+// var_dump($oArticles);
+// var_dump($newsSectionPage);
+// var_dump($_SERVER);
+?>
+<main>
+	<!-- <img id="logoBG" src="img/logoBG.png"> -->
+	<h2><?= $oSections->fields['texte'] ?></h2>
+	<div class="flexslider"> 
+        <?php include('flexslider.phtml');?>
+	</div>
+	<div class="clear"></div>
+
+<?php if($erreur == '') : 
+    echo $menu_pagination;
+    // affciahge des news de la page correspondante 
+    foreach ($newsSectionPage as $key => $news) : ?>
+<div class="blog-slide">
+        <h2 class="blog-slide-title"><?= $news['titre']?></h2>
+        <div class="blog-slide-img">
+            <img src="img/thumb/<?= $news['image']?>" alt="">
+        </div>
+        <p class="blog-slide-text"><?= $news['texte']?>
+            <a href="item/<?= $news['id']?>/<?= urlencode($news['titre'])?>" title="">lire plus</a>
+        </p>
+        <p class="blog-slide-info">
+        Posté le: <?= $news['date']?><br>
+        Posté par: <?= $news['auteur']?><br/>
+        </p>
+</div>
+  <?php endforeach ?>
+  <?= $menu_pagination ?>
+<?php else : ?>
+    <p class="error"><?= $erreur ?></p>
+<?php endif; ?>
+
+</main>
+<?php include('footer.phtml') ?>

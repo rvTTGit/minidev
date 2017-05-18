@@ -1,0 +1,46 @@
+      <div id="containerContact">
+
+        <div id="contactMap">
+          <h4>Nous Situer</h4>
+          <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2612.954028693254!2d0.7825544156824915!3d49.08751387931062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e10c79b143362d%3A0x96105327c5863d70!2s16+Rue+de+Beaumont+la+ville%2C+27170+Beaumont-le-Roger!5e0!3m2!1sfr!2sfr!4v1493224962711" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+          <!--
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2612.954028693254!2d0.7825544156824915!3d49.08751387931062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e10c79b143362d%3A0x96105327c5863d70!2s16+Rue+de+Beaumont+la+ville%2C+27170+Beaumont-le-Roger!5e0!3m2!1sfr!2sfr!4v1493224962711" width="60%" height="25%" frameborder="0" style="border:0" allowfullscreen></iframe>
+          -->
+          <iframe src="<?=$config['url_google_map']?>" width="50%" height="50%" frameborder="0" allowfullscreen>
+          </iframe>
+          <p><?=$config['adresse']?> </br> <?=$config['cp']?> <?=$config['ville']?>
+          </br>Nos horaires :
+          </br>Lundi : Fermé
+          </br>Mardi, Mercredi, Jeudi et Vendredi : 9h00 à 12h00 - 14h00 à 19h00
+          </br>Samedi : 10h00 à 14h00 
+          </br>Dimanche : Fermé</p>
+        </div>
+
+        <?php if($tab_modules['livreor']) : ?>
+        <div id="livreOr">
+          <h4>Livre d'Or</h4>
+          <ul>
+           <?php foreach($tab_messages as $message):?> 
+            <li>
+              <p>Posté par <span style="width:50%; color: #EE7A91;"> <?= $message['prenom'] ?> </span> le <?= date("j M Y à H\hi", strtotime($message['date'])) ?></p>
+              <p><?= $message['text'] ?></p>
+            </li>
+          <?php endforeach ?>
+          </ul>
+          <p><a href="livreor.html">Ecrire un commentaire</a></p>
+        </div>
+        <?php endif ?>
+
+        <div class="clear"></div>
+
+        <noscript>
+          <nav id="menuBas">
+            <?php include('menu.phtml');?>          
+          </nav>
+        </noscript>
+
+        <nav id="menuBas">
+          <?php include('menu.phtml');?>
+        </nav>
+
+      </div>

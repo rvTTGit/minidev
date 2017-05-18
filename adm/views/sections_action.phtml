@@ -1,0 +1,138 @@
+<?php include('header_admin.phtml') ?>
+<?php 
+// var_dump($valeur_tableau_form);
+// var_dump($oSections);
+?>
+<h2><?= $action_txt ?> une section</h2>
+
+<?php if($erreur) : ?>
+<div class="alert alert-danger" role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <?= $erreur ?>
+</div>
+<?php endif ?>
+
+<form method="post" enctype="multipart/form-data">
+<?php if($_GET['action'] =='del') : ?>
+    <div class="well">
+        <h3>Voulez-vous réellement supprimer la section "<?= $oSections->fields['nom'] ?>" ?</h3>
+    </div>    
+    <!-- formulaire suprression -->
+    <input type="hidden" name="id" value="<?= $oSections->fields['id'] ?>" />
+   
+<?php else : ?>
+    <!-- formulaire ajout / édition -->
+    <div class="form-group<?=isset($erreurs_champs_form['nom']) ? ' has-error' : '' ?>">
+        <label for="id_nom" class="control-label">Nom :</label>
+        <input type="text" id="id_nom" name="nom" class="form-control" value="<?= $valeurs_tableau_form['nom'] ?>" />
+        <?php if(isset($erreurs_champs_form['nom'])) { ?>
+        <p class="help-block">
+        <?= $erreurs_champs_form['nom'] ?>
+        </p>
+        <?php } ?>
+    </div>
+
+    <div class="form-group<?=isset($erreurs_champs_form['tag']) ? ' has-error' : '' ?>">
+        <label for="id_tag" class="control-label">Tag :</label>
+        <input type="text" id="id_tag" name="tag" class="form-control" value="<?= $valeurs_tableau_form['tag'] ?>" />
+        <?php if(isset($erreurs_champs_form['tag'])) { ?>
+        <p class="help-block">
+        <?= $erreurs_champs_form['tag'] ?>
+        </p>
+        <?php } ?>
+    </div>                
+
+    <input type="hidden" name="auteur" value="<?= $_SESSION['id']?>" /> 
+
+    <div class="form-group<?=isset($erreurs_champs_form['meta-description']) ? ' has-error' : '' ?>">
+        <label for="id_meta-description" class="control-label">meta-description :</label>
+        <input type="text" id="id_meta-description" name="meta-description" class="form-control" value="<?= $valeurs_tableau_form['meta-description'] ?>" />
+        <?php if(isset($erreurs_champs_form['meta-description'])) { ?>
+        <p class="help-block">
+        <?= $erreurs_champs_form['meta-description'] ?>
+        </p>
+        <?php } ?>
+    </div>                
+
+    <div class="form-group<?=isset($erreurs_champs_form['meta-keywords']) ? ' has-error' : '' ?>">
+        <label for="id_meta-keywords" class="control-label">meta-keywords :</label>
+        <input type="text" id="id_meta-keywords" name="meta-keywords" class="form-control" value="<?= $valeurs_tableau_form['meta-keywords'] ?>" />
+        <?php if(isset($erreurs_champs_form['meta-keywords'])) { ?>
+        <p class="help-block">
+        <?= $erreurs_champs_form['meta-keywords'] ?>
+        </p>
+        <?php } ?>
+    </div>                
+
+    <div class="form-group<?=isset($erreurs_champs_form['texte']) ? ' has-error' : '' ?>">
+        <label for="id_texte" class="control-label">Texte :</label>
+        <textarea id="id_texte" name="texte" class="form-control"><?= $valeurs_tableau_form['texte'] ?></textarea>
+        <?php if(isset($erreurs_champs_form['texte'])) { ?>
+        <p class="help-block">
+        <?= $erreurs_champs_form['texte'] ?>
+        </p>
+        <?php } ?>
+    </div>
+
+    <input type="hidden" name="position" value="<?= $valeurs_tableau_form['position'] ?>" /> 
+
+    <div class="form-group">
+        <label class="control-label">Visible dans l'écran 2? </label>
+        <label class="radio-inline">
+            <input type="radio" name="inScreen2" id="inlineRadio1" value="1" <?=($valeurs_tableau_form['inScreen2']) ? '  checked' : '' ?>> Oui
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="inScreen2" id="inlineRadio2" value="0" <?= !($valeurs_tableau_form['inScreen2']) ? '  checked' : '' ?>> Non
+        </label>            
+    </div>
+    <div class="form-group">
+        <label class="control-label">Visible dans l'écran 3? </label>
+        <label class="radio-inline">
+            <input type="radio" name="inScreen3" id="inlineRadio1" value="1" <?=($valeurs_tableau_form['inScreen3']) ? '  checked' : '' ?>> Oui
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="inScreen3" id="inlineRadio2" value="0" <?= !($valeurs_tableau_form['inScreen3']) ? '  checked' : '' ?>> Non
+        </label>            
+    </div>
+    <div class="form-group">
+        <label class="control-label">Visible dans le menu? </label>
+        <label class="radio-inline">
+            <input type="radio" name="menu" id="inlineRadio1" value="1" <?=($valeurs_tableau_form['menu']) ? '  checked' : '' ?>> Oui
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="menu" id="inlineRadio2" value="0" <?= !($valeurs_tableau_form['menu']) ? '  checked' : '' ?>> Non
+        </label>            
+    </div>
+
+    <input type="hidden" name="delete" value="1" /> 
+    <input type="hidden" name="modify" value="1" /> 
+
+    <div class="form-group">
+        <label class="control-label">Possibilité de lui attacher des publications? </label>
+        <label class="radio-inline">
+            <input type="radio" name="hasItem" id="inlineRadiohasItem1" value="1" <?=($valeurs_tableau_form['hasItem']) ? '  checked' : '' ?>> Oui
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="hasItem" id="inlineRadiohasItem2" value="0" <?=!($valeurs_tableau_form['hasItem']) ? '  checked' : '' ?>> Non
+        </label>            
+    </div>
+
+    <div class="form-group<?=isset($erreurs_champs_form['image']) ? ' has-error' : '' ?>">
+        <label for="id_image" class="control-label">Image :</label>
+        <input type="file" id="id_image" name="image" />
+        <?php if(isset($erreurs_champs_form['image'])) { ?>
+        <p class="help-block">
+        <?= $erreurs_champs_form['image'] ?>
+        </p>
+        <?php } ?>
+    </div>
+<?php endif ?>
+
+    <div class="form-group">
+        <input type="submit" value="<?= $action_txt ?>" class="btn btn-primary"/>
+        <a href="sections/list/" class="btn btn-default">Annuler</a>
+    </div>
+</form>
+
+
+<?php include('footer_admin.phtml'); ?>

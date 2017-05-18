@@ -1,0 +1,99 @@
+        <header class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="index.php" class="navbar-brand">
+                            <span class="glyphicon glyphicon-wrench"></span>
+                            Admin <?=$config['nom_site']?>
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown-toggle<?= $page_category == 'news' ? ' active' : '' ?>">
+                            <a class="dropdown-toggle" aria-expanded="false" role="botton" data-toggle="dropdown">Articles <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="articles/list/">Liste</a></li>
+                                <li><a href="articles/add/">Créer</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="dropdown-toggle<?= $page_category == 'sections' ? ' active' : '' ?>">
+                            <a class="dropdown-toggle" aria-expanded="false" role="botton" data-toggle="dropdown">Sections <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="sections/list/">Liste</a></li>
+                                <li><a href="sections/add/">Créer</a></li>
+                            </ul>
+                        </li>
+<!-- 
+                        <li class="dropdown-toggle<?= $page_category == 'contact' ? ' active' : '' ?>">
+                            <a class="dropdown-toggle" aria-expanded="false" role="botton" data-toggle="dropdown">Information Contact<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="info_contact.php">Liste</a></li>
+                                <li><a href="creation_section.php">Créer</a></li>
+                            </ul>
+                        </li>
+                         -->
+                        <li class="dropdown-toggle<?= $page_category == 'tarifs' ? ' active' : '' ?>">
+                            <a class="dropdown-toggle" aria-expanded="false" role="botton" data-toggle="dropdown">Tarifs<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="tarifs/list/">Liste</a></li>
+                                <li><a href="tarifs/add/">Créer</a></li>
+                                <li><a href="tarifs/listtype/">Liste des groupes</a></li>
+                                <li><a href="tarifs/addtype/">Créer un groupe</a></li>
+                            </ul>
+                        </li>
+                        <!--
+                        <li class="dropdown-toggle<?= $page_category == 'clients' ? ' active' : '' ?>">
+                            <a class="dropdown-toggle" aria-expanded="false" role="botton" data-toggle="dropdown">Listing Client<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="list_clients.php">Liste</a></li>
+                                <li><a href="add_client.php">Créer</a></li>
+                            </ul>
+                        </li> 
+                        -->                       
+                        <li class="dropdown-toggle<?= $page_category == 'livreor' ? ' active' : '' ?>">
+                            <a class="dropdown-toggle" aria-expanded="false" role="botton" data-toggle="dropdown">Livre d'Or <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="livreor/list/">Liste des messages</a></li>
+                            </ul>
+                        </li>                        
+
+                        <li class="dropdown-toggle<?= $page_category == 'contacts' ? ' active' : '' ?>">
+                            <a class="dropdown-toggle" aria-expanded="false" role="botton" data-toggle="dropdown">Contacts <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <!-- <li><a href="list_users.php">Liste</a></li> -->
+                                <li><a href="contacts/list/">Liste</a></li>
+                                <!-- si formulaire de contact actif -->
+                                <li><a href="contacts/messages/">Messages</a></li>
+                                <!-- <li><a href="contacts/export/">Exporter</a></li> -->
+                                <!-- <li><a href="contacts/page/">Gestion de la page</a></li> -->
+                                <!-- <li><a href="contacts/screen/">Gestion de l'écran</a></li> -->
+                            </ul>
+                        </li>
+
+                        <li class="dropdown-toggle<?= $page_category == 'users' ? ' active' : '' ?>">
+                            <a class="dropdown-toggle" aria-expanded="false" role="botton" data-toggle="dropdown">Utilisateurs <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <!-- <li><a href="list_users.php">Liste</a></li> -->
+                                <li><a href="users/list/">Liste</a></li>
+                                <li><a href="users/add/">Créer</a></li>
+                                <li><a href="users/logs/">Logs</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-toggle<?= $page_category == 'configs' ? ' active' : '' ?>">
+                            <a class="dropdown-toggle" aria-expanded="false" role="botton" data-toggle="dropdown">Configuration <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="configs/list/">Paramètres du site</a></li>
+                                <li><a href="configs/modules/">Modules</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="../" target="_blank">
+                                Voir le site public
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>

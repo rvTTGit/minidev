@@ -1,0 +1,34 @@
+      <div id="containerAccueil">
+        <div id="containerHead">
+          <!-- <h1 style="padding: 0;">Arbre &amp; Nature</h1> -->
+            <img id="logoHome" src="img/logo.png" alt="Logo <?=$config['nom_site']?>">
+          <h1>
+            <?=$config['nom_site']?>
+          </h1>
+        </div>
+        <div id="containerAdresse">
+          <h4><?=$config['slogan']?></h4>
+          <!-- <p><?=$config['adresse']?>, <?=$config['cp']?> <?=$config['ville']?><a href="contact.html"> <img src="img/marqueur.png"></a><?=$config['tel']?></p> -->
+        </div>
+        <nav id="navPC">
+            <?php include('menu.phtml');?>
+        </nav>
+       
+     <?php 
+      // echo "<pre>";
+      // var_dump($oArticles);
+      // var_dump($newsSection);
+      // echo "</pre>";
+     ?>
+      <div class="clear"></div>
+
+      <div class="flexslider"> 
+          <?php include('flexslider.phtml');?>
+      </div>
+      <div class="clear"></div>
+
+      <h2><?=$config['txt_screen1']?></h2>
+      <!-- <p>L'Art de la Nature.</p> -->
+
+      <div class="clear"></div>
+      </div>

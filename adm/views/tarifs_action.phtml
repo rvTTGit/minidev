@@ -1,0 +1,103 @@
+<?php include('header_admin.phtml') ?>
+<?php 
+// var_dump($valeurs_tableau_form);
+// var_dump($oTarifs);
+?>
+<?php switch ($_GET['action']): ?>
+<?php case 'del': ?>
+<?php case 'add': ?>
+<?php case 'mod': ?>
+    <h2><?= $action_txt ?> un Tarif</h2>
+<?php break ?>
+<?php case 'deltype': ?>
+<?php case 'addtype': ?>
+<?php case 'modtype': ?>
+    <h2><?= $action_txt ?> un groupe de Tarifs</h2>
+<?php break ?>
+<?php endswitch ?>
+
+
+<?php if($erreur) : ?>
+<div class="alert alert-danger" role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <?= $erreur ?>
+</div>
+<?php endif ?>
+
+<form method="post">
+<?php switch ($_GET['action']): ?>
+<?php case 'del': ?>
+    <div class="well">
+        <h3>Voulez-vous réellement supprimer le tarif "<?= $oTarifs->fields['prestation'] ?>" ?</h3>
+    </div>    
+    <!-- formulaire suprression -->
+    <input type="hidden" name="id" value="<?= $oTarifs->fields['id'] ?>" />
+   
+<?php break ?>
+<?php case 'deltype': ?>
+    <div class="well">
+        <h3>Voulez-vous réellement supprimer le groupe de tarifs "<?= $oTypeTarifs->fields['nom'] ?>" ?</h3>
+    </div>    
+    <!-- formulaire suprression -->
+    <input type="hidden" name="id" value="<?= $oTypeTarifs->fields['id'] ?>" />
+   
+<?php break ?>
+<?php case 'add': ?>
+<?php case 'mod': ?>
+    <!-- formulaire ajout / édition -->
+    <div class="form-group<?= isset($erreurs_champs_form['prestation']) ? ' has-error' : '' ?>">
+        <label for="id_prestation" class="control-label">Prestation:</label>
+        <input type="text" id="id_prestation" name="prestation" class="form-control" value="<?= $valeurs_tableau_form['prestation']?>" />
+        <?php if(isset($erreurs_champs_form['prestation'])) :?>
+            <p class="help-block"><?= $erreurs_champs_form['prestation'] ?> </p>
+        <?php endif; ?>
+    </div>
+    <div class="form-group<?= isset($erreurs_champs_form['prix']) ? ' has-error' : '' ?>">
+        <label for="id_prestation" class="control-label">Prix:</label>
+        <input type="text" id="id_prestation" name="prix" class="form-control" value="<?= $valeurs_tableau_form['prix']?>" />
+        <?php if(isset($erreurs_champs_form['prix'])) :?>
+            <p class="help-block"><?= $erreurs_champs_form['prix'] ?> </p>
+        <?php endif; ?>
+    </div>
+    <div class="form-group">
+        <label for="id_groupe" class="control-label">Groupe : </label> 
+        <select id="id_groupe" name="type">
+            <?php foreach ($oTypeTarifs->getListAll() as $type) : 
+                $selected = ($valeurs_tableau_form['type'] == $type['id']) ? ' selected=selected ' : '' ?> 
+                <option value="<?= $type['id']?>" <?= $selected ?>/><?= $type['nom']?></option>
+            <?php endforeach ?>
+        </select>
+    </div>
+<?php break ?>
+<?php case 'addtype': ?>
+<?php case 'modtype': ?>
+    <!-- formulaire ajout / édition -->
+    <div class="form-group<?= isset($erreurs_champs_form['nom']) ? ' has-error' : '' ?>">
+        <label for="id_nom" class="control-label">Nom du groupe de tarifs:</label>
+        <input type="text" id="id_nom" name="nom" class="form-control" value="<?= $valeurs_tableau_form['nom']?>" />
+        <?php if(isset($erreurs_champs_form['nom'])) :?>
+            <p class="help-block"><?= $erreurs_champs_form['nom'] ?> </p>
+        <?php endif; ?>
+    </div>
+<?php break ?>
+<?php endswitch ?>
+
+    <div class="form-group">
+        <input type="submit" value="<?= $action_txt ?>" class="btn btn-primary"/>
+<?php switch ($_GET['action']): ?>
+<?php case 'del': ?>
+<?php case 'add': ?>
+<?php case 'mod': ?>
+    <a href="tarifs/list/" class="btn btn-default">Annuler</a>
+<?php break ?>
+<?php case 'deltype': ?>
+<?php case 'addtype': ?>
+<?php case 'modtype': ?>
+    <a href="tarifs/listtype/" class="btn btn-default">Annuler</a>
+<?php break ?>
+<?php endswitch ?>        
+    </div>
+</form>
+
+
+<?php include('footer_admin.phtml'); ?>

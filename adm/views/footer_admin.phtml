@@ -1,0 +1,23 @@
+        </div> <!-- fin de la div"main-container" -->
+    </main>
+        <footer>
+            <!-- /!\ => $_SESSION['connected'] à remettre sans ! -->
+            <?php if(isset($_SESSION['connected']) && $_SESSION['connected']):?>
+            <nav class="navbar navbar-default navbar-fixed-bottom">
+                <div class="container">
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="logout.php">
+                                    <span class="glyphicon glyphicon-off"></span>
+                                    Déconnexion  <?= $_SESSION['login'] ?>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <?php endif ?>
+        </footer>
+    </body>
+</html>

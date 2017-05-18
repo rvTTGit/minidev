@@ -1,0 +1,99 @@
+<?php
+include('header_admin.phtml'); ?>
+
+<h2>Liste des Articles</h2>
+<?php 
+
+    // var_dump($_SESSION);
+    // var_dump($oArticles);
+    // var_dump($oSections->getListHasItem());
+
+if($erreur != ""):
+?>
+<div class="alert alert-danger" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+        <?= $erreur ?>
+</div> 
+<?php endif ?>
+
+<?php if(isset($_SESSION['message']) && $_SESSION['message']!= ''): ?>
+<div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+        <?php echo $_SESSION['message'];
+        $_SESSION['message'] = '';
+        ?>
+</div> 
+<?php endif ?>
+<p><a href="articles/add/" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Créer un article</a></p>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="id_section" class="control-label">Pour :</label> 
+
+        <select id="id_section" name="section">
+            <option value="0" selected=selected/>Toutes</option>
+            <?php 
+            // on récupère uniquement la liste des sections pouvant avoir des items
+            foreach ($oSections->getListHasItem() as $section) : ?> 
+            <?php 
+            $selected = (isset($_SESSION['filter_section_id']) && $_SESSION['filter_section_id'] == $section['id']) ? ' selected=selected ' : '' ?>            
+                <?php 
+                // la section est listée si elle a au moins un item
+                if(array_key_exists($section['id'],$tabNombreArticlesSection)): ?>
+                    <option value="<?= $section['id']?>" <?= $selected ?>/><?= $section['nom']?></option>
+                <?php endif ?>
+            <?php endforeach ?>
+        </select>
+        <input type="submit" value="Trier" class="btn btn-primary"/>
+    </div>
+</form>
+<?= $menu_pagination ?>
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Titre</th>
+            <th>Section</th>
+            <th>Auteur</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($list_articles as $article) : ?>
+        <tr>
+            <td>
+                <img src="../img/thumb/<?= $article['image']?>" alt="<?= $article['titre']?>" height="50"> 
+            </td>
+            <td>
+                <a href="../item/<?= $article['id']?>/<?= urlencode($article['titre'])?>" title="Accéder à la news" target="_blank"><?= $article['titre']?></a>
+            </td>
+            <td>
+                <?= $article['section']?>
+            </td>
+            <td>
+                <?= $article['auteur']?>
+            </td>
+            <td>
+                <?= $article['date']?>
+            </td>
+            <td>
+                <?php if($article['auteur'] == $_SESSION['login'] || $_SESSION['droit'] <= $article['droit']) :?>
+                <a href="articles/del/<?= $article['id']?>/" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                &nbsp;
+                <a href="articles/mod/<?= $article['id']?>/" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>
+                <?php else : ?>
+                    /
+                <?php endif?>
+            </td>
+        </tr>
+    <?php endforeach ?>
+    </tbody>
+</table>
+<?= $menu_pagination ?>
+
+<?php include('footer_admin.phtml');?>

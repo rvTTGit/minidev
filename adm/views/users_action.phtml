@@ -1,0 +1,65 @@
+<?php include('header_admin.phtml') ?>
+
+<h2><?= $action_txt ?> un compte utilisateur</h2>
+<?php var_dump($oUser) ?>
+
+<?php if($erreur) : ?>
+<div class="alert alert-danger" role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <?= $erreur ?>
+</div>
+<?php endif ?>
+
+<form method="post">
+<?php if($_GET['action'] =='del') : ?>
+    <div class="well">
+        <h3>Voulez-vous réellement supprimer le compte "<?= $oUser->fields['nom'] ?>" ?</h3>
+    </div>    
+    <!-- formulaire suprression -->
+    <input type="hidden" name="id" value="<?= $oUser->fields['id'] ?>" />
+   
+<?php else : ?>
+    <!-- formulaire ajout / édition -->
+    <div class="form-group<?= isset($erreurs_champs_form['nom']) ? ' has-error' : '' ?>">
+        <label for="id_nom" class="control-label">nom:</label>
+        <input type="text" id="id_nom" name="nom" class="form-control" value="<?= $valeurs_tableau_form['nom']?>" />
+        <?php if(isset($erreurs_champs_form['nom'])) :?>
+            <p class="help-block"><?= $erreurs_champs_form['nom'] ?> </p>
+        <?php endif; ?>
+    </div>
+    <div class="form-group<?= isset($erreurs_champs_form['password']) ? ' has-error' : '' ?>">
+        <label for="id_password" class="control-label">Password:</label>
+        <input type="password" id="id_password" name="password" class="form-control"   value="<?= $valeurs_tableau_form['password']?>"/>
+        <?php if(isset($erreurs_champs_form['password'])) :?>
+            <p class="help-block"><?= $erreurs_champs_form['password'] ?> </p>
+        <?php endif; ?>            
+    </div>
+    <div class="form-group<?= isset($erreurs_champs_form['password_confirm']) ? ' has-error' : '' ?>">
+        <label for="id_password_confirm" class="control-label">Confirmer le Password:</label>
+        <input type="password" id="id_password_confirm" name="password_confirm" class="form-control"  value="<?= isset($erreurs_champs_form['password_confirm']) ? $erreurs_champs_form['password_confirm'] : '' ?>"/>
+        <?php if(isset($erreurs_champs_form['password_confirm'])) :?>
+            <p class="help-block"><?= $erreurs_champs_form['password_confirm'] ?> </p>
+        <?php endif; ?>
+    </div>
+    <div class="form-group">
+        <label for="id_droit" class="control-label">Niveau : </label> 
+        <select id="id_droit" name="droit">
+            <?php foreach ($oDroits->getListAll() as $droit) : 
+                $selected = ($valeurs_tableau_form['droit'] == $droit['id']) ? ' selected=selected ' : '' ?> 
+                <?php if($droit['id'] >= $_SESSION['droit']) : ?>
+                <option value="<?= $droit['id']?>" <?= $selected ?>/><?= $droit['niveau']?></option>
+                <?php endif ?>
+            <?php endforeach ?>
+        </select>
+    </div>
+
+<?php endif ?>
+
+    <div class="form-group">
+        <input type="submit" value="<?= $action_txt ?>" class="btn btn-primary"/>
+        <a href="users/list/" class="btn btn-default">Annuler</a>
+    </div>
+</form>
+
+
+<?php include('footer_admin.phtml'); ?>

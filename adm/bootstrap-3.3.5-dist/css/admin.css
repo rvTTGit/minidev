@@ -1,0 +1,43 @@
+#logoBG{
+	position: fixed;
+	display: block;
+	margin: 0 auto;
+	margin-top: 200px;
+	margin-left: 250px;
+	z-index: 0;
+}
+
+
+/* CONNEXION */
+
+fieldset#connexion {
+	padding: 10px 10px 10px 190px;
+	border: 1px solid #C0C0C0;
+	width: 450px;
+	height: 130px;
+	margin: 50px auto;
+	background: #EFEFEF url(../../../img/login/main.png) 30px 50% no-repeat;
+}
+
+fieldset#connexion input {
+	border: 1px solid #CFCFCF;
+	width: 200px;
+	display: block;
+	padding: 5px 0 5px 35px;
+	height: 25px;
+	margin: 5px;
+}
+fieldset#connexion input.login {
+	background: #FFF url(../../../img/login/login.png) 5px 50% no-repeat;
+	margin-top: 15px;
+}
+fieldset#connexion input.mdp {
+	background: #FFF url(../../../img/login/mdp.png) 5px 50% no-repeat;
+}
+fieldset#connexion input.btn {
+	background: #404040 url(../../../img/login/btn.png) 5px 50% no-repeat;
+	height: 30px;
+	cursor: pointer;
+	color: #FFF;
+	text-align: left;
+}

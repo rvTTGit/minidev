@@ -1,0 +1,68 @@
+<?php
+include('header_admin.phtml'); ?>
+
+<h2>Liste des News</h2>
+<?php 
+if($erreur != ""):
+?>
+<div class="alert alert-danger" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+        <?= $erreur ?>
+</div> 
+<?php endif ?>
+
+<?php if(isset($_SESSION['message']) && $_SESSION['message']!= ''): ?>
+<div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+        <?php echo $_SESSION['message'];
+        $_SESSION['message'] = '';
+        ?>
+</div> 
+<?php endif ?>
+<p><a href="creation.php" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Créer une news</a></p>
+<?= $menu ?>
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Titre</th>
+            <th>Auteur</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($liste_news as $news) : ?>
+        <tr>
+            <td>
+                <img src="../img/<?= $news['image']?>" alt="<?= $news['titre']?>" height="50"> 
+            </td>
+            <td>
+                <a href="../news.php?id=<?= $news['id']?>" title="Accéder à la news" target="_blank"><?= $news['titre']?></a>
+            </td>
+            <td>
+                <?= $news['auteur']?>
+            </td>
+            <td>
+                <?= $news['date']?>
+            </td>
+            <td>
+                <?php if($news['auteur'] == $_SESSION['login'] || strtoupper($_SESSION['login']) == 'ADMIN') :?>
+                <a href="suppression.php?id=<?= $news['id']?>" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                &nbsp;
+                <a href="modification.php?id=<?= $news['id']?>" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>
+                <?php else : ?>
+                    /
+                <?php endif?>
+            </td>
+        </tr>
+    <?php endforeach ?>
+    </tbody>
+</table>
+<?= $menu ?>
+
+<?php include('footer_admin.phtml');?>

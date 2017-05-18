@@ -1,0 +1,99 @@
+<?php include('header_admin.phtml') ?>
+
+<h2><?= $action_txt ?> un contact.</h2>
+
+<?php if($erreur) : ?>
+<div class="alert alert-danger" role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <?= $erreur ?>
+</div>
+<?php endif ?>
+
+<form method="post">
+<?php if($_GET['action'] =='del') : ?>
+    <div class="well">
+        <h3>Voulez-vous réellement supprimer le contact "<?= $oContacts->fields['nom'] ?>" ?</h3>
+    </div>    
+    <!-- formulaire suprression -->
+    <input type="hidden" name="id" value="<?= $oContacts->fields['id'] ?>" />
+   
+<?php else : ?>
+    <!-- formulaire ajout / édition -->
+    <input type="hidden" name="type_contact" value="<?= $oContacts->fields['type_contact'] ?>" />
+
+    <div class="form-group<?= isset($erreurs_champs_form['nom']) ? ' has-error' : '' ?>">
+        <label for="id_nom" class="control-label">Nom:</label>
+        <input type="text" id="id_nom" name="nom" class="form-control" value="<?= $valeurs_tableau_form['nom']?>" />
+        <?php if(isset($erreurs_champs_form['nom'])) :?>
+            <p class="help-block"><?= $erreurs_champs_form['nom'] ?> </p>
+        <?php endif; ?>
+    </div>
+
+    <div class="form-group<?= isset($erreurs_champs_form['prenom']) ? ' has-error' : '' ?>">
+        <label for="id_prenom" class="control-label">Prénom:</label>
+        <input type="text" id="id_prenom" name="prenom" class="form-control" value="<?= $valeurs_tableau_form['prenom']?>" />
+        <?php if(isset($erreurs_champs_form['prenom'])) :?>
+            <p class="help-block"><?= $erreurs_champs_form['prenom'] ?> </p>
+        <?php endif; ?>
+    </div>
+
+    <div class="form-group<?= isset($erreurs_champs_form['mail']) ? ' has-error' : '' ?>">
+        <label for="id_mail" class="control-label">Mail:</label>
+        <input type="email" id="id_mail" name="mail" class="form-control" value="<?= $valeurs_tableau_form['mail']?>" />
+        <?php if(isset($erreurs_champs_form['mail'])) :?>
+            <p class="help-block"><?= $erreurs_champs_form['mail'] ?> </p>
+        <?php endif; ?>
+    </div>    
+
+    <div class="form-group<?= isset($erreurs_champs_form['tel']) ? ' has-error' : '' ?>">
+        <label for="id_tel" class="control-label">Téléphone:</label>
+        <input type="text" id="id_tel" name="tel" class="form-control" value="<?= $valeurs_tableau_form['tel']?>" />
+        <?php if(isset($erreurs_champs_form['tel'])) :?>
+            <p class="help-block"><?= $erreurs_champs_form['tel'] ?> </p>
+        <?php endif; ?>
+    </div>
+
+    <div class="form-group<?= isset($erreurs_champs_form['adresse']) ? ' has-error' : '' ?>">
+        <label for="id_adresse" class="control-label">Adresse:</label>
+        <input type="text" id="id_adresse" name="adresse" class="form-control" value="<?= $valeurs_tableau_form['adresse']?>" />
+        <?php if(isset($erreurs_champs_form['adresse'])) :?>
+            <p class="help-block"><?= $erreurs_champs_form['adresse'] ?> </p>
+        <?php endif; ?>
+    </div>
+
+    <div class="form-group<?= isset($erreurs_champs_form['cp']) ? ' has-error' : '' ?>">
+        <label for="id_cp" class="control-label">Code Postal:</label>
+        <input type="text" id="id_cp" name="cp" class="form-control" value="<?= $valeurs_tableau_form['cp']?>" />
+        <?php if(isset($erreurs_champs_form['cp'])) :?>
+            <p class="help-block"><?= $erreurs_champs_form['cp'] ?> </p>
+        <?php endif; ?>
+    </div>
+
+    <div class="form-group<?= isset($erreurs_champs_form['ville']) ? ' has-error' : '' ?>">
+        <label for="id_ville" class="control-label">Ville:</label>
+        <input type="text" id="id_ville" name="ville" class="form-control" value="<?= $valeurs_tableau_form['ville']?>" />
+        <?php if(isset($erreurs_champs_form['ville'])) :?>
+            <p class="help-block"><?= $erreurs_champs_form['ville'] ?> </p>
+        <?php endif; ?>
+    </div>
+
+    <div class="form-group<?=isset($erreurs_champs_form['note']) ? ' has-error' : '' ?>">
+        <label for="id_note" class="control-label">Note :</label>
+        <textarea id="id_note" name="note" class="form-control"><?= $valeurs_tableau_form['note'] ?></textarea>
+        <?php if(isset($erreurs_champs_form['note'])) { ?>
+        <p class="help-block">
+        <?= $erreurs_champs_form['note'] ?>
+        </p>
+        <?php } ?>
+    </div>          
+
+<?php endif ?>
+
+    <div class="form-group">
+        <input type="submit" value="<?= $action_txt ?>" class="btn btn-primary"/>
+        <a href="contacts/list/" class="btn btn-default">Annuler</a>
+    </div>
+</form>
+
+
+<?php include('footer_admin.phtml'); ?>

@@ -1,0 +1,40 @@
+          <div class="formStyle" <?= !empty($message) ? 'style="display:none"' : '' ?>>
+               <h3>Des questions? Contactez nous!</h3>
+               <form method="post">
+               <fieldset>
+               <label for="field_titre">Nom : </label>
+               <input id="field_titre" type='text' name='nom' size='50' maxlength="255" value="<?= $valeurs_tableau_form['nom'] ?>"/>
+               <?php if(isset($erreurs_champs_form['nom'])) : ?>
+               <br/><span style="color:red;"><?= $erreurs_champs_form['nom'] ?></span>
+               <?php endif ?>
+               <br/>
+
+               <label for="field_titre">Prénom : </label>
+               <input id="field_titre" type='text' name='prenom' size='50' maxlength="255" value="<?= $valeurs_tableau_form['prenom'] ?>"/>
+               <?php if(isset($erreurs_champs_form['prenom'])) : ?>
+               <br/><span style="color:red;"><?= $erreurs_champs_form['prenom'] ?></span>
+               <?php endif ?>      
+               <br/>
+
+               <label for="field_titre">E-mail : </label>
+               <input id="field_titre" type='email' name='mail' size='50' maxlength="255" value="<?= $valeurs_tableau_form['mail'] ?>"/>
+               <?php if(isset($erreurs_champs_form['mail'])) : ?>
+               <br/><span style="color:red;"><?= $erreurs_champs_form['mail'] ?></span>
+               <?php endif ?>      
+               <br/>
+
+               <label for="field_texte">Message : </label>
+               <textarea id="field_texte" type='textarea' name='text' size='50' maxlength="255"><?= $valeurs_tableau_form['text'] ?></textarea>
+               <?php if(isset($erreurs_champs_form['text'])) : ?>
+               <br/><span style="color:red;"><?= $erreurs_champs_form['text'] ?></span>
+               <?php endif ?>     
+               <br/>
+
+               <label for="sendmail">Recevoir une copie par mail de ce message? </label>
+               <input type="checkbox" name="sendmail" id="sendmail"> 
+               <br/>
+
+               </fieldset>
+               <br/>
+               <input id="field_title" type="submit" value="Envoyer"/>
+          </div>

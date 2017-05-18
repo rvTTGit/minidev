@@ -1,0 +1,38 @@
+<?php include('header_admin.phtml') ?>
+<!-- <img id="logoBG" src="../img/logoBG.png"> -->
+        <div id="containerHead">
+            <!-- <h1>Authentification <?=$config['nom_site']?></h1> -->
+            <h2><img id="logoHome" src="../img/logo.png" alt="Logo <?=$config['nom_site']?>">Authentification <?=$config['nom_site']?></h2>
+        </div>
+<?php if($erreur != ''):?>
+<div class="alert alert-danger" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+        <?= $erreur ?>
+</div>
+<?php endif ?>
+
+<!-- <form method="post">
+    <div class="form-group">
+        <label for="id_login">Login: </label>
+        <input type="text" id="id_login" name="login" />
+    </div>
+    <div class="form-group">
+        <label for="id_password">Mot de passe: </label>
+        <input type="password" id="id_password" name="password" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Connexion" class="btn btn-primary" />
+    </div>
+</form> -->
+
+<form method="post">
+    <fieldset id="connexion">
+        <input type="text" name="login" value="" placeholder="nom d'utilisateur" class="login" />
+        <input type="password" name="password" value="" placeholder="mot de passe" class="mdp" />
+        <input type="submit" name="bouton" value="Authentification" class="btn" />
+    </fieldset>
+</form>
+
+<?php include('footer_admin.phtml') ?>

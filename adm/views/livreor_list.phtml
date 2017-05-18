@@ -1,0 +1,61 @@
+<?php
+include('header_admin.phtml'); ?>
+
+<h2>Liste des message postés dans le livre d'Or</h2>
+<?php 
+if($erreur != ""):
+?>
+<div class="alert alert-danger" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+        <?= $erreur ?>
+</div> 
+<?php endif ?>
+
+<?php if(isset($_SESSION['message']) && $_SESSION['message']!= ''): ?>
+<div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+        <?php echo $_SESSION['message'];
+        $_SESSION['message'] = '';
+        ?>
+</div>
+<?php endif ;
+
+// echo '<pre>'.var_dump($list_configs).'</pre>';
+?>
+<?php if(!empty($list_messages)) : ?>
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Date</th>
+            <th>Message</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($list_messages as $message) : ?>
+        <tr>
+            <td>
+                <?= $message['prenom']?>&nbsp;<?= $message['nom']?>
+            </td>
+            <td>
+                <?= date("j M Y à H\hi", strtotime($message['date'])) ?>
+            </td>
+            <td>
+                <?= $message['text'] ?>
+            </td>
+            <td>
+                <a href="livreor/del/<?= $message['id']?>/" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+            </td>
+        </tr>
+    <?php endforeach ?>
+    </tbody>
+</table>
+<?php else : ?>
+    <p>Aucun message pour le moment.</p>
+<?php endif ?>
+<?php include('footer_admin.phtml');?>
