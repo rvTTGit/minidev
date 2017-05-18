@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Jeu 18 Mai 2017 à 14:30
+-- Généré le :  Jeu 18 Mai 2017 à 19:43
 -- Version du serveur :  5.5.52-0+deb8u1
 -- Version de PHP :  5.6.27-0+deb8u1
 
@@ -32,32 +32,36 @@ CREATE TABLE IF NOT EXISTS `configs` (
   `valeur` varchar(500) NOT NULL,
   `description` varchar(255) NOT NULL DEFAULT '',
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `acces_client` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'le client peut il modifier la valeur?'
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+  `acces_client` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'le client peut il modifier la valeur?',
+  `type` enum('core','general','css','font') NOT NULL DEFAULT 'general'
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `configs`
 --
 
-INSERT INTO `configs` (`id`, `tag`, `valeur`, `description`, `date`, `acces_client`) VALUES
-(1, 'nom_site', 'Arbre &amp; Nature', 'Nom du site', '0000-00-00 00:00:00', 0),
-(2, 'slogan', '27 années au service de vos jardins!', 'phrase affichée dans le premier écran de la page d''accueil', '2017-05-10 16:22:20', 1),
-(3, 'adresse', '16, rue de Beaumont-la-Ville', 'adresse de vos locaux', '2017-05-09 20:13:12', 1),
-(4, 'cp', '27170', 'votre code postal', '2017-05-09 20:14:33', 1),
-(5, 'ville', 'Beaumontel', 'la ville de vos locaux', '2017-05-09 20:14:26', 1),
-(6, 'tel', '02 32 44 17 24', 'votre numéro de téléphone', '2017-05-09 20:14:51', 1),
-(7, 'mail', 'arbresetnature27@wanadoo.fr', 'votre adresse mail', '2017-05-09 20:15:04', 1),
-(8, 'url_google_map', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2612.954028693254!2d0.7825544156824915!3d49.08751387931062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e10c79b143362d%3A0x96105327c5863d70!2s16+Rue+de+Beaumont+la+ville%2C+27170+Beaumont-le-Roger!5e0!3m2!1sfr!2sfr!4v1493224962711', 'url embed google maps', '2017-04-29 00:08:10', 0),
-(9, 'open_hours', '', '', '0000-00-00 00:00:00', 0),
-(11, 'news_par_page', '6', 'nombre d''lémént listés par pagination dans les pages de section', '2017-05-18 09:41:22', 0),
-(12, 'taille_miniatures', '[370, 220]', '', '0000-00-00 00:00:00', 0),
-(13, 'separateur_menu', '๑', 'sépare les éléments du menu', '2017-05-14 13:37:38', 0),
-(18, 'txt_inter1', 'Aménagez votre jardin ...', 'message entre les deux 1er écrans de la home', '2017-05-09 20:15:22', 1),
-(19, 'txt_inter2', 'Et bien plus...', 'message entre le 2eme et 3eme écran de la home', '2017-05-09 20:15:31', 1),
-(20, 'txt_screen2', 'Terrasses, Pergolas, Treillages…', 'message affiché dans l''écran 2', '2017-04-28 21:23:25', 0),
-(21, 'txt_screen1', 'L''Art de la Nature.', 'message affiché dans l''écran1', '2017-04-28 21:24:42', 0),
-(24, 'color', '0c3d01', 'code hexa de la couleur du texte', '2017-05-14 13:34:24', 0),
-(25, 'background-color', 'DCEED8', 'couleur de fond du site', '2017-05-14 13:33:33', 0);
+INSERT INTO `configs` (`id`, `tag`, `valeur`, `description`, `date`, `acces_client`, `type`) VALUES
+(1, 'nom_site', 'Arbre &amp; Nature', 'Nom du site', '0000-00-00 00:00:00', 0, 'core'),
+(2, 'slogan', '27 années au service de vos jardins!!', 'phrase affichée dans le premier écran de la page d''accueil', '2017-05-18 17:37:33', 1, 'general'),
+(3, 'titre_home', 'Arbre &amp; Nature**', 'titre affiché dans le 1er écran de la homepage', '2017-05-18 16:47:11', 1, 'general'),
+(4, 'cp', '27170', 'votre code postal', '2017-05-18 16:47:22', 1, 'general'),
+(5, 'ville', 'Beaumontel', 'la ville de vos locaux', '2017-05-18 16:47:34', 1, 'general'),
+(6, 'tel', '02 32 44 17 24', 'votre numéro de téléphone', '2017-05-18 16:47:47', 1, 'general'),
+(7, 'mail', 'arbresetnature27@wanadoo.fr', 'votre adresse mail', '2017-05-18 16:48:52', 1, 'general'),
+(8, 'adresse', '16, rue de Beaumont-la-Ville', 'adresse de vos locaux', '2017-05-18 16:49:03', 1, 'general'),
+(9, 'open_hours', '                          ', '', '2017-05-18 16:49:24', 0, 'general'),
+(11, 'news_par_page', '6', 'nombre d''lémént listés par pagination dans les pages de section', '2017-05-18 17:14:10', 0, 'general'),
+(12, 'taille_miniatures', '[370, 220]', '', '0000-00-00 00:00:00', 0, 'core'),
+(13, 'separateur_menu', '๑', 'sépare les éléments du menu', '2017-05-18 16:49:35', 0, 'general'),
+(18, 'txt_inter1', 'Aménagez votre jardin ...', 'message entre les deux 1er écrans de la home', '2017-05-18 16:52:46', 1, 'general'),
+(19, 'txt_inter2', 'Et bien plus...', 'message entre le 2eme et 3eme écran de la homepage', '2017-05-18 17:36:22', 1, 'general'),
+(20, 'txt_screen2', 'Terrasses, Pergolas, Treillages…', 'message affiché dans l''écran 2', '2017-05-18 16:53:10', 0, 'general'),
+(21, 'txt_screen1', 'L''Art de la Nature.', 'message affiché dans l''écran1', '2017-05-18 16:53:15', 0, 'general'),
+(24, 'color', '0c3d01', 'code hexa de la couleur du texte', '2017-05-18 16:53:27', 0, 'css'),
+(25, 'background-color', 'DCEED8', 'couleur de fond du site', '2017-05-18 16:53:31', 0, 'css'),
+(26, 'couleur_lien', '262125', 'couleur des liens', '2017-05-18 16:53:38', 0, 'css'),
+(27, 'couleur_lien_actif', 'e31051', 'couleur des liens actifs ou survolés', '2017-05-18 16:53:45', 0, 'css'),
+(28, 'url_google_map', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2612.954028693254!2d0.7825544156824915!3d49.08751387931062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e10c79b143362d%3A0x96105327c5863d70!2s16+Rue+de+Beaumont+la+ville%2C+27170+Beaumont-le-Roger!5e0!3m2!1sfr!2sfr!4v1493224962711', 'url embed google maps', '2017-05-18 16:53:56', 0, 'core');
 
 -- --------------------------------------------------------
 
@@ -155,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `logs` (
   `date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `ip` varchar(100) NOT NULL DEFAULT '',
   `action` varchar(255) NOT NULL DEFAULT ''
-) ENGINE=InnoDB AUTO_INCREMENT=329 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=379 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `logs`
@@ -484,7 +488,57 @@ INSERT INTO `logs` (`id`, `user`, `date`, `ip`, `action`) VALUES
 (325, 1, '2017-05-18 12:17:54', '192.168.10.254', 'mod news: L''article "test autre" est bien en bdd, il porte l''id : 88'),
 (326, 1, '2017-05-18 12:29:03', '192.168.10.254', 'mod news: L''article "test autre" est bien en bdd, il porte l''id : 88'),
 (327, 1, '2017-05-18 12:29:20', '192.168.10.254', 'del news: L''article &laquo;test autre &raquo a correctement été supprimé ( id: 88)'),
-(328, 1, '2017-05-18 12:29:43', '192.168.10.254', 'mod news: L''article "tout casser!" est bien en bdd, il porte l''id : 84');
+(328, 1, '2017-05-18 12:29:43', '192.168.10.254', 'mod news: L''article "tout casser!" est bien en bdd, il porte l''id : 84'),
+(329, 1, '2017-05-18 12:41:14', '192.168.10.254', 'list news: '),
+(330, 1, '2017-05-18 12:54:24', '192.168.10.254', 'add configs: L''option couleur_lien a bien été créée, elle porte l''id : 26'),
+(331, 1, '2017-05-18 12:54:58', '192.168.10.254', 'add configs: L''option couleur_lien_actif a bien été créée, elle porte l''id : 27'),
+(332, 1, '2017-05-18 12:59:49', '192.168.10.254', 'mod configs: L''option couleur_lien a bien été créée, elle porte l''id : 26'),
+(333, 1, '2017-05-18 13:00:16', '192.168.10.254', 'mod configs: L''option couleur_lien a bien été créée, elle porte l''id : 26'),
+(334, 1, '2017-05-18 13:01:36', '192.168.10.254', 'mod configs: L''option couleur_lien a bien été créée, elle porte l''id : 26'),
+(335, 1, '2017-05-18 13:20:37', '192.168.10.254', 'modules configs: Mise à jour effectuée'),
+(336, 1, '2017-05-18 13:24:07', '192.168.10.254', 'modules configs: Mise à jour effectuée : tarifs, livreor, contacts'),
+(337, 1, '2017-05-18 13:24:34', '192.168.10.254', 'modules configs: Mise à jour effectuée : tarifs, livreor'),
+(338, 1, '2017-05-18 14:54:33', '192.168.10.254', 'Authentification'),
+(339, 1, '2017-05-18 15:23:52', '192.168.10.254', 'add tarifs: '),
+(340, 1, '2017-05-18 15:23:57', '192.168.10.254', 'add tarifs: Le tarif wwww a bien été créée, il porte l''id : 16'),
+(341, 1, '2017-05-18 15:24:20', '192.168.10.254', 'mod tarifs: Le tarif wwww a bien été créée, il porte l''id : 16'),
+(342, 1, '2017-05-18 15:30:30', '192.168.10.254', 'mod tarifs: Le tarif wwww a bien été créée, il porte l''id : 16'),
+(343, 1, '2017-05-18 15:30:57', '192.168.10.254', 'mod tarifs: Le tarif wwww a bien été créée, il porte l''id : 16'),
+(344, 1, '2017-05-18 15:33:57', '192.168.10.254', 'mod tarifs: Le tarif arroser les canards a bien été créée, il porte l''id : 16'),
+(345, 1, '2017-05-18 15:48:54', '192.168.10.254', 'add configs: L''option titre_home a bien été créée, elle porte l''id : 28'),
+(346, 1, '2017-05-18 16:02:27', '192.168.10.254', 'mod configs: L''option color a bien été créée, elle porte l''id : 24'),
+(347, 1, '2017-05-18 16:07:38', '192.168.10.254', 'mod configs: L''option titre_home a bien été créée, elle porte l''id : 3'),
+(348, 1, '2017-05-18 16:42:04', '192.168.10.254', 'add configs: '),
+(349, 1, '2017-05-18 16:46:58', '192.168.10.254', 'mod configs: L''option slogan a bien été créée, elle porte l''id : 2'),
+(350, 1, '2017-05-18 16:47:11', '192.168.10.254', 'mod configs: L''option titre_home a bien été créée, elle porte l''id : 3'),
+(351, 1, '2017-05-18 16:47:22', '192.168.10.254', 'mod configs: L''option cp a bien été créée, elle porte l''id : 4'),
+(352, 1, '2017-05-18 16:47:34', '192.168.10.254', 'mod configs: L''option ville a bien été créée, elle porte l''id : 5'),
+(353, 1, '2017-05-18 16:47:47', '192.168.10.254', 'mod configs: L''option tel a bien été créée, elle porte l''id : 6'),
+(354, 1, '2017-05-18 16:48:52', '192.168.10.254', 'mod configs: L''option mail a bien été créée, elle porte l''id : 7'),
+(355, 1, '2017-05-18 16:49:04', '192.168.10.254', 'mod configs: L''option adresse a bien été créée, elle porte l''id : 8'),
+(356, 1, '2017-05-18 16:49:14', '192.168.10.254', 'mod configs: '),
+(357, 1, '2017-05-18 16:49:24', '192.168.10.254', 'mod configs: L''option open_hours a bien été créée, elle porte l''id : 9'),
+(358, 1, '2017-05-18 16:49:35', '192.168.10.254', 'mod configs: L''option separateur_menu a bien été créée, elle porte l''id : 13'),
+(359, 1, '2017-05-18 16:52:46', '192.168.10.254', 'mod configs: L''option txt_inter1 a bien été enregistrée, valeur : Aménagez votre jardin ...'),
+(360, 1, '2017-05-18 16:53:05', '192.168.10.254', 'mod configs: L''option txt_inter2 a bien été enregistrée, valeur : Et bien plus...'),
+(361, 1, '2017-05-18 16:53:10', '192.168.10.254', 'mod configs: L''option txt_screen2 a bien été enregistrée, valeur : Terrasses, Pergolas, Treillages…'),
+(362, 1, '2017-05-18 16:53:17', '192.168.10.254', 'mod configs: L''option txt_screen1 a bien été enregistrée, valeur : L''Art de la Nature.'),
+(363, 1, '2017-05-18 16:53:27', '192.168.10.254', 'mod configs: L''option color a bien été enregistrée, valeur : 0c3d01'),
+(364, 1, '2017-05-18 16:53:31', '192.168.10.254', 'mod configs: L''option background-color a bien été enregistrée, valeur : DCEED8'),
+(365, 1, '2017-05-18 16:53:39', '192.168.10.254', 'mod configs: L''option couleur_lien a bien été enregistrée, valeur : 262125'),
+(366, 1, '2017-05-18 16:53:45', '192.168.10.254', 'mod configs: L''option couleur_lien_actif a bien été enregistrée, valeur : e31051'),
+(367, 1, '2017-05-18 16:53:56', '192.168.10.254', 'mod configs: L''option url_google_map a bien été enregistrée, valeur : https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2612.954028693254!2d0.7825544156824915!3d49.08751387931062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e10c79b143362d%3A0'),
+(368, 1, '2017-05-18 17:14:10', '192.168.10.254', 'mod configs: L''option news_par_page a bien été enregistrée, valeur : 6'),
+(369, 2, '2017-05-18 17:15:10', '192.168.10.254', 'Authentification'),
+(370, 1, '2017-05-18 17:15:21', '192.168.10.254', 'modules configs: Mise à jour effectuée : tarifs, livreor, configs'),
+(371, 2, '2017-05-18 17:15:50', '192.168.10.254', 'mod configs: L''option slogan a bien été enregistrée, valeur : 27 années au service de vos jardins!!'),
+(372, 1, '2017-05-18 17:25:23', '192.168.10.254', 'mod configs: L''option txt_inter2 a bien été enregistrée, valeur : Et bien plus...'),
+(373, 1, '2017-05-18 17:29:23', '192.168.10.254', 'modules configs: Mise à jour effectuée : tarifs, livreor, form_contact, configs<br>Array, Mettre à jour'),
+(374, 1, '2017-05-18 17:30:25', '192.168.10.254', 'modules configs: Mise à jour effectuée : tarifs, livreor, form_contact, configs'),
+(375, 1, '2017-05-18 17:30:32', '192.168.10.254', 'modules configs: Mise à jour effectuée : tarifs, livreor, configs'),
+(376, 1, '2017-05-18 17:30:48', '192.168.10.254', 'mod configs: L''option txt_inter2 a bien été enregistrée, valeur : Et bien plus...'),
+(377, 1, '2017-05-18 17:36:22', '192.168.10.254', 'mod configs: L''option txt_inter2 a bien été enregistrée, valeur : Et bien plus...'),
+(378, 1, '2017-05-18 17:37:33', '192.168.10.254', 'mod configs: L''option slogan a bien été enregistrée, valeur : 27 années au service de vos jardins!!');
 
 -- --------------------------------------------------------
 
@@ -531,13 +585,13 @@ CREATE TABLE IF NOT EXISTS `modules` (
 --
 
 INSERT INTO `modules` (`id`, `nom`, `slug`, `actif`, `date`) VALUES
-(1, 'Gestion des Utilisateurs', 'users', 0, '2017-05-15 12:58:11'),
-(2, 'Gestion des Sections', 'sections', 0, '2017-05-15 12:58:11'),
-(3, 'Gestion des Tarifs', 'tarifs', 0, '2017-05-15 12:58:11'),
-(4, 'Gestion du Livre d''Or', 'livreor', 1, '2017-05-15 12:58:11'),
-(5, 'Gestion des Contacts', 'contacts', 1, '2017-05-15 12:58:11'),
-(6, 'Formulaire de contact', 'form_contact', 0, '2017-05-15 12:58:11'),
-(7, 'Gestion des paramètres', 'configs', 0, '2017-05-15 12:58:11');
+(1, 'Gestion des Utilisateurs', 'users', 0, '2017-05-18 17:30:32'),
+(2, 'Gestion des Sections', 'sections', 0, '2017-05-18 17:30:32'),
+(3, 'Gestion des Tarifs', 'tarifs', 1, '2017-05-18 17:30:32'),
+(4, 'Gestion du Livre d''Or', 'livreor', 1, '2017-05-18 17:30:32'),
+(5, 'Gestion des Contacts', 'contacts', 0, '2017-05-18 17:30:32'),
+(6, 'Formulaire de contact', 'form_contact', 0, '2017-05-18 17:30:32'),
+(7, 'Gestion des paramètres', 'configs', 1, '2017-05-18 17:30:32');
 
 -- --------------------------------------------------------
 
@@ -642,7 +696,7 @@ CREATE TABLE IF NOT EXISTS `tarifs` (
   `prix` float NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `type` int(10) unsigned NOT NULL COMMENT 'référence à type_tarifs'
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `tarifs`
@@ -656,7 +710,8 @@ INSERT INTO `tarifs` (`id`, `prestation`, `prix`, `date`, `type`) VALUES
 (6, 'faire une terrasse', 147.5, '0000-00-00 00:00:00', 1),
 (13, 'test', 55555, '2017-05-09 11:35:07', 1),
 (14, 'trytry', 333.3, '2017-05-10 16:13:20', 3),
-(15, 'Planter des navets', 20000, '2017-05-14 13:48:42', 4);
+(15, 'Planter des navets', 20000, '2017-05-14 13:48:42', 4),
+(16, 'arroser les canards', 5.32, '2017-05-18 15:33:57', 4);
 
 -- --------------------------------------------------------
 
@@ -782,7 +837,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `configs`
 --
 ALTER TABLE `configs`
-MODIFY `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
+MODIFY `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT pour la table `contacts`
 --
@@ -797,7 +852,7 @@ MODIFY `id` int(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT pour la table `logs`
 --
 ALTER TABLE `logs`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=329;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=379;
 --
 -- AUTO_INCREMENT pour la table `messages`
 --
@@ -822,7 +877,7 @@ MODIFY `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 -- AUTO_INCREMENT pour la table `tarifs`
 --
 ALTER TABLE `tarifs`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT pour la table `type_tarifs`
 --
