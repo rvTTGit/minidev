@@ -63,18 +63,6 @@ strong{
 	font-weight: normal;
 }
 
-a{
-	color: #262125;
-	text-decoration: none;
-}
-
-a:hover{
-	color: #e31051;
-}
-
-a:focus{
-	color: #e31051;
-}
 
 .clear{
 	clear: both;
@@ -129,13 +117,6 @@ a:focus{
 	padding-top: 10%;
 }
 
-#containerAccueil li a{
-	color: #262125;
-	text-decoration: none;
-}
-#containerAccueil li a:hover, #containerAccueil li a:focus{
-	color: #e31051;
-}
 
 #containerHead{
 	display: inline;
