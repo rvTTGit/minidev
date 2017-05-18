@@ -406,14 +406,6 @@ strong{
 	padding: 0% 1%;
 }
 
-#menuBas li a{
-	color: #262125;
-	text-decoration: none;
-}
-#menuBas li a:hover, #menuBas li a:focus{
-	color: #e31051;
-}
-
 .btn-navbar {
     display: none;
 }
@@ -441,13 +433,7 @@ header li{
 header ul li+li{
 	/*border-left: 1px solid #262125;*/
 }
-header li a{
-	color: #262125;
-	text-decoration: none;
-}
-header li a:hover, header li a:focus{
-	color: #e31051;
-}
+
 #logoPage{
 	width: 10%;
 	/*padding: 2% 0%;*/
