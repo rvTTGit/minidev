@@ -75,7 +75,7 @@
             <input type="radio" name="acces_client" id="inlineRadio2" value="0" <?= !($valeurs_tableau_form['acces_client']) ? '  checked' : '' ?>> Non
         </label>  
     <?php else : ?>
-        <input type="hidden" name="acces_client" value="0" />
+        <input type="hidden" name="acces_client" value="<?= $valeurs_tableau_form['acces_client'] ?>" />
     <?php endif ?>
     </div>
 

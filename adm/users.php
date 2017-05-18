@@ -31,10 +31,6 @@ if(in_array($_GET['action'], ['del','mod'])){
 	        if(!$oUser->fields){
 			    $message = 'L\' utilisateur n\'existe pas !';	            
 	        }		        
-	        //tentative d'accès au compte admin ...
-	        if($oUser->fields['id'] == $adminId){
-			    $message = 'Même pas en rêve !';	            
-	        }		        
 	    }
 	    else{
 	    	//pas un nombre

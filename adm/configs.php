@@ -95,9 +95,9 @@ switch ($_GET['action']) {
 		break;	
 	/*---------------------------------------------------------------------*/
 	case 'list':
+		$type_config = isset($_GET['type'])?$_GET['type']:'';
 		// chargement de la liste des configuration en fonction des droits
 		if($_SESSION['droit'] <=1){
-			$type_config = isset($_GET['type'])?$_GET['type']:'';
 			$list_configs = $oConfigs->getListAll($type_config);
 		}
 		else
