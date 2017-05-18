@@ -2,7 +2,7 @@
 //chargement du modele
 include('script/init.php');
 
-//controleur 
+//controleur général du front office du site
 
 // => vérification des infos reçus en $_GET
 //récupération du slug de la section renvoyé par le htaccess
