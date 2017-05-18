@@ -91,6 +91,7 @@ class News extends Model{
         $query = 'SELECT `news`.* FROM '. $this->table ;
         $query .= ' JOIN `sections` ON `news`.section = `sections`.id ';
         $query .= ' WHERE `sections`.tag='.$this->db->quote($section);
+        $query .= ' AND `news`.visible=1';
         // pour la home, on ajoute les autres sections
         if($section == 'home'){
             $query .= ' OR `sections`.tag!='.$this->db->quote($section);
@@ -126,19 +127,21 @@ class News extends Model{
     * id, titre, date, texte, auteur et image
     * si aucune news n'est pas trouvée, la fonction retourne 'false'
     */
-    function getNewsFromPageSection($page,$section){
+    function getNewsFromPageSection($page,$section,$visible=1){
         global $config;
         $retour = [];       
         // definition de l offset
         $offset = ($page-1) * $config['news_par_page'];
 
-        $query = 'SELECT news.`id` , news.`titre` , news.`texte` , news.`date` , news.`image`, sections.`nom` AS section, sections.`nom` AS tag , users.nom AS auteur, users.droit AS droit ';
+        $query = 'SELECT news.*, sections.`nom` AS section, sections.`nom` AS tag , users.nom AS auteur, users.droit AS droit ';
         $query .= 'FROM news INNER JOIN users ON news.auteur = users.id ';
         $query .= 'JOIN `sections` ON `news`.section = `sections`.id ';
+        // $query .= 'WHERE `news`.visible='.$this->db->quote($visible);        
+        $query .= 'WHERE `news`.visible=1';        
         if($section > 0)
         // if($section!='all')
             // $query .= 'WHERE `sections`.tag='.$this->db->quote($section);        
-            $query .= 'WHERE `sections`.id='.$this->db->quote($section);        
+            $query .= ' AND `sections`.id='.$this->db->quote($section);        
 
         $query .= ' ORDER BY date DESC LIMIT ' . $offset .', '. $config['news_par_page'];
         // echo "query:" . $query . "<br/>"; 
@@ -156,6 +159,38 @@ class News extends Model{
         
         return $retour;
     }
+
+    function getNewsFromPageSectionAdm($page,$section){
+        global $config;
+        $retour = [];       
+        // definition de l offset
+        $offset = ($page-1) * $config['news_par_page'];
+
+        $query = 'SELECT news.*, sections.`nom` AS section, sections.`nom` AS tag , users.nom AS auteur, users.droit AS droit ';
+        $query .= 'FROM news INNER JOIN users ON news.auteur = users.id ';
+        $query .= 'JOIN `sections` ON `news`.section = `sections`.id ';
+        $query .= 'WHERE ';        
+        if($section > 0)
+        // if($section!='all')
+            // $query .= 'WHERE `sections`.tag='.$this->db->quote($section);        
+            $query .= ' `sections`.id='.$this->db->quote($section);        
+
+        $query .= ' ORDER BY date DESC LIMIT ' . $offset .', '. $config['news_par_page'];
+        // echo "query:" . $query . "<br/>"; 
+        $this->query = $query;
+        $query_result = $this->db->query($query);
+        if(!$query_result){
+            $error = $this->db->errorInfo();
+            $error = $error[2];
+            throw new PDOException('Erreur de requête : ' .$error. '</br>'.$query);
+        }        
+        $values = $query_result->fetchAll();
+        if($values){
+            $retour = $values;
+        }
+        
+        return $retour;
+    }    
 
     /**
     * Cette méthode re affecte les news à un nouvel utilisateur
@@ -218,7 +253,7 @@ class News extends Model{
     } 
 
     public function get($id){
-        $query = 'SELECT `news`.`id`, `news`.`titre`, `news`.`texte`, `news`.`date`, `news`.`image`, `news`.`section`, `sections`.`nom` AS section_nom, `users`.nom AS auteur ';
+        $query = 'SELECT `news`.*, `sections`.`nom` AS section_nom, `users`.nom AS auteur ';
         $query .= 'FROM ' . $this->table . ' JOIN `users` ON `news`.auteur = `users`.id ';
         $query .= 'INNER JOIN sections ON news.section = sections.id ';
         $query .= ' WHERE `news`.id=' . $this->db->quote($id);

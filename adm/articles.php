@@ -91,6 +91,7 @@ switch ($_GET['action']) {
 		           'auteur' => ['required' => true, 'max' => 50],
 		           'section' => ['required' => true, 'max' => 50],
 		           'texte' => ['required' => true, 'min' => 10],
+		           'visible' => ['required' => false, 'max' => 1],
 		           'image' => ['uploaded' => true, 'function' => 'is_image']
 		          ];
 		// on pré remplit le tableau valeurs_tableau_form avec les clef du tableau de règle
@@ -106,6 +107,7 @@ switch ($_GET['action']) {
 		           'auteur' => ['required' => true, 'max' => 50],
 		           'section' => ['required' => true, 'max' => 50],
 		           'texte' => ['required' => true, 'min' => 10],
+		           'visible' => ['required' => false, 'max' => 1],
 		           // mettre « false » à uploaded va vérifier l’upload, mais ne
 		           // va pas provoquer d’erreur si aucun fichier n’est envoyé
 		           'image' => ['uploaded' => false, 'function' => 'is_image']
@@ -122,7 +124,7 @@ switch ($_GET['action']) {
 	/*---------------------------------------------------------------------*/
 	case 'list':
 		$tabNombreArticlesSection = $oArticles->countSections();
-		$list_articles = $oArticles->getNewsFromPageSection($page_actuelle,$_SESSION['filter_section_id']);
+		$list_articles = $oArticles->getNewsFromPageSectionAdm($page_actuelle,$_SESSION['filter_section_id']);
 	    // reformatage de la date de la news pour l affichage dans la page html
 	    foreach($list_articles as $id => $article){
 	        $date = new DateTime($article['date']);

@@ -60,6 +60,7 @@ if($erreur != ""):
             <th>Section</th>
             <th>Auteur</th>
             <th>Date</th>
+            <th>Visible</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -81,6 +82,13 @@ if($erreur != ""):
             <td>
                 <?= $article['date']?>
             </td>
+            <td>
+                <?php if($article['visible']):?>
+                    <span class="glyphicon glyphicon-ok-circle" style="color:green"></span>
+                <?php else : ?>
+                    <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
+                <?php endif?>
+            </td>            
             <td>
                 <?php if($article['auteur'] == $_SESSION['login'] || $_SESSION['droit'] <= $article['droit']) :?>
                 <a href="articles/del/<?= $article['id']?>/" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>

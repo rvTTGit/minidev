@@ -1,6 +1,7 @@
 <?php include('header_admin.phtml') ?>
 <?php 
-// var_dump($valeur_tableau_form);
+// var_dump($valeurs_tableau_form);
+// var_dump($erreurs_champs_form);
 // var_dump($oArticles);
 ?>
 <h2><?= $action_txt ?> un article</h2>
@@ -86,6 +87,21 @@
         </p>
         <?php } ?>
     </div>
+
+    <?php if($_SESSION['droit'] <=2) : ?>
+    <div class="form-group">
+        <label class="control-label">Publié ? </label>
+        <label class="radio-inline">
+            <input type="radio" name="visible" id="inlineRadio1" value="1" <?=($valeurs_tableau_form['visible']) ? '  checked' : '' ?>> Oui
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="visible" id="inlineRadio2" value="0" <?= !($valeurs_tableau_form['visible']) ? '  checked' : '' ?>> Non
+        </label>            
+    </div>
+    <?php else : ?>
+        <input type="hidden" name="visible" value="0" />      
+    <?php endif ?>
+
 <?php endif ?>
 
     <div class="form-group">
