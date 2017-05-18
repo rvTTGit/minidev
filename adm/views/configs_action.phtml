@@ -37,21 +37,36 @@
 
     <div class="form-group<?= isset($erreurs_champs_form['valeur']) ? ' has-error' : '' ?>">
         <label for="id_tag" class="control-label">valeur:</label>
-        <input type="text" id="id_tag" name="valeur" class="form-control" value="<?= $valeurs_tableau_form['valeur']?>" />
-        <?php if(isset($erreurs_champs_form['valeur'])) :?>
-            <p class="help-block"><?= $erreurs_champs_form['valeur'] ?> </p>
+        <?php if($valeurs_tableau_form['acces_client'] || $_SESSION['droit'] <=1) : ?>
+            <input type="text" id="id_tag" name="valeur" class="form-control" value="<?= $valeurs_tableau_form['valeur']?>" />
+            <?php if(isset($erreurs_champs_form['valeur'])) :?>
+                <p class="help-block"><?= $erreurs_champs_form['valeur'] ?> </p>
+            <?php endif; ?>
+        <?php else: ?>
+            <div class="well">
+                <p><?=$oConfigs->fields['valeur']?></p>
+            </div>
+            <input type="hidden" name="valeur" value="<?=$oConfigs->fields['valeur']?>" />        
         <?php endif; ?>
     </div>
     
     <div class="form-group<?= isset($erreurs_champs_form['description']) ? ' has-error' : '' ?>">
+    <?php if($_SESSION['droit'] <=1) : ?>
         <label for="id_tag" class="control-label">description:</label>
         <input type="text" id="id_tag" name="description" class="form-control" value="<?= $valeurs_tableau_form['description']?>" />
         <?php if(isset($erreurs_champs_form['description'])) :?>
             <p class="help-block"><?= $erreurs_champs_form['description'] ?> </p>
         <?php endif; ?>
+    <?php else : ?>
+        <div class="well">
+            <p><?=$oConfigs->fields['description']?></p>
+        </div>
+        <input type="hidden" name="description" value="<?=$oConfigs->fields['description']?>" />
+    <?php endif ?>        
     </div>
-    <?php if($_SESSION['droit'] <=1) : ?>
+    
     <div class="form-group">
+    <?php if($_SESSION['droit'] <=1) : ?>
         <label class="control-label">Modifiable par le client? </label>
         <label class="radio-inline">
             <input type="radio" name="acces_client" id="inlineRadio1" value="1" <?=($valeurs_tableau_form['acces_client']) ? '  checked' : '' ?>> Oui
@@ -59,10 +74,24 @@
         <label class="radio-inline">
             <input type="radio" name="acces_client" id="inlineRadio2" value="0" <?= !($valeurs_tableau_form['acces_client']) ? '  checked' : '' ?>> Non
         </label>  
-    </div>
     <?php else : ?>
-    <input type="hidden" name="acces_client" value="0" />
+        <input type="hidden" name="acces_client" value="0" />
     <?php endif ?>
+    </div>
+
+    <div class="form-group">
+    <?php if($_SESSION['droit'] <=1) : ?>
+        <label for="type" class="control-label">Type : </label> 
+        <select id="type" name="type">
+            <?php foreach ($oConfigs->getTypes() as $type) : 
+                $selected = ($valeurs_tableau_form['type'] == $type) ? ' selected=selected ' : '' ?> 
+                <option value="<?= $type?>" <?=$selected ?>/><?=$type?></option>
+            <?php endforeach ?>
+        </select>
+    <?php else : ?>
+        <input type="hidden" name="type" value="<?=$oConfigs->fields['type']?>" />
+    <?php endif ?>    
+    </div>
 
 <?php endif ?>
 

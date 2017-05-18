@@ -23,6 +23,10 @@ $regles = [
                 'required' => true,
                 'min' => 1
     ],
+    'type' => [
+                'required' => true,
+                'min' => 1
+    ],
     'description' => [
                 'required' => false
     ],
@@ -92,8 +96,10 @@ switch ($_GET['action']) {
 	/*---------------------------------------------------------------------*/
 	case 'list':
 		// chargement de la liste des configuration en fonction des droits
-		if($_SESSION['droit'] <=1)
-			$list_configs = $oConfigs->getListAll();
+		if($_SESSION['droit'] <=1){
+			$type = isset($_GET['type'])?$_GET['type']:'';
+			$list_configs = $oConfigs->getListAll($type);
+		}
 		else
 			$list_configs = $oConfigs->getListClient();
 		break;
@@ -127,7 +133,7 @@ if(count($_POST)) {
 		            $erreur = 'Erreur lors de l\'insertion en bdd.';
 		        }
 		        else{
-		            $message = 'L\'option '.$oConfigs->fields['tag'] .' a bien été créée, elle porte l\'id : ' . $oConfigs->fields['id'];
+		            $message = 'L\'option '.$oConfigs->fields['tag'] .' a bien été enregistrée, valeur : ' . $oConfigs->fields['valeur'];
 		        }
 		    }
 			break;

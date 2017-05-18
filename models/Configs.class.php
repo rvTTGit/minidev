@@ -57,6 +57,44 @@ class Configs extends Model{
         }
     }
 
+    /**
+    * permet de récupérer l'ensemble des élément d'une table
+    */
+    public function getListAll($type=''){
+        // définition de la requete
+        $query = 'SELECT * FROM ' . $this->table;
+        if($type!= '')
+            $query .= ' WHERE `type`=' . $this->db->quote($type);
+        $this->query = $query;
+        // éxécution de la requete
+        $resultat = $this->db->query($query);
+
+        if(!$resultat){
+            return false;
+        }
+        else{
+            return $resultat->fetchAll();
+        }
+    }    
+
+    // renvoie les valeurs du champ ENUM sous forme d'un tableau
+    public function getTypes(){
+        // définition de la requete
+        $query = 'SHOW COLUMNS FROM  ' . $this->table . '  like \'type\'';
+        $this->query = $query;
+        // éxécution de la requete
+        $resultat = $this->db->query($query);
+
+        if(!$resultat){
+            return [];
+        }
+        else{
+            $clean = ['enum(', ')', '\''];
+            $liste = explode(',', str_replace($clean, '', $resultat->fetch()['Type']));            
+            return $liste;
+        }
+    }
+
     public function getListModules(){
         // définition de la requete
         $query = 'SELECT * FROM modules';

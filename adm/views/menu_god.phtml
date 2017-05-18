@@ -82,7 +82,10 @@
                         <li class="dropdown-toggle<?= $page_category == 'configs' ? ' active' : '' ?>">
                             <a class="dropdown-toggle" aria-expanded="false" role="botton" data-toggle="dropdown">Configuration <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="configs/list/">Paramètres du site</a></li>
+                            <?php foreach ($oConfigs->getTypes() as $type) : ?> 
+                                <li><a href="configs/list/<?=$type?>/">Paramètres du type '<?=$type?>'</a></li>
+                            <?php endforeach ?>
+                                <li><a href="configs/list/">Tous les paramètres</a></li>
                                 <li><a href="configs/modules/">Modules</a></li>
                             </ul>
                         </li>

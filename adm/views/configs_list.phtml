@@ -25,6 +25,7 @@ if($erreur != ""):
 <?php endif ;
 
 // echo '<pre>'.var_dump($list_configs).'</pre>';
+// echo '<pre>'.var_dump($_GET).'</pre>';
 ?>
 <?php if($_SESSION['droit'] <=1) : ?>
 <p><a href="configs/add/" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Créer une config</a></p>
@@ -37,6 +38,7 @@ if($erreur != ""):
             <th>Valeur</th>
             <th>Description</th>
             <?php if($_SESSION['droit'] <=1) : ?>
+            <th>Type</th>
             <th>Accès client?</th>
             <?php endif?>
             <th>Action</th>
@@ -58,6 +60,11 @@ if($erreur != ""):
                     <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
                 <?php endif?>
             </td>
+
+            <?php if($_SESSION['droit'] <=1) : ?>
+                <td><?=$config['type']?></td>
+            <?php endif?>
+            
             <?php if($_SESSION['droit'] <=1) : ?>
             <td>
                 <?php if($config['acces_client']):?>
@@ -67,6 +74,7 @@ if($erreur != ""):
                 <?php endif?>
             </td>
             <?php endif?>
+
             <td>
                 <?php if($_SESSION['droit'] <=1) : ?>
                 <a href="configs/del/<?= $config['id']?>/" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
