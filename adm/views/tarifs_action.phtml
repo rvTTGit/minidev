@@ -54,7 +54,7 @@
     </div>
     <div class="form-group<?= isset($erreurs_champs_form['prix']) ? ' has-error' : '' ?>">
         <label for="id_prestation" class="control-label">Prix:</label>
-        <input type="text" id="id_prestation" name="prix" class="form-control" value="<?= $valeurs_tableau_form['prix']?>" />
+        <input type="number" step="0.01" id="id_prestation" name="prix" class="form-control" value="<?= $valeurs_tableau_form['prix']?>" />
         <?php if(isset($erreurs_champs_form['prix'])) :?>
             <p class="help-block"><?= $erreurs_champs_form['prix'] ?> </p>
         <?php endif; ?>

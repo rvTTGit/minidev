@@ -8,7 +8,7 @@ include('header.phtml');
 	<!-- <img id="logoBG" src="img/logoBG.png"> -->
 	<h4><?= $oSections->fields['texte'] ?></h4>
 
-<?php foreach($tabTarifs as $type):?> 
+<?php foreach($oTypeTarifs->getListAll() as $type):?> 
 
     <table class="listeTarifs">
         <caption><?= $type['nom'] ?></caption>
@@ -21,7 +21,7 @@ include('header.phtml');
         <?php foreach($oTarifs->getListType($type['id']) as $tarif):?> 
             <tr>
                 <td><?= $tarif['prestation'] ?></td>
-                <td><?= $tarif['prix'] ?>€</a></td>
+                <td><?= $tarif['prix'] ?> €</a></td>
             </tr>
         <?php endforeach ?>
         </tbody>

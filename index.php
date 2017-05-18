@@ -37,8 +37,7 @@ try{
 		// liste des sections dans les écrans de la home
 		$tabSectionScreen2 = $oSections->getListScreen2();
 		$tabSectionScreen3 = $oSections->getListScreen3();
-		// liste des tarifs
-		$tabTarifs = $oTypeTarifs->getListAll();
+
 		// chargement des message pour ecran_contact
 		$tab_messages = $oMessages->getLastMessages(2);
 		//récupération de la liste des modules
