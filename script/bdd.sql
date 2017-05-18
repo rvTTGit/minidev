@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Jeu 18 Mai 2017 à 11:37
+-- Généré le :  Jeu 18 Mai 2017 à 14:30
 -- Version du serveur :  5.5.52-0+deb8u1
 -- Version de PHP :  5.6.27-0+deb8u1
 
@@ -49,7 +49,7 @@ INSERT INTO `configs` (`id`, `tag`, `valeur`, `description`, `date`, `acces_clie
 (7, 'mail', 'arbresetnature27@wanadoo.fr', 'votre adresse mail', '2017-05-09 20:15:04', 1),
 (8, 'url_google_map', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2612.954028693254!2d0.7825544156824915!3d49.08751387931062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e10c79b143362d%3A0x96105327c5863d70!2s16+Rue+de+Beaumont+la+ville%2C+27170+Beaumont-le-Roger!5e0!3m2!1sfr!2sfr!4v1493224962711', 'url embed google maps', '2017-04-29 00:08:10', 0),
 (9, 'open_hours', '', '', '0000-00-00 00:00:00', 0),
-(11, 'news_par_page', '2', 'nombre d''lémént listés par pagination dans les pages de section', '2017-05-17 12:52:47', 0),
+(11, 'news_par_page', '6', 'nombre d''lémént listés par pagination dans les pages de section', '2017-05-18 09:41:22', 0),
 (12, 'taille_miniatures', '[370, 220]', '', '0000-00-00 00:00:00', 0),
 (13, 'separateur_menu', '๑', 'sépare les éléments du menu', '2017-05-14 13:37:38', 0),
 (18, 'txt_inter1', 'Aménagez votre jardin ...', 'message entre les deux 1er écrans de la home', '2017-05-09 20:15:22', 1),
@@ -155,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `logs` (
   `date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `ip` varchar(100) NOT NULL DEFAULT '',
   `action` varchar(255) NOT NULL DEFAULT ''
-) ENGINE=InnoDB AUTO_INCREMENT=291 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=329 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `logs`
@@ -446,7 +446,45 @@ INSERT INTO `logs` (`id`, `user`, `date`, `ip`, `action`) VALUES
 (287, 1, '2017-05-17 12:46:56', '192.168.10.254', 'list news: '),
 (288, 1, '2017-05-17 12:51:56', '192.168.10.254', 'list news: '),
 (289, 1, '2017-05-17 12:52:47', '192.168.10.254', 'mod configs: L''option news_par_page a bien été créée, elle porte l''id : 11'),
-(290, 1, '2017-05-17 12:52:50', '192.168.10.254', 'list news: ');
+(290, 1, '2017-05-17 12:52:50', '192.168.10.254', 'list news: '),
+(291, 1, '2017-05-18 09:40:18', '192.168.10.254', 'Authentification'),
+(292, 1, '2017-05-18 09:41:01', '192.168.10.254', 'mod news: L''article "Allée" est bien en bdd, il porte l''id : 78'),
+(293, 1, '2017-05-18 09:41:09', '192.168.10.254', 'list news: '),
+(294, 1, '2017-05-18 09:41:22', '192.168.10.254', 'mod configs: L''option news_par_page a bien été créée, elle porte l''id : 11'),
+(295, 1, '2017-05-18 09:41:59', '192.168.10.254', 'mod news: L''article "Merci la tempête (bis)" est bien en bdd, il porte l''id : 83'),
+(296, 1, '2017-05-18 09:42:17', '192.168.10.254', 'mod news: L''article "Merci la tempête :(" est bien en bdd, il porte l''id : 68'),
+(297, 1, '2017-05-18 09:42:35', '192.168.10.254', 'list news: '),
+(298, 1, '2017-05-18 09:43:31', '192.168.10.254', 'mod news: L''article "Ginkgo biloba à l''école" est bien en bdd, il porte l''id : 82'),
+(299, 1, '2017-05-18 09:43:53', '192.168.10.254', 'mod news: L''article "Intallation de jardinière de toît" est bien en bdd, il porte l''id : 81'),
+(300, 1, '2017-05-18 09:43:58', '192.168.10.254', 'mod news: L''article "test contrib" est bien en bdd, il porte l''id : 80'),
+(301, 1, '2017-05-18 09:44:56', '192.168.10.254', 'mod news: L''article "Réparation de serre" est bien en bdd, il porte l''id : 79'),
+(302, 1, '2017-05-18 09:45:25', '192.168.10.254', 'list news: '),
+(303, 1, '2017-05-18 09:47:50', '192.168.10.254', 'mod news: L''article "pillage des noisetiers" est bien en bdd, il porte l''id : 69'),
+(304, 1, '2017-05-18 09:48:06', '192.168.10.254', 'mod news: L''article "test contrib" est bien en bdd, il porte l''id : 80'),
+(305, 1, '2017-05-18 09:48:25', '192.168.10.254', 'mod news: L''article "plantage de capucines,  soucis et bourrache" est bien en bdd, il porte l''id : 70'),
+(306, 1, '2017-05-18 09:49:02', '192.168.10.254', 'mod news: L''article "tableau végétal" est bien en bdd, il porte l''id : 71'),
+(307, 1, '2017-05-18 09:49:24', '192.168.10.254', 'mod news: L''article "Sucrine du berry" est bien en bdd, il porte l''id : 72'),
+(308, 1, '2017-05-18 09:49:41', '192.168.10.254', 'mod news: L''article "Pour canards" est bien en bdd, il porte l''id : 73'),
+(309, 1, '2017-05-18 09:49:41', '192.168.10.254', 'mod news: L''article "Pavot" est bien en bdd, il porte l''id : 74'),
+(310, 1, '2017-05-18 09:50:01', '192.168.10.254', 'mod news: L''article "Pavot" est bien en bdd, il porte l''id : 74'),
+(311, 1, '2017-05-18 09:50:16', '192.168.10.254', 'mod news: L''article "Puzzle" est bien en bdd, il porte l''id : 75'),
+(312, 1, '2017-05-18 09:50:38', '192.168.10.254', 'mod news: L''article "Essai de puzzle" est bien en bdd, il porte l''id : 76'),
+(313, 1, '2017-05-18 09:51:13', '192.168.10.254', 'mod news: L''article "oh la belle terrasse !" est bien en bdd, il porte l''id : 77'),
+(314, 1, '2017-05-18 09:51:26', '192.168.10.254', 'list news: '),
+(315, 1, '2017-05-18 11:36:45', '192.168.10.254', 'Authentification'),
+(316, 1, '2017-05-18 12:09:33', '192.168.10.254', 'list news: '),
+(317, 1, '2017-05-18 12:09:42', '192.168.10.254', 'mod news: '),
+(318, 1, '2017-05-18 12:10:19', '192.168.10.254', 'mod news: '),
+(319, 1, '2017-05-18 12:10:53', '192.168.10.254', 'mod news: '),
+(320, 1, '2017-05-18 12:13:41', '192.168.10.254', 'mod news: '),
+(321, 1, '2017-05-18 12:14:40', '192.168.10.254', 'mod sections: La section "Les Pergolas" est bien en bdd, elle porte l''id : 9'),
+(322, 1, '2017-05-18 12:16:21', '192.168.10.254', 'mod news: L''article "tout casser!" est bien en bdd, il porte l''id : 84'),
+(323, 1, '2017-05-18 12:17:22', '192.168.10.254', 'add news: '),
+(324, 1, '2017-05-18 12:17:40', '192.168.10.254', 'add news: L''article "test autre" est bien en bdd, il porte l''id : 88'),
+(325, 1, '2017-05-18 12:17:54', '192.168.10.254', 'mod news: L''article "test autre" est bien en bdd, il porte l''id : 88'),
+(326, 1, '2017-05-18 12:29:03', '192.168.10.254', 'mod news: L''article "test autre" est bien en bdd, il porte l''id : 88'),
+(327, 1, '2017-05-18 12:29:20', '192.168.10.254', 'del news: L''article &laquo;test autre &raquo a correctement été supprimé ( id: 88)'),
+(328, 1, '2017-05-18 12:29:43', '192.168.10.254', 'mod news: L''article "tout casser!" est bien en bdd, il porte l''id : 84');
 
 -- --------------------------------------------------------
 
@@ -514,34 +552,35 @@ CREATE TABLE IF NOT EXISTS `news` (
   `auteur` int(10) unsigned NOT NULL,
   `date` datetime NOT NULL,
   `image` varchar(100) NOT NULL,
-  `section` smallint(5) unsigned NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8;
+  `section` smallint(5) unsigned NOT NULL,
+  `visible` tinyint(1) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `news`
 --
 
-INSERT INTO `news` (`id`, `titre`, `texte`, `auteur`, `date`, `image`, `section`) VALUES
-(67, 'test', 'fsddddddddddddddddddddddddddsssss', 1, '2017-05-10 00:35:16', 'allee.jpg', 11),
-(68, 'Merci la tempête :(', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-04-29 14:14:27', 'serre.jpg', 9),
-(69, 'pillage des noisetiers', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-04-29 13:20:28', '1493464824717520170416_185127.jpg', 10),
-(70, 'plantage de capucines,  soucis et bourrache', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-05-09 20:17:42', '20170416_185007.jpg', 7),
-(71, 'tableau végétal', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-04-29 14:11:31', '20170416_193724.jpg', 7),
-(72, 'Sucrine du berry', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-04-29 14:11:17', '20170416_194052.jpg', 7),
-(73, 'Pour canards', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-04-29 14:10:57', '20170409_114957.jpg', 9),
-(74, 'Pavot', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-04-29 14:07:34', '20170419_181043.jpg', 7),
-(75, 'Puzzle', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-04-29 14:07:12', '20170413_181908.jpg', 6),
-(76, 'Essai de puzzle', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-04-29 14:06:46', '20170405_155330.jpg', 6),
-(77, 'oh la belle terrasse !', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-04-29 14:13:11', 'terrasse2.jpg', 6),
-(78, 'Allée', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 2, '2017-05-17 14:34:28', 'allee.jpg', 11),
-(79, 'Réparation de serre', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-04-29 14:13:42', 'serre2.jpg', 8),
-(80, 'test contrib', 'blabla bla blablablablablabla', 21, '2017-05-10 00:36:26', '20170420_185929.jpg', 5),
-(81, 'Intallation de jardinière de toît', 'il fallait installer et planter des jardinières bois au 3ème étage à Rouen route de Darnétal', 21, '2017-05-10 16:17:24', '20161017_114440.jpg', 7),
-(82, 'Ginkgo biloba à l''école', 'Chantier dans une école primaire de Vincennes qui consistait à arracher 2 souches de Platane, de replanter 2 Ginkgo biloba et de refaire un revêtement à la place du bitume de la cour abîmé lors de l''arrachage des souches.', 21, '2017-05-10 16:45:33', '20170215_153227.jpg', 7),
-(83, 'Merci la tempête (bis)', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et commodo orci. Vivamus eu diam tristique, luctus diam volutpat, blandit ex. Sed in diam volutpat, faucibus ligula nec, placerat erat. Mauris a risus lacinia, elementum elit id, venenatis dolor. Vestibulum quis odio rutrum, condimentum nisl non, porta velit. Quisque lacinia commodo mollis. Quisque eu bibendum arcu, non varius nisl. Pellentesque sed massa dignissim, finibus dolor id, tincidunt diam. Nunc laoreet quam quis sapien placerat, nec pulvinar velit efficitur. Proin ac augue ante. Nunc in vestibulum urna. Pellentesque congue vestibulum lectus vel dignissim. Praesent ut facilisis nibh, vel tristique lorem. Cras in mauris nulla. Proin mattis, magna nec elementum eleifend, erat lectus pellentesque tortor, luctus posuere augue enim id massa. Suspendisse sed euismod metus, sed commodo nisl. ', 1, '2017-05-10 16:52:05', 'pergola.jpg', 9),
-(84, 'tout casser!', 'On a le matos pour tout péter!!!\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et commodo orci. Vivamus eu diam tristique, luctus diam volutpat, blandit ex. Sed in diam volutpat, faucibus ligula nec, placerat erat. Mauris a risus lacinia, elementum elit id, venenatis dolor. Vestibulum quis odio rutrum, condimentum nisl non, porta velit. Quisque lacinia commodo mollis. Quisque eu bibendum arcu, non varius nisl. Pellentesque sed massa dignissim, finibus dolor id, tincidunt diam. Nunc laoreet quam quis sapien placerat, nec pulvinar velit efficitur. Proin ac augue ante. Nunc in vestibulum urna. Pellentesque congue vestibulum lectus vel dignissim. Praesent ut facilisis nibh, vel tristique lorem. Cras in mauris nulla. Proin mattis, magna nec elementum eleifend, erat lectus pellentesque tortor, luctus posuere augue enim id massa. Suspendisse sed euismod metus, sed commodo nisl. ', 1, '2017-05-15 15:14:21', '20170213_125041.jpg', 8),
-(85, 'Mini golf 2', 'Mise en place de la pelouse de votre mini golf privé mhé !', 22, '2017-05-14 15:28:38', '021.jpg', 12),
-(86, 'Ohoho le ciel', 'Bleu etc etc', 23, '2017-05-14 16:01:54', '7167759c254625a9616f9ad790e52f5b.jpg', 16);
+INSERT INTO `news` (`id`, `titre`, `texte`, `auteur`, `date`, `image`, `section`, `visible`) VALUES
+(67, 'test', 'fsddddddddddddddddddddddddddsssss', 1, '2017-05-10 00:35:16', 'allee.jpg', 11, 1),
+(68, 'Merci la tempête :(', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-05-18 11:42:17', 'serre.jpg', 9, 1),
+(69, 'pillage des noisetiers', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-05-18 11:47:49', '20170416_185127.jpg', 10, 1),
+(70, 'plantage de capucines,  soucis et bourrache', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-05-18 11:48:24', '20170416_185007.jpg', 7, 1),
+(71, 'tableau végétal', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-05-18 11:49:02', '20170416_193724.jpg', 7, 1),
+(72, 'Sucrine du berry', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-05-18 11:49:24', '20170416_194052.jpg', 7, 1),
+(73, 'Pour canards', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-05-18 11:49:41', '20170409_114957.jpg', 9, 1),
+(74, 'Pavot', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-05-18 11:50:01', '20170419_181043.jpg', 7, 1),
+(75, 'Puzzle', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-05-18 11:50:16', '20170413_181908.jpg', 6, 1),
+(76, 'Essai de puzzle', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-05-18 11:50:38', '20170405_155330.jpg', 6, 1),
+(77, 'oh la belle terrasse !', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-05-18 11:51:13', 'terrasse2.jpg', 6, 1),
+(78, 'Allée', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 2, '2017-05-18 11:41:01', 'allee.jpg', 11, 1),
+(79, 'Réparation de serre', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2017-05-18 11:44:56', 'serre2.jpg', 8, 1),
+(80, 'test contrib', 'blabla bla blablablablablabla', 21, '2017-05-18 11:48:05', '20170420_185929.jpg', 5, 1),
+(81, 'Intallation de jardinière de toît', 'il fallait installer et planter des jardinières bois au 3ème étage à Rouen route de Darnétal', 21, '2017-05-18 11:43:53', '20161017_114440.jpg', 7, 1),
+(82, 'Ginkgo biloba à l''école', 'Chantier dans une école primaire de Vincennes qui consistait à arracher 2 souches de Platane, de replanter 2 Ginkgo biloba et de refaire un revêtement à la place du bitume de la cour abîmé lors de l''arrachage des souches.', 21, '2017-05-18 11:43:31', '20170215_153227.jpg', 7, 1),
+(83, 'Merci la tempête (bis)', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et commodo orci. Vivamus eu diam tristique, luctus diam volutpat, blandit ex. Sed in diam volutpat, faucibus ligula nec, placerat erat. Mauris a risus lacinia, elementum elit id, venenatis dolor. Vestibulum quis odio rutrum, condimentum nisl non, porta velit. Quisque lacinia commodo mollis. Quisque eu bibendum arcu, non varius nisl. Pellentesque sed massa dignissim, finibus dolor id, tincidunt diam. Nunc laoreet quam quis sapien placerat, nec pulvinar velit efficitur. Proin ac augue ante. Nunc in vestibulum urna. Pellentesque congue vestibulum lectus vel dignissim. Praesent ut facilisis nibh, vel tristique lorem. Cras in mauris nulla. Proin mattis, magna nec elementum eleifend, erat lectus pellentesque tortor, luctus posuere augue enim id massa. Suspendisse sed euismod metus, sed commodo nisl. ', 1, '2017-05-18 11:41:58', 'pergola.jpg', 9, 1),
+(84, 'tout casser!', 'On a le matos pour tout péter!!!\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et commodo orci. Vivamus eu diam tristique, luctus diam volutpat, blandit ex. Sed in diam volutpat, faucibus ligula nec, placerat erat. Mauris a risus lacinia, elementum elit id, venenatis dolor. Vestibulum quis odio rutrum, condimentum nisl non, porta velit. Quisque lacinia commodo mollis. Quisque eu bibendum arcu, non varius nisl. Pellentesque sed massa dignissim, finibus dolor id, tincidunt diam. Nunc laoreet quam quis sapien placerat, nec pulvinar velit efficitur. Proin ac augue ante. Nunc in vestibulum urna. Pellentesque congue vestibulum lectus vel dignissim. Praesent ut facilisis nibh, vel tristique lorem. Cras in mauris nulla. Proin mattis, magna nec elementum eleifend, erat lectus pellentesque tortor, luctus posuere augue enim id massa. Suspendisse sed euismod metus, sed commodo nisl. ', 23, '2017-05-18 14:29:43', '20170213_125041.jpg', 8, 0),
+(85, 'Mini golf 2', 'Mise en place de la pelouse de votre mini golf privé mhé !', 22, '2017-05-14 15:28:38', '021.jpg', 12, 1),
+(86, 'Ohoho le ciel', 'Bleu etc etc', 23, '2017-05-14 16:01:54', '7167759c254625a9616f9ad790e52f5b.jpg', 16, 1);
 
 -- --------------------------------------------------------
 
@@ -580,7 +619,7 @@ INSERT INTO `sections` (`id`, `nom`, `tag`, `meta-description`, `meta-keywords`,
 (6, 'Les Terrasses', 'terrasses', '', '', '', 1, '2017-05-04 15:14:59', '', 0, 4, 1, 1, 1, 0, 0),
 (7, 'Les Plantations', 'plantations', '', '', 'Quelques exemples de plantations...', 1, '2017-05-09 08:17:55', '', 1, 5, 1, 1, 1, 0, 0),
 (8, 'Autres Prestations', 'autre', '', '', '', 1, '2017-04-28 08:28:04', '', 1, 5, 1, 1, 1, 0, 0),
-(9, 'Les Pergolas', 'pergola', '', '', 'Nos belles pergolas!!', 1, '2017-04-28 20:10:15', '', 0, 0, 1, 1, 1, 0, 0),
+(9, 'Les Pergolas', 'pergola', '', '', 'Nos belles pergolas!!', 1, '2017-05-18 12:14:40', '', 0, 0, 1, 1, 1, 0, 0),
 (10, 'Les Treillages', 'treillage', '', '', 'oh les supers treillages!!', 1, '2017-04-28 20:27:08', '', 0, 0, 1, 1, 1, 1, 0),
 (11, 'les Allées', 'allee', '', '', '', 1, '2017-04-28 22:05:40', '', 0, 0, 1, 1, 1, 0, 1),
 (12, 'L''Engazonnement', 'engazonnement', '', '', '', 1, '2017-04-28 22:16:57', '', 0, 0, 1, 1, 1, 0, 0),
@@ -758,7 +797,7 @@ MODIFY `id` int(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT pour la table `logs`
 --
 ALTER TABLE `logs`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=291;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=329;
 --
 -- AUTO_INCREMENT pour la table `messages`
 --
@@ -773,7 +812,7 @@ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 -- AUTO_INCREMENT pour la table `news`
 --
 ALTER TABLE `news`
-MODIFY `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=88;
+MODIFY `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=89;
 --
 -- AUTO_INCREMENT pour la table `sections`
 --
@@ -814,8 +853,8 @@ ADD CONSTRAINT `messages` FOREIGN KEY (`contact`) REFERENCES `contacts` (`id`);
 -- Contraintes pour la table `news`
 --
 ALTER TABLE `news`
-ADD CONSTRAINT `foreign key2` FOREIGN KEY (`section`) REFERENCES `sections` (`id`),
-ADD CONSTRAINT `foreign key` FOREIGN KEY (`auteur`) REFERENCES `users` (`id`) ON UPDATE NO ACTION;
+ADD CONSTRAINT `foreign key` FOREIGN KEY (`auteur`) REFERENCES `users` (`id`) ON UPDATE NO ACTION,
+ADD CONSTRAINT `foreign key2` FOREIGN KEY (`section`) REFERENCES `sections` (`id`);
 
 --
 -- Contraintes pour la table `sections`
