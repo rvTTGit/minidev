@@ -74,7 +74,7 @@ switch ($_GET['action']) {
 		foreach ($regles as $key => $value) {
 		    $valeurs_tableau_form[$key] = '';
 		    if($key='position')
-		    	$valeurs_tableau_form[$key] = 999;
+		    	$valeurs_tableau_form[$key] = 20;//max 127
 		}
 
 		break;

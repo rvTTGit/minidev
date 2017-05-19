@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width">
         <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
         <!-- ajout de la meta base à cause de rewrite url -->
-        <!-- <base href="/arbreetnature/adm/"> -->
+        <!-- <base href="/repertoire/adm/"> -->
         <base href="<?=str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME'])?>">
         <script type="text/javascript" src="bootstrap-3.3.5-dist/js/jquery-1.9.1.min.js"></script>
         <!-- ajout de base pour les chemins lors des re écriture d url -->
@@ -20,8 +20,6 @@
             #main-container{margin-top: 50px;}
             #main-container{margin-bottom: 50px;}
         </style>
-        <!-- <link type="text/css" rel="stylesheet" href="../css/arbreetnature.css" /> -->
-
     </head>
     <body>
         <?php if(isset($_SESSION['connected']) && $_SESSION['connected']):?>

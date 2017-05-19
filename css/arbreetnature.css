@@ -1,113 +1,14 @@
-h1{
-	/*font-variant: small-caps;*/
-	/*padding: 2% 0%;*/
-	font-size: 6vh;
-	font-weight: 200;
-	/*color: #f9a18e;*/
-	/*text-shadow: 4px -2px 4px #aaa;*/
-}
-
-h2{
-	/*color: #fccfc0;*/
-	font-size: 4vh;
-	/*text-transform: uppercase;*/
-	/*font-variant: small-caps;*/
-	padding-top: 2.6%;
-}
-
-h3{
-	font-size: 3vh;
-	/*font-variant: small-caps;*/
-}
-
-h4{
-	font-size: 2.5vh;
-}
-
-p{
-
-}
-
-li{
-	list-style-type: none;
-}
-
-strong{
-	font-weight: normal;
-}
-
-
-.clear{
-	clear: both;
-}
-.parallaxParent {
-	height: 100vh;
-	overflow: hidden;
-}
-.parallaxParent > * {
-	height: 200%;
-	position: relative;
-	top: -100%;
-}
-
-
-.spacer {
-	text-align: center;
-	min-height: 100px;
-	/*height: 5%;*/
-	background-color: #FFFFFF;
-	background-image: url("../img/example_bg_spacer_v.gif");
-}
-.spacer.s0 {
-	min-height: 1px;
-}
-
-
-
-#ecran1{
-	/*background-image: url(../img/bgAccueil.jpg);*/
-	background-color: #FFFFFF;
-	background-size: 100% 70%;	
-	background-repeat: no-repeat;
-	text-align: center;
-}
-#ecran2{
-	background-color: #F3FAF2;
-}
-
-#ecran3{
-	background-color: #E8F5E5;
-}
-
-#ecran4{
-	background-color: #DCEED8;
-}
-
-
-#containerAccueil{
-	width: 60%;
-	margin: 0 auto;
-	padding-top: 10%;
-}
-
-
-#containerHead{
-	display: inline;
-}
-
-#containerAdresse{
-	
-}
-
+    /*******************************************************/
+    /* ********* Sortir le code dur dans style.css *********/
+    /* * Sortir le code dynamique et le mettre dans custom */
+    /* *********** Supprimer ce fichier ****************** */
+    /*******************************************************/
 #logo{
 	width: 10%;
 	margin: 0 auto;
 	display: block;
 }
-#logoHome{
-	margin: 0 auto;
-	width: 10%;
-}
+
 #navPC{
 	padding: 2%;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9f5e3+0,f7edb9+42,ffffff+100&1+0,0+58 */
@@ -215,106 +116,6 @@ strong{
 	height: 20% !important;
 }
 
-
-#containerSoins{
-	width: 60%;
-	/*height: 500px;*/
-	margin: 0 auto;
-	padding-top: 17%;
-	text-align: center;
-}
-#containerSoins div{
-	margin: 5% 2% 0% 2%;
-}
-
-#containerSection{
-	width: 60%;
-	/*height: 500px;*/
-	margin: 0 auto;
-	padding-top: 17%;
-	text-align: center;
-}
-#containerSection div{
-	margin: 5% 2% 0% 2%;
-	display: inline-block;
-}
-
-
-/*#soinsVisage, #soinsCorps, #soinsAutre{
-	width: 20%;
-	height: 20%;
-	display: inline-block;
-	background-color: #fffcd6;
-}
-*/
-
-#containerScreen3{
-	width: 60%;
-	height: 50%;
-	margin: 0 auto;
-	padding-top: 15%;
-	text-align: center;
-}
-#containerScreen3 div{
-	display: inline-block;
-	width: 22%;
-	height: 31%;
-	margin: 4%;
-}
-/*
-#autre, #soins, #uv, #tarif, #maquillage, #minceur{
-	width: 22%;
-	height: 31%;
-	margin: 4%;
-}
-*/
-#containerScreen3 img{
-	width: 100%;
-}
-#containerScreen3 h4{
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	text-align:center;
-	/*top: 50%;*/
-	/*vertical-align: middle;*/
-	z-index: 1;
-	opacity: 0;
-	-webkit-transition: opacity 0.7s ease;
-	transition: opacity 0.7s ease;
-}
-
-#containerScreen3:hover > h4{
-	opacity: 1;
-}
-
-#containerScreen3:hover > .containerScreen3Nom{
-	opacity: 1;
-}
-
-.containerScreen3Nom:hover > h4{
-	opacity: 1;
-}
-
-#autre:hover > h4{
-	opacity: 1;
-}
-#soins:hover >  h4{
-	opacity: 1;
-}
-#uv:hover > h4{
-	opacity: 1;
-}
-#tarif:hover > h4{
-	opacity: 1;
-}
-#maquillage:hover > h4{
-	opacity: 1;
-}
-#minceur:hover > h4{
-	opacity: 1;
-}
 
 
 #containerContact{
@@ -840,42 +641,6 @@ form label {
 }
 
 
-/*.listeTarifs th {
-  color:#D5DDE5;;
-  background:#1b1e24;
-  border-bottom:4px solid #9ea7af;
-  border-right: 1px solid #343a45;
-  font-size:23px;
-  font-weight: 100;
-  padding:24px;
-  text-align:left;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  vertical-align:middle;
-}
-.listeTarifs tr {
-  border-top: 1px solid #C1C3D1;
-  border-bottom-: 1px solid #C1C3D1;
-  color:#666B85;
-  font-size:16px;
-  font-weight:normal;
-  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
-}
-
-.listeTarifs td:nth-child(even){
-	background-color: #FCE0D6;
-}
-
-.listeTarifs td {
-  background:#FFFFFF;
-  padding:20px;
-  text-align:left;
-  vertical-align:middle;
-  font-weight:300;
-  font-size:18px;
-  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-  border-right: 1px solid #C1C3D1;
-}
-*/
 table a:link{
 	color : #333333;
 }
@@ -886,23 +651,6 @@ table a:hover, table a:focus{
 	color : #FF472B;
 }
 
-
-
-/*Tableau*/
-/*table,th, td{
-border: 1px solid gray;
-}*/
-
-/*th, td{
-height: 15px;
-width: 15%;
-padding:6px;
-vertical-align:middle;
-}
-
-th{
-background-color: #FDFCFC;
-}*/
 
 /****** Contact  *****/
 #contactPage{
