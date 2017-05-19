@@ -27,7 +27,8 @@ if($erreur != ""):
 // echo '<pre>'.var_dump($list_configs).'</pre>';
 ?>
 <?php if(!empty($list_messages)) : ?>
-<table class="table table-striped table-bordered table-hover">
+<div class="responsive-table-line">
+<table class="table table-striped table-bordered table-hover table-responsive">
     <thead>
         <tr>
             <th>Nom</th>
@@ -39,22 +40,23 @@ if($erreur != ""):
     <tbody>
         <?php foreach($list_messages as $message) : ?>
         <tr>
-            <td>
+            <td data-title="Nom">
                 <?= $message['prenom']?>&nbsp;<?= $message['nom']?>
             </td>
-            <td>
+            <td data-title="Date">
                 <?= date("j M Y à H\hi", strtotime($message['date'])) ?>
             </td>
-            <td>
+            <td data-title="Message">
                 <?= $message['text'] ?>
             </td>
-            <td>
+            <td data-title="Action">
                 <a href="livreor/del/<?= $message['id']?>/" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
             </td>
         </tr>
     <?php endforeach ?>
     </tbody>
 </table>
+</div>
 <?php else : ?>
     <p>Aucun message pour le moment.</p>
 <?php endif ?>

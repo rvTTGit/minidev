@@ -52,7 +52,8 @@ if($erreur != ""):
     </div>
 </form>
 <?= $menu_pagination ?>
-<table class="table table-striped table-bordered table-hover">
+<div class="responsive-table-line">
+<table class="table table-striped table-bordered table-hover table-responsive>">
     <thead>
         <tr>
             <th>Image</th>
@@ -67,29 +68,29 @@ if($erreur != ""):
     <tbody>
         <?php foreach($list_articles as $article) : ?>
         <tr>
-            <td>
+            <td data-title="Tag">
                 <img src="../img/thumb/<?= $article['image']?>" alt="<?= $article['titre']?>" height="50"> 
             </td>
-            <td>
+            <td data-title="Titre">
                 <a href="../item/<?= $article['id']?>/<?= urlencode($article['titre'])?>" title="Accéder à la news" target="_blank"><?= $article['titre']?></a>
             </td>
-            <td>
+            <td data-title="Section">
                 <?= $article['section']?>
             </td>
-            <td>
+            <td data-title="Auteur">
                 <?= $article['auteur']?>
             </td>
-            <td>
+            <td data-title="Date">
                 <?= $article['date']?>
             </td>
-            <td>
+            <td data-title="Visible">
                 <?php if($article['visible']):?>
                     <span class="glyphicon glyphicon-ok-circle" style="color:green"></span>
                 <?php else : ?>
                     <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
                 <?php endif?>
             </td>            
-            <td>
+            <td data-title="Action">
                 <?php if($article['auteur'] == $_SESSION['login'] || $_SESSION['droit'] <= $article['droit']) :?>
                 <a href="articles/del/<?= $article['id']?>/" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
                 &nbsp;
@@ -99,9 +100,11 @@ if($erreur != ""):
                 <?php endif?>
             </td>
         </tr>
+        <!-- <tr><td colspan="7"><hr /></td></tr> -->
     <?php endforeach ?>
     </tbody>
 </table>
+</div>
 <?= $menu_pagination ?>
 
 <?php include('footer_admin.phtml');?>

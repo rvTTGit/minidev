@@ -6,7 +6,8 @@ include('header_admin.phtml') ?>
 <?php
 // echo '<pre>'.var_dump($tab_news).'</pre>';
 ?>
-<table class="table table-striped table-bordered table-hover">
+<div class="responsive-table-line">
+<table class="table table-striped table-bordered table-hover table-responsive">
     <thead>
         <tr>
             <th>Nom</th>
@@ -19,16 +20,16 @@ include('header_admin.phtml') ?>
         <?php foreach($list_logs as $log) : ?>
         <?php if($log['droit'] >= $_SESSION['droit']): ?>
         <tr>
-            <td>
+            <td data-title="Nom">
                 <?= $log['user_name']?>
             </td>
-            <td>
+            <td data-title="Action">
                 <?= $log['action']?>
             </td>
-            <td>
+            <td data-title="Date">
                 <?= $log['date']?>
             </td>
-            <td>
+            <td data-title="IP">
                 <?= $log['ip']?>
             </td>
         </tr>
@@ -36,7 +37,7 @@ include('header_admin.phtml') ?>
         <?php endforeach ?>
     </tbody>
 </table>
-
+</div>
 <?php 
 
 include('footer_admin.phtml');?>

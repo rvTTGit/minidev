@@ -16,13 +16,13 @@ include('header_admin.phtml') ?>
 <?php
 // echo '<pre>'.var_dump($tab_news).'</pre>';
 ?>
-
-<table class="table table-striped table-bordered table-hover">
+<div class="responsive-table-line">
+<table class="table table-striped table-bordered table-hover table-responsive">
     <thead>
         <tr>
             <th>Nom</th>
             <th>Email</th>
-            <th>Origine / Source / Provenance</th>
+            <th>Origine</th>
             <th>Téléphone</th>
             <th>Adresse</th>
             <th>Note</th>
@@ -32,13 +32,13 @@ include('header_admin.phtml') ?>
     <tbody>
         <?php foreach($liste_contacts as $contact) : ?>
         <tr>
-            <td>
+            <td data-title="Nom">
                 <?= $contact['prenom']?>&nbsp;<?= $contact['nom']?>
             </td>
-            <td>
+            <td data-title="Email">
                 <?= $contact['mail']?>
             </td>
-            <td>
+            <td data-title="Origine">
                 <?php 
                 switch($contact['type_contact']) {
                     case 'form_contact':
@@ -53,16 +53,16 @@ include('header_admin.phtml') ?>
                 }
                 ?>
             </td>
-            <td>
+            <td data-title="Téléphone">
                 <?= $contact['tel']?>
             </td>
-            <td>
+            <td data-title="Adresse">
                 <?= $contact['adresse']?>&nbsp;<?= $contact['cp']?>&nbsp;<?= $contact['ville']?>
             </td>
-            <td>
+            <td data-title="Note">
                 <?= $contact['note']?>
             </td>
-            <td>
+            <td data-title="Action">
 <!--                 <a href="contacts/del/<?= $contact['id']?>/" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
                 &nbsp; -->
                 <a href="contacts/mod/<?= $contact['id']?>/" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -71,7 +71,7 @@ include('header_admin.phtml') ?>
         <?php endforeach ?>
     </tbody>
 </table>
-
+</div>
 <?php 
 
 include('footer_admin.phtml');?>

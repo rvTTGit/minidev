@@ -34,8 +34,8 @@ if($erreur != ""):
     <a href="tarifs/add/" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Créer un tarif</a>
     <a href="tarifs/addtype/" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Créer un groupe de tarifs</a>
 </p>
-
-<table class="table table-striped table-bordered table-hover">
+<div class="responsive-table-line">
+<table class="table table-striped table-bordered table-hover table-responsive">
     <thead>
         <?php if($_GET['action'] == 'list') :?>
         <tr>
@@ -55,16 +55,16 @@ if($erreur != ""):
         <?php foreach($list_tarifs as $tarif) : ?>
         <?php if($_GET['action'] == 'list') :?>
         <tr>
-            <td>
+            <td data-title="Nom">
                 <?= $tarif['prestation']?>
             </td>
-            <td>
+            <td data-title="Valeur">
                 <?= $tarif['prix']?>
             </td>
-            <td>
+            <td data-title="Groupe">
                 <?= $tarif['groupe']?>
             </td>
-            <td>
+            <td data-title="Action">
                 <a href="tarifs/del/<?= $tarif['id']?>/" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
                 &nbsp;
                 <a href="tarifs/mod/<?= $tarif['id']?>/" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -72,10 +72,10 @@ if($erreur != ""):
         </tr>
         <?php else : ?>
         <tr>
-            <td>
+            <td data-title="Nom">
                 <?= $tarif['nom']?>
             </td>
-            <td>
+            <td data-title="Action">
                 <a href="tarifs/deltype/<?= $tarif['id']?>/" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
                 &nbsp;
                 <a href="tarifs/modtype/<?= $tarif['id']?>/" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -85,5 +85,5 @@ if($erreur != ""):
     <?php endforeach ?>
     </tbody>
 </table>
-
+</div>
 <?php include('footer_admin.phtml');?>

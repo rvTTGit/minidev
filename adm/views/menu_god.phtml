@@ -1,12 +1,17 @@
         <header class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>                                        
                     <a href="index.php" class="navbar-brand">
                             <span class="glyphicon glyphicon-wrench"></span>
                             Admin <?=$config['nom_site']?>
                     </a>
                 </div>
-                <div class="navbar-collapse collapse">
+                <div class="navbar-collapse collapse" id="menu">
                     <ul class="nav navbar-nav">
                         <li class="dropdown-toggle<?= $page_category == 'news' ? ' active' : '' ?>">
                             <a class="dropdown-toggle" aria-expanded="false" role="botton" data-toggle="dropdown">Articles <span class="caret"></span></a>

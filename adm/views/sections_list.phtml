@@ -27,8 +27,8 @@ if($erreur != ""):
 // echo '<pre>'.var_dump($list_sections).'</pre>';
 ?>
 <p><a href="sections/add/" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Créer une section</a></p>
-
-<table class="table table-striped table-bordered table-hover">
+<div class="responsive-table-line">
+<table class="table table-striped table-bordered table-hover table-responsive">
     <thead>
         <tr>
             <th>Image</th>
@@ -46,7 +46,7 @@ if($erreur != ""):
     <tbody>
         <?php foreach($list_sections as $section) : ?>
         <tr>
-            <td>
+            <td data-title="Image">
                 <?php if($section['image'] != ''):?>
                     <img src="../img/<?= $section['image']?>" alt="<?= $section['titre']?>" height="50"> 
                 <?php else : ?>
@@ -54,55 +54,55 @@ if($erreur != ""):
                 <?php endif?>
 
             </td>
-            <td>
+            <td data-title="Nom">
                 <a href="../<?= $section['tag']?>.html" title="Accéder à la section" target="_blank"><?= $section['nom']?></a>
             </td>
-            <td>
+            <td data-title="Nombre de News">
                 <!-- si on a la clef correspondant à l id section, on affiche le nombre de news, 0 sinon (toutes les sections ne peuvent avoir de news) -->
                 <?= isset($tab_news[$section['id']]) ? $tab_news[$section['id']] : '0'?>
             </td>
-            <td>
+            <td data-title="meta-description">
                 <?php if($section['meta-description'] != ''):?>
                     <span class="glyphicon glyphicon-ok-circle" style="color:green"></span>
                 <?php else : ?>
                     <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
                 <?php endif?>
             </td>
-            <td>
+            <td data-title="meta-keywords">
                 <?php if($section['meta-keywords'] != ''):?>
                     <div class="alert alert-success"><span class="glyphicon glyphicon-ok-circle"></span></div>
                 <?php else : ?>
                     <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
                 <?php endif?>
             </td>
-            <td>
+            <td data-title="Ecran 2">
                 <?php if($section['inScreen2']):?>
                     <span class="glyphicon glyphicon-ok-circle" style="color:green"></span>
                 <?php else : ?>
                     <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
                 <?php endif?>
             </td>
-            <td>
+            <td data-title="Ecran 3">
                 <?php if($section['inScreen3']):?>
                     <span class="glyphicon glyphicon-ok-circle" style="color:green"></span>
                 <?php else : ?>
                     <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
                 <?php endif?>
             </td>
-            <td>
+            <td data-title="Menu">
                 <?php if($section['menu']):?>
                     <span class="glyphicon glyphicon-ok-circle" style="color:green"></span>
                 <?php else : ?>
                     <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
                 <?php endif?>
             </td>
-            <td>
+            <td data-title="Position">
                 <?php if($section['position'] != ''):?>
                     <?= $section['position']?>
                 <?php else : ?>
                     <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
                 <?php endif?>            </td>
-            <td>
+            <td data-title="Action">
                 <?php if($section['auteur'] == $_SESSION['login'] || $_SESSION['droit'] ==1) :?>
                     <?php if($section['delete']):?>
                         <a href="sections/del/<?= $section['id']?>/" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
@@ -119,5 +119,5 @@ if($erreur != ""):
     <?php endforeach ?>
     </tbody>
 </table>
-
+</div>
 <?php include('footer_admin.phtml');?>

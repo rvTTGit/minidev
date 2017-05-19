@@ -5,16 +5,14 @@
             <?php if(isset($_SESSION['connected']) && $_SESSION['connected']):?>
             <nav class="navbar navbar-default navbar-fixed-bottom">
                 <div class="container">
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a href="logout.php">
-                                    <span class="glyphicon glyphicon-off"></span>
-                                    Déconnexion  <?= $_SESSION['login'] ?>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="logout.php">
+                                <span class="glyphicon glyphicon-off"></span>
+                                Déconnexion  <?= $_SESSION['login'] ?>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </nav>
             <?php endif ?>

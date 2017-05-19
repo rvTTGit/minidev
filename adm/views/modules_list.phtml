@@ -31,7 +31,8 @@ if($erreur != ""):
 
 ?>
 <form method="post">
-    <table class="table table-striped table-bordered table-hover">
+    <div class="responsive-table-line">
+    <table class="table table-striped table-bordered table-hover table-responsive">
         <thead>
             <tr>
                 <th>Nom</th>
@@ -42,19 +43,20 @@ if($erreur != ""):
         <tbody>
             <?php foreach($list_modules as $module) : ?>
             <tr>
-                <td>
+                <td data-title="Nom">
                     <label for="<?= $module['slug']?>"><?= $module['nom']?></label>
                 </td>
-                <td>
+                <td data-title="Actif">
                     <input type="checkbox" name="module[]" value="<?= $module['slug']?>" id="<?= $module['slug'] ?>" <?= ($module['actif'])? 'checked ' : '' ?>>
                 </td>
-                <td>
+                <td data-title="Date">
                     <?= date("j M Y à H\hi", strtotime($module['date'])) ?>
                 </td>
             </tr>
         <?php endforeach ?>
         </tbody>
     </table>
+    </div>
     <div class="form-group">
         <!-- obligé de lui mettre une value, sinon rien dans $_POST à la validation -->
         <input type="submit" value="Mettre à jour" name="Mettre à jour" class="btn btn-primary"/>
