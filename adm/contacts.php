@@ -197,7 +197,7 @@ switch ($_GET['action']) {
 	case 'messages':
 		// chargement de la liste des messages issus du formulaire de contact
 		$list_messages = $oMessages->getMessageFromPageType($page_actuelle,'form_contact');
-		$list_messages = $oMessages->getListAll('form_contact');
+		$list_messages = $oMessages->getList('form_contact');
 		$menu_pagination = $oMessages->pagination_menu($page_actuelle,$oMessages->countMessages('form_contact'));
 
 		/*

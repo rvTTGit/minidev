@@ -89,7 +89,7 @@ class Messages extends Model{
         return $retour;
     }    
 
-    function getListAll($type){
+    function getList($type){
         $retour = [];       
 
         $query = 'SELECT ' . $this->table . '.*, contacts.prenom, contacts.nom, contacts.mail FROM ' . $this->table . ' ';

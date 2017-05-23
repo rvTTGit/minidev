@@ -52,7 +52,7 @@ switch ($_GET['action']) {
 	/*---------------------------------------------------------------------*/
 	case 'list':
 		// chargement de la liste des messages
-		$list_messages = $oMessages->getListAll('livreor');
+		$list_messages = $oMessages->getList('livreor');
 		break;
 	/*---------------------------------------------------------------------*/
 	default:
