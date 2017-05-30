@@ -1,23 +1,28 @@
       <div id="containerSection">
         <h3><?=$config['txt_screen2']?></h3>
 
-        <div class="container" id="soinCorps">
+<!--         <div class="container" id="soinCorps">
           <a href="treillage.html">
             <h3>Les Treillages</h3>
             <img class="image2" src="img/pastille_arbre_hover.png" alt="Les soins corps de l'institut de beauté">
             <img class="image1" src="img/pastille_arbre.png" alt="Les soins corps de l'institut de beauté">
           </a>
-        </div> 
+        </div>  -->
+
+        <div id="sectionsScreen2">
+          
+
         <?php 
         // var_dump($tabSectionScreen2);
         foreach ($tabSectionScreen2 as $section) :?>
           <div class="container" id="<?= $section['tag']?>">
             <a href="<?= $section['tag']?>.html">
               <h3><?= $section['nom']?></h3>
-              <img class="image2" src="img/pastille_arbre_hover.png" alt="<?= $section['nom']?> <?=$config['nom_site']?>">
-              <img class="image1" src="img/pastille_arbre.png" alt="<?= $section['nom']?> <?=$config['nom_site']?>">
+              <img class="image2" src="img/pastilleArbreHover3.png" alt="<?= $section['nom']?> <?=$config['nom_site']?>">
+              <img class="image1" src="img/pastilleArbre.png" alt="<?= $section['nom']?> <?=$config['nom_site']?>">
             </a>
           </div>
         <?php endforeach ?>
 
+        </div>
       </div>

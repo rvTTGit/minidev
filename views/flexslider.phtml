@@ -3,12 +3,15 @@
 	    <li>
 	      <a href="item/<?= $news['id']?>/<?= urlencode(htmlentities($news['titre']))?>">
 	      <img src="img/thumb/<?= $news['image'] ?>" alt="<?= $news['titre'] ?>"/>
-	      <h4><?= $news['titre'] ?></h4>
-	     
-	      <div class="clear"></div>
-	        <p><?= substr($news['texte'], 0, 50) ?>
-	          ...
-	        </p>
+
+	      <div class="textFlexslider">
+		      <h4><?= $news['titre'] ?></h4>
+		      <div class="clear"></div>
+		       <p><?= substr($news['texte'], 0, 50) ?>
+		          ...
+		       </p>
+	      </div>
+
 	      </a> 
 	    </li>
 	    <?php endforeach ?>
