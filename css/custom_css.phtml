@@ -1,4 +1,4 @@
-<!-- ------------------ font ---------------------- -->
+<!-- ------------------ font ---------------------- --> 
 <?php if(array_key_exists('import_url', $config)) : ?>
 <link href="<?=$config['import_url']?>" rel="stylesheet">
 <?php endif?>
@@ -22,10 +22,7 @@
     /*font-family: "script-mt-bold", serif;*/
     /*font-family: "brush-script-mt-bold", serif;*/
     font-family: <?=$config['font-family'] ?>;
-    width: 100%;
-    height:100%;
     background-color: #<?=$config['background-color'] ?>;
-    font-size: 2.2vh;
     color: #<?=$config['color'] ?>;
   };
   header li a{
@@ -46,134 +43,31 @@
     color: #<?=$config['couleur_lien_actif'] ?>;
   }
 
+
   /******************* ecran scrollmagic ************************/
-  .clear{
-  clear: both;
-  }
-  .parallaxParent {
-    height: 100vh;
-    overflow: hidden;
-  }
-  .parallaxParent > * {
-    height: 200%;
-    position: relative;
-    top: -100%;
-  }
-  .spacer {
-    text-align: center;
-    min-height: 100px;
-    /*height: 5%;*/
-    background-color: #FFFFFF;
-    background-image: url("../img/example_bg_spacer_v.gif");
-  }
-  .spacer.s0 {
-    min-height: 1px;
-  }
-  #ecran1{
-    /*background-image: url(../img/bgAccueil.jpg);*/
-    background-color: #FFFFFF;
-    background-size: 100% 70%;  
-    background-repeat: no-repeat;
-    text-align: center;
-  }
-  #ecran2{
-    background-color: #F3FAF2;
-  }
-
-  #ecran3{
-    background-color: #E8F5E5;
-  }
-
-  #ecran4{
-    background-color: #DCEED8;
-  }
 
 
-  #containerAccueil{
-    width: 60%;
-    margin: 0 auto;
-    padding-top: 10%;
-  }
 
 
-  #containerHead{
-    display: inline;
-  }
 
-  #containerAdresse{
+
+/*  #containerAdresse{
     
-  }
-    #logoHome{
-    margin: 0 auto;
-    width: 10%;
-  }
+  }*/
 
-  #containerSoins{
+/*  #containerSoins{
     width: 60%;
-    /*height: 500px;*/
+    height: 500px;
     margin: 0 auto;
     padding-top: 17%;
     text-align: center;
   }
   #containerSoins div{
     margin: 5% 2% 0% 2%;
-  }
+  }*/
 
-  #containerSection{
-    width: 60%;
-    /*height: 500px;*/
-    margin: 0 auto;
-    padding-top: 17%;
-    text-align: center;
-  }
-  #containerSection div{
-    margin: 5% 2% 0% 2%;
-    display: inline-block;
-  }
-
-  #containerScreen3{
-    width: 60%;
-    height: 50%;
-    margin: 0 auto;
-    padding-top: 15%;
-    text-align: center;
-  }
-  #containerScreen3 div{
-    display: inline-block;
-    width: 22%;
-    height: 31%;
-    margin: 4%;
-  }
-
-  #containerScreen3 img{
-    width: 100%;
-  }
-  #containerScreen3 h4{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align:center;
-    /*top: 50%;*/
-    /*vertical-align: middle;*/
-    z-index: 1;
-    opacity: 0;
-    -webkit-transition: opacity 0.7s ease;
-    transition: opacity 0.7s ease;
-  }
-
-  #containerScreen3:hover > h4{
-    opacity: 1;
-  }
-
-  #containerScreen3:hover > .containerScreen3Nom{
-    opacity: 1;
-  }
-
-  .containerScreen3Nom:hover > h4{
-    opacity: 1;
-  }
-
+ 
+/*
   #autre:hover > h4{
     opacity: 1;
   }
@@ -192,7 +86,7 @@
   #minceur:hover > h4{
     opacity: 1;
   }
-
+*/
 
   /* certainement du ménage à faire ici */
   #containerAccueil li a{

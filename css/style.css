@@ -1,3 +1,11 @@
+body,html{
+	width: 100%;
+    height:100%;
+    font-size: 2.2vh;
+    padding: 0;
+    margin: 0;
+}
+
 h1{
 	/*font-variant: small-caps;*/
 	/*padding: 2% 0%;*/
@@ -9,9 +17,11 @@ h1{
 h2{
 	/*color: #fccfc0;*/
 	font-size: 4vh;
+	margin: 0;
+	padding: 1%;
 	/*text-transform: uppercase;*/
 	/*font-variant: small-caps;*/
-	padding-top: 2.6%;
+	/*padding-top: 2.6%;*/
 }
 h3{
 	font-size: 3vh;
@@ -19,6 +29,7 @@ h3{
 }
 h4{
 	font-size: 2.5vh;
+	margin: 0;
 }
 p{
 
@@ -27,5 +38,355 @@ li{
 	list-style-type: none;
 }
 strong{
-	font-weight: normal;
+	font-weight: normal; 
+}
+
+.clear{
+	clear: both;
+}
+.parallaxParent {
+	height: 100vh;
+	overflow: hidden;
+}
+.parallaxParent > * {
+	height: 200%;
+	position: relative;
+	top: -100%;
+}
+.spacer {
+	text-align: center;
+	min-height: 100px;
+	/*height: 5%;*/
+	background-color: #B7D771; /*#B7D771 #ABBC56 #C0D45C*/
+	/*background-image: url("../img/example_bg_spacer_v.gif");*/
+}
+.spacer.s0 {
+	min-height: 1px;
+}
+
+.container {
+	position:relative;
+	/*width:380px;*/
+	/*height:350px;*/
+}
+.container img {
+	position:absolute;
+	top:0;
+	left:0;
+	-webkit-transition: opacity 1s ease;
+	transition: opacity 1s ease;
+}
+.container:hover .image1, .container:focus .image1{
+	opacity:0;
+}
+
+#containerHead{
+	display: inline;
+}
+
+
+/*******************************************************/
+/* ********* ECRAN 1 - ACCUEIL *********/
+/*******************************************************/
+#ecran1{
+	background-color: #DAEFC9;
+	/*background-color: #FFFFFF;*/
+	text-align: center;
+}
+#containerAccueil{
+	padding-top: 10%;
+    margin: 0 auto;
+	width: 60%;
+	height: 100%;
+}
+
+
+/***** NAV *****/
+#navPC{
+	padding: 2%;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9f5e3+0,f7edb9+42,ffffff+100&1+0,0+58 */
+	/* FF3.6-15 */
+	/*background: -moz-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%, rgba(247,237,185,0.28) 42%, rgba(249,242,204,0) 58%, rgba(255,255,255,0) 100%); */
+	background: -moz-radial-gradient(center, ellipse cover, rgba(241, 242, 190, 1) 0%, rgba(155, 223, 110,0.28) 42%, rgba(200, 231, 108,0) 100%, rgba(255,255,255,0) 100%); 
+	/* Chrome10-25,Safari5.1-6 */
+	/*background: -webkit-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(241, 242, 190, 1) 0%, rgba(155, 223, 110,0.28) 42%, rgba(200, 231, 108,0) 100%, rgba(255,255,255,0) 100%); 
+	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	/*background: radial-gradient(ellipse at center, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); */
+	background: radial-gradient(ellipse at center, rgba(241, 242, 190, 1) 0%, rgba(155, 223, 110,0.28) 42%, rgba(200, 231, 108,0) 100%, rgba(255,255,255,0) 100%); 
+	/* IE6-9 fallback on horizontal gradient */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f5e3', endColorstr='#00ffffff',GradientType=1 ); 
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 2104% 45%;
+}
+
+#navPC li{
+	display: inline-block;
+	/*border-right: 1px solid #262125;*/
+	padding: 0% 1%;
+	/*font-variant: small-caps;*/
+	font-size: 2vh;
+}
+
+#containerAccueil ul :nth-child(8){  /*Last à la place de 8*/
+	border: none;
+}
+
+/***** FLEXSLIDER *****/
+.flexslider{
+	margin: 0 auto;
+	width: 100%;
+	/*height: 100%;*/
+}
+.flexslider h4{
+	padding: 0;
+	margin: 1%;
+}
+
+
+
+
+#logoHome{
+	margin: 0 auto;
+	width: 10%;
+	padding: 0% 2%;
+}
+
+#logoHome, #h1Home{
+	display: inline-block;
+}
+
+#h2Home{
+	width: 39%;
+	vertical-align: top;
+}
+/*.flexslider img, .flexslider h4{
+	display: inline-block;
+}
+*/
+/*******************************************************/
+/* ********* ECRAN 2 - GNav picto 1st *********/
+/*******************************************************/
+  #ecran2{
+    background-color: #A8F5A0;
+  }
+
+
+#containerSection{
+	width: 90%;
+	height: 50%;
+	margin: 0 auto;
+	padding-top: 13%;
+	text-align: center;
+}
+
+#sectionsScreen2{
+	width: 100%;
+	height: 65%;
+	margin-top: 5%;
+}
+#containerSection .container{
+	display: inline-block;
+	margin: 0% 2%;
+	width: 25%;
+	height: 70%;
+}
+
+#containerSection .container img{
+	width: 100%;
+}
+
+
+#containerSection .container h3{
+	position: absolute;
+	margin-top: 90%;
+	z-index: 1;
+	color: #0F5300;
+	transition-property: margin-top, color, font-size, margin-left;
+	transition-duration: 1s, 1s, 1s, 1s;
+}
+
+#containerSection .container:hover h3, .container:focus h3{
+	color: #FFFFFF !important;
+	font-size: 3.5vh;
+	margin-top: 45% !important;
+	margin-left: 30% !important;
+
+}
+
+/*******************************************************/
+/* ********* ECRAN 3 - Nav picto 2sd *********/
+/*******************************************************/
+  #ecran3{
+    background-color: #7FE696;
+  }
+
+
+
+/*#containerScreen3 h4{
+	opacity: 1;
+	top: 65%;
+	font-size: 3vh;
+}*/
+/*#containerScreen3{
+	width: 90%;
+}*/
+#containerScreen3{
+	width: 60%;
+	height: 50%;
+	margin: 0 auto;
+	padding-top: 15%;
+	text-align: center;
+}
+/*#containerScreen3 div{
+	float: left;
+	width: 40%;
+	height: 55%;
+}*/
+#containerScreen3 div{
+	display: inline-block;
+	width: 22%;
+	height: 31%;
+	margin: 4%;
+}
+
+#containerScreen3 img{
+	width: 100%;
+}
+#containerScreen3 h4{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align:center;
+	/*top: 50%;*/
+	/*vertical-align: middle;*/
+	z-index: 1;
+	opacity: 0;
+	-webkit-transition: opacity 0.7s ease;
+	transition: opacity 0.7s ease;
+}
+
+#containerScreen3 .container:hover > h4{
+	opacity: 1;
+}
+
+/*#containerScreen3:hover > .containerScreen3Nom{
+	opacity: 1;
+}
+
+.containerScreen3Nom:hover > h4{
+	opacity: 1;
+}
+*/
+/*******************************************************/
+/* ********* ECRAN 4 - Contact *********/
+/*******************************************************/
+  #ecran4{
+    background-color: #6AB37F;
+  }
+
+
+#containerContact{
+	width: 70%;
+	/*height: 42%;*/
+	margin: 0 auto;
+	padding-top: 56%;
+	text-align: center;
+	font-size: 2vh;
+}
+#containerContact h4{
+	font-size: 3vh;
+	color: #262024;
+	padding-bottom: 2%;
+}
+#contactMap{
+	width: 60%;
+	float: left;
+}
+#contactMap iframe{
+	/*float: left;*/
+	width: 52%; 
+	height: 22%; 
+	border: 3px solid #0F5300;
+	border-radius: 10px;
+}
+#contactMap p{
+	width: 100%;
+	text-align: left;
+	margin-top: 11%;
+	/*float: right;*/
+}
+#livreOr{
+	width: 40%;
+	float: right;
+}
+#livreOr li{
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 10px;
+	padding: 5% 0%;
+	border-radius: 10px;
+	list-style-type: none;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9f5e3+0,f7edb9+42,ffffff+100&1+0,0+58 */
+	background: -moz-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%, rgba(247,237,185,0.28) 42%, rgba(249,242,204,0) 58%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: radial-gradient(ellipse at center, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f5e3', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 200% 200%;
+}
+#livreOr p {
+	padding: 2% 5% 5% 5%;
+}
+
+#menuBas{
+	/*margin-top: 15%;*/
+}
+#menuBas li{
+	display: inline-block;
+	padding: 0% 1%;
+}
+
+
+/*******************************************************/
+/* ********* FOOTER *********/
+/*******************************************************/
+
+footer{
+	/*position: absolute;*/
+	bottom: 0;
+	width: 100%;
+	/*margin-top: 10%;*/
+	/*padding-bottom: 2%;*/
+	/*color: #000;*/
+	/*background-color: #977d5a;*/
+	z-index: 1;
+}
+
+.containFooter{
+	width: 80%;
+	margin: 0 auto;
+	position: relative;
+
+}
+.containFooter div{
+	display: inline-block;
+}
+.infoFooter{
+	width: 45%;
+	float: left;
+	/*padding-bottom: 1%;*/
+}
+.infoFooter p, .infoFooter h5, .CG p{
+	display: inline-block;
+	margin: 1%;
+
+}
+.CG{
+	width: 45%;
+	float: right;
+	text-align: right;
 }

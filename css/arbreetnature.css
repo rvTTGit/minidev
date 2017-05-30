@@ -3,42 +3,17 @@
     /* * Sortir le code dynamique et le mettre dans custom */
     /* *********** Supprimer ce fichier ****************** */
     /*******************************************************/
+
+/*
+
 #logo{
 	width: 10%;
 	margin: 0 auto;
 	display: block;
 }
+*/
 
-#navPC{
-	padding: 2%;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9f5e3+0,f7edb9+42,ffffff+100&1+0,0+58 */
-	/* FF3.6-15 */
-	/*background: -moz-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%, rgba(247,237,185,0.28) 42%, rgba(249,242,204,0) 58%, rgba(255,255,255,0) 100%); */
-	background: -moz-radial-gradient(center, ellipse cover, rgba(234,246,231,1) 0%, rgba(192,244,181,0.28) 42%, rgba(212,245,205,0) 58%, rgba(255,255,255,0) 100%); 
-	/* Chrome10-25,Safari5.1-6 */
-	/*background: -webkit-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); */
-	background: -webkit-radial-gradient(center, ellipse cover, rgba(234,246,231,1) 0%, rgba(192,244,181,0.28) 42%, rgba(212,245,205,0) 58%, rgba(255,255,255,0) 100%); 
-	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	/*background: radial-gradient(ellipse at center, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); */
-	background: radial-gradient(ellipse at center, rgba(234,246,231,1) 0%, rgba(192,244,181,0.28) 42%, rgba(212,245,205,0) 58%, rgba(255,255,255,0) 100%); 
-	/* IE6-9 fallback on horizontal gradient */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f5e3', endColorstr='#00ffffff',GradientType=1 ); 
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	background-size: 124% 80%;
-}
-#containerAccueil ul :nth-child(8){
-	border: none;
-}
-#navPC li{
-	display: inline-block;
-	/*border-right: 1px solid #262125;*/
-	padding: 0% 1%;
-	/*font-variant: small-caps;*/
-	font-size: 2vh;
-}
-
-
+/*
 #soinGourmand{
 	position:relative;
 	display: block;
@@ -46,9 +21,9 @@
 	width: 50%;
 	height: 20%;
 	/*margin: 5% 0% 0% -5%;*/
-}
+/*}*/
 
-.tableauGourmand{
+/*.tableauGourmand{
 	width: 31%;
 	height: 20%;
 	float: left;
@@ -97,88 +72,20 @@
 	-webkit-transition: width 0.5s ease;
 	transition: width 0.5s ease;
 	width: 102%;
-}
+}*/
 
 
 
 
-.flexslider{
-	width: 70%;
-	float: left;
-	/*margin-left: 10% !important;*/
-
-}
 /*.flexsilder ul{
 	width: 100%;
 }*/
-.flexslider img{
+/*.flexslider img{
 	width: 100% !important;
 	height: 20% !important;
-}
+}*/
 
 
-
-#containerContact{
-	width: 60%;
-	/*height: 42%;*/
-	margin: 0 auto;
-	padding-top: 60%;
-	text-align: center;
-	font-size: 2vh;
-}
-#containerContact h4{
-	font-size: 3vh;
-	color: #262024;
-	padding-bottom: 2%;
-}
-#contactMap{
-	width: 60%;
-	float: left;
-}
-#contactMap iframe{
-	float: left;
-	/*width: 52%; */
-	/*height: 22%; */
-	border: 5px solid #0F5300;
-	border-radius: 10px;
-}
-#contactMap p{
-	width: 43%;
-	text-align: left;
-	margin-top: 11%;
-	float: right;
-}
-#livreOr{
-	width: 40%;
-	float: right;
-}
-#livreOr li{
-	width: 90%;
-	margin: 0 auto;
-	margin-top: 10px;
-	padding: 5% 0%;
-	border-radius: 10px;
-	list-style-type: none;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9f5e3+0,f7edb9+42,ffffff+100&1+0,0+58 */
-	background: -moz-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%, rgba(247,237,185,0.28) 42%, rgba(249,242,204,0) 58%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
-	background: -webkit-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: radial-gradient(ellipse at center, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f5e3', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	background-size: 200% 200%;
-}
-#livreOr p {
-	padding: 2% 5% 5% 5%;
-}
-
-#menuBas{
-	margin-top: 15%;
-}
-#menuBas li{
-	display: inline-block;
-	padding: 0% 1%;
-}
 
 .btn-navbar {
     display: none;
@@ -312,56 +219,10 @@ main{
 	z-index: 0;
 }
 
-.container {
-position:relative;
-width:380px;
-height:350px;
-}
-.container img {
-position:absolute;
-top:0;
-left:0;
--webkit-transition: opacity 1s ease;
-transition: opacity 1s ease;
-}
-.container:hover .image1, .container:focus .image1{
-	opacity:0;
-}
 
 
 
 
-footer{
-	/*position: absolute;*/
-	bottom: 0;
-	width: 100%;
-	/*margin-top: 10%;*/
-	/*padding-bottom: 2%;*/
-	color: #000;
-	/*background-color: #977d5a;*/
-	z-index: 1;
-}
-
-.containFooter{
-	width: 1000px;
-	margin: 0 auto;
-	position: relative;
-
-}
-.infoFooter{
-	width: 45%;
-	float: left;
-	padding-bottom: 1%;
-}
-.infoFooter p, .infoFooter h5{
-	display: inline-block;
-
-}
-.CG{
-	width: 45%;
-	float: right;
-	padding-bottom: 1%;
-}
 
 
 
@@ -378,7 +239,7 @@ form label {
 
 
 /****** Soins Sothys  *****/
-#soinVisage{
+/*#soinVisage{
 	display: inline-block;
 	float: left;
 }
@@ -386,30 +247,7 @@ form label {
 	display: inline-block;
 	float: right;
 }
-#soinVisage h3, #soinCorps h3{
-	position: absolute;
-	margin-top: 80%;
-	z-index: 1;
-	color: #0F5300;
-	transition-property: margin-top, color, font-size, margin-left;
-	transition-duration: 1s, 1s, 1s, 1s;
-}
-#soinVisage h3{
-	margin-left: 60%; 
-}
-#soinCorps h3{
-	margin-left: 60%;
-}
-#soinCorps:hover h3{
-	margin-left: 35%;
-}
-.container:hover h3, .container:focus h3{
-	color: #FFFFFF !important;
-	font-size: 3.5vh;
-	margin-top: 45% !important;
-	margin-left: 30% !important;
-
-}
+*/
 .listeSoins li{
 	width: 26%;
 	height: 50%;
@@ -850,11 +688,7 @@ table a:hover, table a:focus{
 		height: 100%;
 		background-size:100% 100%;
 	}
-	#containerAccueil{
-		padding-top: 1%;
-		width: 90%;
-		height: 100%;
-	}
+
 	#navPC{
 		display: none;
 	}
@@ -875,53 +709,8 @@ table a:hover, table a:focus{
 	}
 
 
-	#soinVisage, #soinCorps{
-		display: block;
-		float: none;
-		margin: 0 auto;
-	}
-	#soinCorps{
-		margin-top: 40% !important;
-	}
-	#soinCorps h3{
-		margin-left: 35%;
-	}
-	#containerSection{
-		width: 90%;
-	}
-	#containerSection div{
-		margin: 0 auto;
-		width: 90%;
-	}
-	#containerSection img{
-		width: 100%;
-	}
-	#containerSoins{
-		width: 90%;
-	}
-	#containerSoins div{
-		margin: 0 auto;
-		width: 90%;
-	}
-	#containerSoins img{
-		width: 100%;
-	}
-	#containerScreen3 h4{
-		opacity: 1;
-		top: 65%;
-		font-size: 3vh;
-	}
 
 
-	#containerScreen3{
-		width: 90%;
-	}
-	#containerScreen3 div{
-		float: left;
-		width: 40%;
-		height: 55%;
-
-	}
 
 	#parallax4{
 		overflow: visible;
