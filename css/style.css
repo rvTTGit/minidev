@@ -430,7 +430,7 @@ main .flexslider{
 /*******************************************************/
 
 caption{
-	color: #b79262;
+	/*color: #b79262;*/
 	font-size: 3vh;
 	padding: 2%;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9f5e3+0,f7edb9+42,ffffff+100&1+0,0+58 */
@@ -442,12 +442,12 @@ caption{
 	background-position: 50% 50%;
 	background-size: 85% 100%;
 }
-caption a{
+/*caption a{
 	color: #b79262 !important;
 }
 caption a:hover, caption a:focus{
 	color: #FE6D52 !important;
-}
+}*/
 
 .listeTarifs{
 	position: relative;
@@ -463,7 +463,7 @@ caption a:hover, caption a:focus{
 
 .listeTarifs th {
   color:#fccfc0;
-  background:#262024;
+  background:#222620;
   border-bottom:4px solid #9ea7af;
   border-right: 1px solid #343a45;
   font-size:23px;
@@ -499,7 +499,7 @@ caption a:hover, caption a:focus{
 }
  
 .listeTarifs tr:nth-child(odd) td {
-  background: rgba(256, 256, 256, 0.1);
+  background: #DEEFD4;
 }
  
 
@@ -512,7 +512,7 @@ caption a:hover, caption a:focus{
 }
  
 .listeTarifs td {
-  background:#4b4b4b80;
+  background:#8C9D82;
   padding:20px;
   text-align:left;
   vertical-align:middle;
@@ -645,7 +645,7 @@ form label {
     margin: 0px 0px 10px 0px;
     border: 1px solid #FDF8A1;
     padding: 20px;
-    background: #80A874;
+    /*background: #80A874;*/
     box-shadow: inset 0px 0px 15px #DEF883;
     -moz-box-shadow: inset 0px 0px 15px #DEF883;
     -webkit-box-shadow: inset 0px 0px 15px #DEF883;

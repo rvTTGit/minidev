@@ -76,8 +76,8 @@ html[xmlns] .flexslider .slides {
  * ====================================================================================================================*/
 .flexslider {
   /*margin: 0 0 60px;*/
-  background: #CCD897;
-  border: 4px solid #c9a35e;
+  /*background: #CCD897;*/
+  border: 4px solid #6261614d;
   position: relative;
   zoom: 1;
   -webkit-border-radius: 5px;
