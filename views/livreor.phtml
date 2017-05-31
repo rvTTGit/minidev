@@ -1,26 +1,25 @@
 <?php include('header.phtml') ?>
 <main>
+<br/><br/>
     <h4><?= $oSections->fields['texte'] ?></h4>
     <?php if($erreur) : ?>
     <p style="color:red;"><?= $erreur ?></p>
     <?php else : ?>
     <?= $message; ?> 
     <?php endif ?>
+    <br/><br/>
 	  <div id="livreOrPage">
          <ul>
            <?php foreach($tab_messages as $msg):?> 
             <li>
-              <p>Posté par <span style="color: #e31051;"> <?= $msg['prenom'] ?> </span> le <?= date("j M Y à H\hi", strtotime($msg['date'])) ?></p>
+              <p>Posté par <span style="color: #<?=$config['couleur_lien_actif'] ?>;"> <?= $msg['prenom'] ?> </span> le <?= date("j M Y à H\hi", strtotime($msg['date'])) ?></p>
               <p><?= $msg['text'] ?></p>
             </li>
           <?php endforeach ?>
           </ul> 
       </div>
      </br>
-     </br>
-     </br>
      <div ><?php echo $menu_pagination; ?></div>
-     </br>
      </br>
      </br>
     <div class="formStyle" <?= !empty($message) ? 'style="display:none"' : '' ?>>
