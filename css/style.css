@@ -1,31 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Bubbler+One|Dancing+Script|El+Messiri|Grand+Hotel|Marck+Script|Pompiere|Tangerine|The+Girl+Next+Door');
+
 body,html{
 	width: 100%;
     height:100%;
-    font-size: 2.2vh;
+    /*font-size: 2vh; /* a virer*/ 
     padding: 0;
     margin: 0;
+    /*font-family: 'El Messiri', sans-serif;*/
+    /*font-family: 'Bubbler One', sans-serif;*/
+    /*font-family: 'Tangerine', cursive;*/
+    font-family: 'The Girl Next Door', cursive;
+    /*font-family: 'Pompiere', cursive;*/
+
 }
 
 h1{
-	/*font-variant: small-caps;*/
-	/*padding: 2% 0%;*/
 	font-size: 6vh;
 	font-weight: 200;
-	/*color: #f9a18e;*/
-	/*text-shadow: 4px -2px 4px #aaa;*/
 }
 h2{
-	/*color: #fccfc0;*/
-	font-size: 4vh;
 	margin: 0;
 	padding: 1%;
-	/*text-transform: uppercase;*/
-	/*font-variant: small-caps;*/
-	/*padding-top: 2.6%;*/
 }
 h3{
 	font-size: 3vh;
-	/*font-variant: small-caps;*/
 }
 h4{
 	font-size: 2.5vh;
@@ -56,9 +54,7 @@ strong{
 .spacer {
 	text-align: center;
 	min-height: 100px;
-	/*height: 5%;*/
 	background-color: #B7D771; /*#B7D771 #ABBC56 #C0D45C*/
-	/*background-image: url("../img/example_bg_spacer_v.gif");*/
 }
 .spacer.s0 {
 	min-height: 1px;
@@ -66,8 +62,6 @@ strong{
 
 .container {
 	position:relative;
-	/*width:380px;*/
-	/*height:350px;*/
 }
 .container img {
 	position:absolute;
@@ -83,6 +77,28 @@ strong{
 #containerHead{
 	display: inline;
 }
+main{
+	width: 60%;
+	min-height: 70%;
+	margin: 0 auto;
+}
+.navPCpage ul{
+	padding: 0;
+}
+#logoPage{
+	width: 10%;
+	/*padding: 2% 0%;*/
+}
+
+/*******************************************************/
+/* ********* NAV MOBILE *********/
+/*******************************************************/
+.btn-navbar {
+    display: none;
+}
+#navMobile{
+	display: none;
+}
 
 
 /*******************************************************/
@@ -90,7 +106,6 @@ strong{
 /*******************************************************/
 #ecran1{
 	background-color: #DAEFC9;
-	/*background-color: #FFFFFF;*/
 	text-align: center;
 }
 #containerAccueil{
@@ -123,10 +138,7 @@ strong{
 
 #navPC li{
 	display: inline-block;
-	/*border-right: 1px solid #262125;*/
 	padding: 0% 1%;
-	/*font-variant: small-caps;*/
-	font-size: 2vh;
 }
 
 #containerAccueil ul :nth-child(8){  /*Last à la place de 8*/
@@ -137,7 +149,6 @@ strong{
 .flexslider{
 	margin: 0 auto;
 	width: 100%;
-	/*height: 100%;*/
 }
 .flexslider h4{
 	padding: 0;
@@ -161,14 +172,12 @@ strong{
 	width: 39%;
 	vertical-align: top;
 }
-/*.flexslider img, .flexslider h4{
-	display: inline-block;
-}
-*/
+
+
 /*******************************************************/
 /* ********* ECRAN 2 - GNav picto 1st *********/
 /*******************************************************/
-  #ecran2{
+#ecran2{
     background-color: #A8F5A0;
   }
 
@@ -222,16 +231,6 @@ strong{
     background-color: #7FE696;
   }
 
-
-
-/*#containerScreen3 h4{
-	opacity: 1;
-	top: 65%;
-	font-size: 3vh;
-}*/
-/*#containerScreen3{
-	width: 90%;
-}*/
 #containerScreen3{
 	width: 60%;
 	height: 50%;
@@ -239,18 +238,12 @@ strong{
 	padding-top: 15%;
 	text-align: center;
 }
-/*#containerScreen3 div{
-	float: left;
-	width: 40%;
-	height: 55%;
-}*/
 #containerScreen3 div{
 	display: inline-block;
 	width: 22%;
 	height: 31%;
 	margin: 4%;
 }
-
 #containerScreen3 img{
 	width: 100%;
 }
@@ -260,37 +253,24 @@ strong{
 	left: 0;
 	right: 0;
 	text-align:center;
-	/*top: 50%;*/
-	/*vertical-align: middle;*/
 	z-index: 1;
 	opacity: 0;
 	-webkit-transition: opacity 0.7s ease;
 	transition: opacity 0.7s ease;
 }
-
 #containerScreen3 .container:hover > h4{
 	opacity: 1;
 }
 
-/*#containerScreen3:hover > .containerScreen3Nom{
-	opacity: 1;
-}
 
-.containerScreen3Nom:hover > h4{
-	opacity: 1;
-}
-*/
 /*******************************************************/
 /* ********* ECRAN 4 - Contact *********/
 /*******************************************************/
-  #ecran4{
-    background-color: #6AB37F;
-  }
-
-
+#ecran4{
+	background-color: #6AB37F;
+}
 #containerContact{
 	width: 70%;
-	/*height: 42%;*/
 	margin: 0 auto;
 	padding-top: 56%;
 	text-align: center;
@@ -302,12 +282,11 @@ strong{
 	padding-bottom: 2%;
 }
 #contactMap{
-	width: 60%;
+	width: 40%;
 	float: left;
 }
 #contactMap iframe{
-	/*float: left;*/
-	width: 52%; 
+	width: 70%; 
 	height: 22%; 
 	border: 3px solid #0F5300;
 	border-radius: 10px;
@@ -316,17 +295,17 @@ strong{
 	width: 100%;
 	text-align: left;
 	margin-top: 11%;
-	/*float: right;*/
 }
+
 #livreOr{
-	width: 40%;
+	width: 45%;
 	float: right;
 }
 #livreOr li{
 	width: 90%;
 	margin: 0 auto;
 	margin-top: 10px;
-	padding: 5% 0%;
+	padding: 1% 0%;
 	border-radius: 10px;
 	list-style-type: none;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9f5e3+0,f7edb9+42,ffffff+100&1+0,0+58 */
@@ -339,30 +318,37 @@ strong{
 	background-size: 200% 200%;
 }
 #livreOr p {
-	padding: 2% 5% 5% 5%;
+	padding: 2% 5% 0% 5%;
 }
 
-#menuBas{
-	/*margin-top: 15%;*/
-}
 #menuBas li{
 	display: inline-block;
 	padding: 0% 1%;
 }
 
 
+
+/*******************************************************/
+/* ********* HEADER *********/
+/*******************************************************/
+header{
+	width: 60%;
+	margin: 0 auto;
+	position: relative;
+	z-index: 1;
+}
+header li{
+	display: inline-block;
+	padding-left: 5px;
+}
+
 /*******************************************************/
 /* ********* FOOTER *********/
 /*******************************************************/
 
 footer{
-	/*position: absolute;*/
 	bottom: 0;
 	width: 100%;
-	/*margin-top: 10%;*/
-	/*padding-bottom: 2%;*/
-	/*color: #000;*/
-	/*background-color: #977d5a;*/
 	z-index: 1;
 }
 
@@ -378,7 +364,6 @@ footer{
 .infoFooter{
 	width: 45%;
 	float: left;
-	/*padding-bottom: 1%;*/
 }
 .infoFooter p, .infoFooter h5, .CG p{
 	display: inline-block;
@@ -389,4 +374,519 @@ footer{
 	width: 45%;
 	float: right;
 	text-align: right;
+}
+
+
+/*******************************************************/
+/* ********* ITEM *********/
+/*******************************************************/
+.blog-slide {
+  background: #4b4b4b80;
+  padding: 1%;
+}
+.blog-slide:nth-child(odd){
+  background: #F0F0F080;
+}
+.blog-slide-text, .blog-slide-img{
+	width: 49%;
+	display: inline-block;
+
+}
+.blog-slide-text{
+	width:40%;
+	float: right;
+	font-size: 2.2vh;
+}
+.blog-slide-img img{
+	width: 100%;
+}
+
+main .flexslider{
+	margin-bottom: 10%;
+}
+
+.pagination{
+	padding: 0;
+}
+.pagination li{
+	display: inline-block;
+}
+.pagination a{
+	padding: 5px 15px;
+	border-radius: 5px;
+	background-color: #8CA23D;
+	text-decoration: none;
+}
+.pagination a:hover, .pagination a:focus{
+	background-color: #CCD897;
+}
+.active a{
+	background-color: #CCD897;
+
+}
+
+/*******************************************************/
+/* ********* TARIFS *********/
+/*******************************************************/
+
+caption{
+	color: #b79262;
+	font-size: 3vh;
+	padding: 2%;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9f5e3+0,f7edb9+42,ffffff+100&1+0,0+58 */
+	background: -moz-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%, rgba(247,237,185,0.28) 42%, rgba(249,242,204,0) 58%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: radial-gradient(ellipse at center, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f5e3', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 85% 100%;
+}
+caption a{
+	color: #b79262 !important;
+}
+caption a:hover, caption a:focus{
+	color: #FE6D52 !important;
+}
+
+.listeTarifs{
+	position: relative;
+	margin-top: 5%;
+	background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  padding:5px;
+  width: 100%;
+	text-align:center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.listeTarifs th {
+  color:#fccfc0;
+  background:#262024;
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size:23px;
+  font-weight: 100;
+  padding:24px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+
+.listeTarifs th:first-child {
+  border-top-left-radius:3px;
+}
+ 
+.listeTarifs th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+  
+.listeTarifs tr {
+  font-size:16px;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+ 
+ 
+.listeTarifs tr:first-child {
+  border-top:none;
+}
+
+.listeTarifs tr:last-child {
+  border-bottom:none;
+}
+ 
+.listeTarifs tr:nth-child(odd) td {
+  background: rgba(256, 256, 256, 0.1);
+}
+ 
+
+.listeTarifs tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+.listeTarifs tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+.listeTarifs td {
+  background:#4b4b4b80;
+  padding:20px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.listeTarifs td:last-child {
+  border-right: 0px;
+}
+
+
+table a:link{
+	color : #333333;
+}
+table a:visited{
+	color : #333333;
+}
+table a:hover, table a:focus{
+	color : #FF472B;
+}
+
+/*******************************************************/
+/* ********* CONTACT *********/
+/*******************************************************/
+#contactPage{
+	position: relative;
+}
+#contactPage h4{
+	padding: 2%;
+}
+#contactPage iframe{
+	float: left;
+	border: 5px solid #0F5300;
+	border-radius: 10px;
+}
+#contactPage p{
+	width: 45%;
+	float: right;
+}
+.lienLivreOrContact{
+	width: 30%;
+	margin: 0 auto;
+	position: relative;
+	padding: 5% 0% 10%;
+	text-align: center;
+}
+
+#logoBG{
+	position: fixed;
+	display: block;
+	margin: 0 auto;
+	margin-left: 33%;
+	z-index: 0;
+	opacity: 0.3;
+}
+
+.boutonOr a{
+	padding: 3%;
+	border: 1px solid #fefad8;
+	border-radius: 10px;
+	background-color: #3c7b51;
+	-webkit-box-shadow: 0px 0px 0px 3px #52a44e;
+    -moz-box-shadow: 0px 0px 0px 3px #52a44e;
+    box-shadow: 0px 0px 0px 3px #52a44e;
+    transition-property:background-color, box-shadow;
+	transition-duration: 0.5s, 0.5s;
+}
+.boutonOr a:hover, .boutonOr a:focus{
+	background-color: #E6D383;
+    -webkit-box-shadow: 0px 0px 0px 3px #FBF9A1;
+    -moz-box-shadow: 0px 0px 0px 3px #FBF9A1;
+    box-shadow: 0px 0px 0px 3px #FBF9A1;
+}
+
+
+/*******************************************************/
+/* ********* LIVRE D'OR *********/
+/*******************************************************/
+
+#livreOrPage li{
+	width: 90%;
+  	background: #4b4b4b80;
+  	padding: 1%;
+}
+#livreOrPage li:nth-child(odd){
+  background: #F0F0F080;
+}
+
+#livreOrPage{
+	width: 800px;
+	margin: 0 auto;
+}
+#livreOrPage p {
+	padding: 10px;
+}
+form label {
+	display: inline-block;
+	width: 25%;
+	padding: 5px;
+}
+
+
+
+/********************* FORM *******************************/
+
+.formStyle{
+    width: 60%;
+    margin: 0 auto;
+    padding-bottom: 5%;
+}
+.formStyle label{
+    display:inline-block;
+    margin-top: 10px;
+}
+.formStyle label > span{
+    float: left;
+    width: 100px;
+    color: #F072A9;
+    font-weight: bold;
+    font-size: 13px;
+    text-shadow: 1px 1px 1px #fff;
+}
+.formStyle fieldset{
+	    margin: 0 auto;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    margin: 0px 0px 10px 0px;
+    border: 1px solid #FDF8A1;
+    padding: 20px;
+    background: #80A874;
+    box-shadow: inset 0px 0px 15px #DEF883;
+    -moz-box-shadow: inset 0px 0px 15px #DEF883;
+    -webkit-box-shadow: inset 0px 0px 15px #DEF883;
+}
+.formStyle textarea{
+    width:250px;
+    height:100px;
+}
+.formStyle input[type=text],
+.formStyle input[type=email],
+.formStyle select,
+.formStyle textarea{
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border: 1px solid #4E845E;
+    outline: none;
+    /*color: #F072A9;*/
+    padding: 5px 8px 5px 8px;
+    box-shadow: inset 1px 1px 4px #FFD5E7;
+    -moz-box-shadow: inset 1px 1px 4px #FFD5E7;
+    -webkit-box-shadow: inset 1px 1px 4px #FFD5E7;
+    /*background: #FFEFF6;*/
+    width:95%;
+}
+.formStyle  input[type=submit],
+.formStyle  input[type=button]{
+    background: #3c7b51;
+    border: 1px solid #52a44e;
+    padding: 5px 15px 5px 15px;
+    color: #fefad8;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.formStyle  input[type=submit]:hover,
+.formStyle  input[type=button]:hover{
+	cursor:  pointer;
+	background: #E6D383;
+    color: #4E845E;
+}
+
+
+
+
+
+/*******************************************************/
+/* ********* RESPONSIVE *********/
+/*******************************************************/
+
+@media screen and (min-device-width : 740px) and (max-device-width : 1024px){
+
+	#indexHtml, #indexhtml body{
+		background-color: #ee7a91;
+	}
+	h2{
+		font-size: 5vh;
+		padding-top: 3.6%;
+	}
+
+	.btn {
+	    display: inline-block;
+	    cursor: pointer;
+	}
+
+	.btn-navbar {
+	    float: right;
+	    position: fixed;
+	    right: 0;
+	    padding: 2% 2%;
+	    margin-right: 5px;
+	    margin-left: 5px;
+	    z-index: 1;
+		background-color: #FCCFC0;
+		border-radius: 5px;
+	}
+	.icon-bar {
+	    display: block;
+	    width: 18px;
+	    height: 3px;
+	    background-color: #E6277E;
+	    -webkit-border-radius: 1px; /* Ce sont des préfixes, pour que les navigateurs */
+	    -moz-border-radius: 1px; /* prennent en charge les nouvelles propriétés. */
+	    border-radius: 1px;
+	}
+	.icon-bar + .icon-bar { /* Le + permet de sélectionner les éléments qui suivent */
+	    margin-top: 3px;
+	}
+	#navMobile{
+		display: none;
+		position: fixed;
+		right: 0;
+		width: 35%;
+		padding-top: 6%;
+	}
+	#navMobile ul{
+		background-color: #FCCFC0;
+		border-radius: 5px;
+	}
+	#navMobile li{
+		display: block;
+		border:none;
+	}
+
+	.parallaxParent{
+		height: 150vh;
+	}
+	#ecran1, #ecran2, #ecran3, #ecran4{
+		top: 0;
+		height: 100%;
+		background-size:100% 100%;
+	}
+
+	#navPC{
+		display: none;
+	}
+
+	.flexslider{
+		width: 90%;
+		float:none;
+		/*margin-left:0px !important; */
+		margin: 0 auto !important;
+	}
+
+	#parallax4{
+		overflow: visible;
+	}
+	#containerContact{
+		width: 90%;
+		font-size: 3vh;
+		padding-top: 1%
+	}
+	#containerContact div{
+		float: none;
+	}
+	#contactMap{
+		width: 100%;
+	}
+	#contactMap iframe{
+		width: 52%;
+		float: left;
+		height: 22%;
+	}
+	#contactMap p{
+		width: 100%;
+		float: none;
+		text-align: center;
+		padding-top: 10%;
+	}
+	#livreOr{
+		width: 100%;
+		padding-top: 15%;
+	}
+
+	main{
+		width: 90%;
+	}
+	header{
+		width: 90%;
+	}
+	footer{
+		width: 90%;
+	}
+	.containFooter{
+		width: 90%;
+	}
+	.navPcPage{
+		display: none;
+	}
+
+	.lienLivreOrContact{
+		width: 100%;
+	}
+	#contactPage iframe, #contactPage p{
+		float: none;
+		width: 100%;
+		color: black;
+		font-size: 4vh;
+	}
+	#livreOrPage{
+		width: 100%;
+		margin: 0 auto;
+	}
+	.formStyle{
+		width: 100%;
+	}
+
+
+
+}
+
+@media screen and (max-width: 640px) {
+	h2{
+		font-size: 7vh;
+		padding-top: 6.6%;
+	}
+	#navMobile{
+		width: 60%;
+		padding-top: 8%;
+		font-size: 4vh;
+	}
+	.flexslider{
+		width: 100%;
+	}
+
+	#containerSection div{
+		width: 100%;
+	}
+
+	#livreOr{
+		padding-top: 15%;
+	}
+
+	#menuBas{
+		width: 100%;
+	}
+	.boutonOr{
+		font-size: 4vh;
+	}
+	#livreOrPage{
+		font-size: 4vh;
+	}
+	#contactPage{
+		font-size: 4vh;
+	}
+	.formStyle{
+		font-size: 4vh !important;
+	}
+	.formStyle label{
+		width: 100%;
+	}
+	.formStyle input[type=text],
+	.formStyle input[type=email],
+	.formStyle textarea{
+		width: 100%;
+	}
+
+}
+
+
+
+@media tv (min-width:1919px) and (max-resolution:72dpi) {
+html,body{
+	font-size: 5vh;
 }

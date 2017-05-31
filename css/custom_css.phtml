@@ -16,12 +16,11 @@
     /*src: url("fonts/BRUSHSCI.TTF");*/
 
     /*test config*/
-    font-family: <?=$config['font-family'] ?>;
+    /*font-family: <?=$config['font-family'] ?>;*/
   }
   html,body{
-    /*font-family: "script-mt-bold", serif;*/
-    /*font-family: "brush-script-mt-bold", serif;*/
-    font-family: <?=$config['font-family'] ?>;
+    /*font-family: <?=$config['font-family'] ?>;*/
+    font-size: <?=$config['font-size_body'] ?>vh;
     background-color: #<?=$config['background-color'] ?>;
     color: #<?=$config['color'] ?>;
   };
@@ -42,8 +41,15 @@
   a:focus{
     color: #<?=$config['couleur_lien_actif'] ?>;
   }
-
-
+  h2{
+    font-size: <?=$config['font-size_h2'] ?>vh;
+  }
+  #navPC li{
+    font-size: <?=$config['font-size_body'] ?>vh;
+  }
+  .pagination a{
+    color: #<?=$config['color'] ?>;
+  }
   /******************* ecran scrollmagic ************************/
 
 
