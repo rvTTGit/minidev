@@ -104,12 +104,12 @@ if($erreur != ""):
                 <?php endif?>            </td>
             <td data-title="Action">
                 <?php if($section['auteur'] == $_SESSION['login'] || $_SESSION['droit'] ==1) :?>
-                    <?php if($section['delete']):?>
-                        <a href="sections/del/<?= $section['id']?>/" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
-                    <?php endif?>
-                    &nbsp;
                     <?php if($section['modify']):?>
                         <a href="sections/mod/<?= $section['id']?>/" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <?php endif?>
+                    &nbsp;
+                    <?php if($section['delete']):?>
+                        <a href="sections/del/<?= $section['id']?>/" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
                     <?php endif?>
                 <?php else : ?>
                     /

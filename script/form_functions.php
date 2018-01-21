@@ -29,7 +29,9 @@ function validate_form_data($value, $rules) {
 
         case 'required':
             if($arg)
-                if(empty($value)) return 'Cette valeur est requise.';
+                if($value=='') return 'Cette valeur est requise.';
+                // if(empty($value)) return 'Cette valeur est requise.';
+                // if(empty($value)) return 'Cette valeur est requise.rule_name:'.$rule_name.' - arg:'.$arg.' - value:'.$value;
             break;
 
         case 'min':

@@ -1,6 +1,6 @@
 <?php include('header_admin.phtml') ?>
 <?php 
-// var_dump($valeur_tableau_form);
+// var_dump($form_validation);
 // var_dump($oSections);
 ?>
 <h2><?= $action_txt ?> une section</h2>
@@ -32,6 +32,7 @@
         <?php } ?>
     </div>
 
+    <?php if(!in_array($valeurs_tableau_form['tag'], ['home','tarifs','contact'])) : ?>
     <div class="form-group<?=isset($erreurs_champs_form['tag']) ? ' has-error' : '' ?>">
         <label for="id_tag" class="control-label">Tag :</label>
         <input type="text" id="id_tag" name="tag" class="form-control" value="<?= $valeurs_tableau_form['tag'] ?>" />
@@ -40,7 +41,10 @@
         <?= $erreurs_champs_form['tag'] ?>
         </p>
         <?php } ?>
-    </div>                
+    </div>  
+    <?php else : ?>
+        <input type="hidden" name="tag" value="<?= $valeurs_tableau_form['tag']?>" />
+    <?php endif ?>                      
 
     <input type="hidden" name="auteur" value="<?= $_SESSION['id']?>" /> 
 
@@ -103,8 +107,11 @@
             <input type="radio" name="menu" id="inlineRadio2" value="0" <?= !($valeurs_tableau_form['menu']) ? '  checked' : '' ?>> Non
         </label>            
     </div>
-
-    <input type="hidden" name="delete" value="1" /> 
+    <?php if(in_array($valeurs_tableau_form['tag'], ['home','tarifs','contact'])) : ?>
+        <input type="hidden" name="delete" value="0" /> 
+    <?php else : ?>
+        <input type="hidden" name="delete" value="1" /> 
+    <?php endif ?>  
     <input type="hidden" name="modify" value="1" /> 
 
     <div class="form-group">
