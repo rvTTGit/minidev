@@ -172,11 +172,11 @@ class News extends Model{
         // $query .= 'WHERE ';        
         if($section > 0)
         // if($section!='all')
-            $query .= 'WHERE `sections`.tag='.$this->db->quote($section);        
+            $query .= 'WHERE `sections`.id='.$this->db->quote($section);        
             // $query .= ' `sections`.id='.$this->db->quote($section);        
 
         $query .= ' ORDER BY date DESC LIMIT ' . $offset .', '. $config['news_par_page'];
-        // echo "query:" . $query . "<br/>"; 
+        echo "query:" . $query . "<br/>"; 
         $this->query = $query;
         $query_result = $this->db->query($query);
         if(!$query_result){
