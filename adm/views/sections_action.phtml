@@ -32,7 +32,7 @@
         <?php } ?>
     </div>
 
-    <?php if(!in_array($valeurs_tableau_form['tag'], ['home','tarifs','contact'])) : ?>
+    <?php if(!in_array($valeurs_tableau_form['tag'], ['home','tarifs','contact','livreor'])) : ?>
     <div class="form-group<?=isset($erreurs_champs_form['tag']) ? ' has-error' : '' ?>">
         <label for="id_tag" class="control-label">Tag :</label>
         <input type="text" id="id_tag" name="tag" class="form-control" value="<?= $valeurs_tableau_form['tag'] ?>" />
