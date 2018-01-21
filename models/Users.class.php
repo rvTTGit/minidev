@@ -158,7 +158,6 @@ class Users extends Model{
     * @return boolean l'état de la suppression
     */
     public function delete(){
-        /*
         // on créé une instance de News pour appeller la méthode de changement de propriétaire
         $objet = new News;
         // récupération de l'identifiant en bdd de l'utilisateur Admin
@@ -169,8 +168,8 @@ class Users extends Model{
         }
         else{
             return false;
-        }*/
-        return parent::delete();
+        }
+        // return parent::delete();
     }    
 
 
