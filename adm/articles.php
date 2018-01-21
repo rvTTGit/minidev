@@ -198,12 +198,19 @@ if(count($_POST)) {
 			    }
 			    else{
 			        // la suppression est passée, il va falloir supprimer également l'image associée
-			        if(file_exists("../img/".$oArticles->fields['image'])){
+			        if(file_exists("../img/item/".$oArticles->fields['image'])){
 			            // on ne supprime pas les images qui ont été placées dans l insertion en masse
 			            // if($oArticles->fields['image'] != "blog-2.jpg" && $oArticles->fields['image'] != "blog-1.jpg" ){
-			                unlink("../img/".$oArticles->fields['image']);
+			                unlink("../img/item/".$oArticles->fields['image']);
 			            // }
 			        }
+			        // et la miniature
+			        if(file_exists("../img/thumb/".$oArticles->fields['image'])){
+			            // on ne supprime pas les images qui ont été placées dans l insertion en masse
+			            // if($oArticles->fields['image'] != "blog-2.jpg" && $oArticles->fields['image'] != "blog-1.jpg" ){
+			                unlink("../img/thumb/".$oArticles->fields['image']);
+			            // }
+			        }			        
 			        $message = "L'article &laquo;".$oArticles->fields['titre'] ." &raquo";
 			        $message .= " a correctement été supprimé ( id: " . $oArticles->fields['id'] .")"; 
 			    }
