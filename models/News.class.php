@@ -215,6 +215,29 @@ class News extends Model{
             return true;
         }
     }
+    /**
+    * Cette méthode re affecte les news à l'accueil lors de la suppression de la section
+    *
+    * @param int $old identifiant de la section actuelle des news
+    * @param int $new identifiant de la nouvelle section des news
+    * @return tableau contenant pour clef l'id de l auteur et en valeur sont nombre de news
+    */
+    public function changeSection($old, $new){
+
+        $query = 'UPDATE ' . $this->table . ' SET section='.$this->db->quote($new).', visible=0 WHERE section='.$this->db->quote($old);
+        // echo $query;exit;
+        $this->query = $query;
+        $query_result = $this->db->exec($query);
+        if($query_result === false){
+            // $error = $this->db->errorInfo();
+            // $error = $error[2];
+            // throw new PDOException('Erreur de requête : ' .$error);
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
 
     /**
     * Cette fonction vérifie en base de donnée si il existe une news possèdant le titre passé en paramètre

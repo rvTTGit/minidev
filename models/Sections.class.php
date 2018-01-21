@@ -135,4 +135,34 @@ class Sections extends Model{
             return $resultat->fetchAll();
         }
     }
+
+    public function getHomeId(){
+        $query = 'SELECT id FROM '.$this->table.' WHERE tag ="home"' ;
+        
+        $resultat = $this->db->query($query)->fetch();
+
+        return $resultat['id'];
+    }
+
+    /**
+    * Surcharge de la méthode parent (Model)
+    * Cette fonction supprime une ligne identifiée par son ID en base de données
+    * lors de la suppression d'une section, ses news sont attribuées à l'accueil
+    * avec une visibilité à 0
+    *
+    * @return boolean l'état de la suppression
+    */
+    public function delete(){
+        // on créé une instance de News pour appeller la méthode de changement de section
+        $objet = new News;
+        // récupération de l'identifiant en bdd de la section home
+        $home_id = $this->getHomeId();
+        // si le changement c'est bien passé, on supprime la section à l'aide de la méthode du parent 
+        if($objet->changeSection($this->fields['id'], $home_id)){
+            return parent::delete();
+        }
+        else{
+            return false;
+        }
+    }     
 }
