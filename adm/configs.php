@@ -163,7 +163,11 @@ if(count($_POST)) {
 		        $erreur = "Problème lors de la mise à jour des modules...";
 		    }
 		    else{
-		        $message = "Mise à jour effectuée : ". implode(', ', $_POST['module']);
+		        $message = "Mise à jour effectuée : ";
+		        if(!empty($tab))
+		        	$message .=implode(', ', $_POST['module']);
+		        else
+		        	$message .= 'aucun module';
 		    }
 		    // mise à jour de la liste
 		    $list_modules = $oConfigs->getListModules();
