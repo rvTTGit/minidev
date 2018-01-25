@@ -18,7 +18,6 @@ class Users extends Model{
 
         if($result !== false){
             $user = $result->fetch();
-            var_dump($user);
             if(password_verify($password,$user['password'])){
                 //récupération de l'id de l'utilisateur connecté
                 $this->get($user['id']);

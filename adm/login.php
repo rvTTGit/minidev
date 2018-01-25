@@ -17,7 +17,19 @@ if(isset($_POST['login'], $_POST['password'])){
         $_SESSION['droit'] = $oUser->fields['droit'];
 
         // var_dump($oUser);exit;
-        $oLogs->logAction("Authentification");
+        if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) 
+        {
+          $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }
+        elseif(isset($_SERVER['HTTP_CLIENT_IP'])) 
+        {
+          $ip  = $_SERVER['HTTP_CLIENT_IP'];
+        }
+        else 
+        {
+          $ip = $_SERVER['REMOTE_ADDR'];
+        }
+        $oLogs->logAction("Authentification, ip:".$ip);
     }
     else{
         $erreur = "Echec de l'authentification !!";

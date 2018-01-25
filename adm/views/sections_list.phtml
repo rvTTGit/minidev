@@ -25,6 +25,8 @@ if($erreur != ""):
 <?php endif ;
 
 // echo '<pre>'.var_dump($list_sections).'</pre>';
+// echo '<pre>'.var_dump($tab_modules['livreor']).'</pre>';
+
 ?>
 <p><a href="sections/add/" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Créer une section</a></p>
 <div class="responsive-table-line">
@@ -70,7 +72,7 @@ if($erreur != ""):
             </td>
             <td data-title="meta-keywords">
                 <?php if($section['meta-keywords'] != ''):?>
-                    <div class="alert alert-success"><span class="glyphicon glyphicon-ok-circle"></span></div>
+                    <span class="glyphicon glyphicon-ok-circle" style="color:green"></span>
                 <?php else : ?>
                     <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
                 <?php endif?>
@@ -103,13 +105,13 @@ if($erreur != ""):
                     <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
                 <?php endif?>            </td>
             <td data-title="Action">
-                <?php if($section['auteur'] == $_SESSION['login'] || $_SESSION['droit'] ==1) :?>
+                <?php if($section['auteur'] == $_SESSION['login'] || $_SESSION['droit'] <=2) :?>
                     <?php if($section['modify']):?>
-                        <a href="sections/mod/<?= $section['id']?>/" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span></a>
+                        <a href="sections/mod/<?= $section['id']?>/" class="btn btn-success" title="Editer"><span class="glyphicon glyphicon-pencil"></span></a>
                     <?php endif?>
                     &nbsp;
                     <?php if($section['delete']):?>
-                        <a href="sections/del/<?= $section['id']?>/" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                        <a href="sections/del/<?= $section['id']?>/" class="btn btn-danger" title="Supprimer"><span class="glyphicon glyphicon-trash"></span></a>
                     <?php endif?>
                 <?php else : ?>
                     /

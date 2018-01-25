@@ -55,9 +55,6 @@ catch(PDOException $e){
     die();
 }
 
-// gestion de $_POST (formaulaire de contact et livreor)
-
-
 //chargement de la vue
 
 //si le fichier template existe, alors on le charge (verif cas 'item')
@@ -104,6 +101,9 @@ if( file_exists('views/'.$nav_en_cours.'.phtml') ) {
 	else{
 		//gestion du livreor
 		if($nav_en_cours == 'livreor'){
+			// si le module n'est pas actif, on redirige vers la home
+			if(!$tab_modules['livreor'])
+				$nav_en_cours = 'home';
 			//control
 			$message = '';
 			$erreur = '';
@@ -114,6 +114,7 @@ if( file_exists('views/'.$nav_en_cours.'.phtml') ) {
 			$regles = ['nom' => ['required' => true, 'max' => 50],
 			           'prenom' => ['required' => true, 'max' => 50],
 			           'text' => ['required' => true, 'min' => 10],
+			           'visible_livreor' => ['required' => true, 'max' => 1],
 			           'mail' => ['email' => true]
 			          ];
 			// on pré remplit le tableau valeurs_tableau_form avec les clef du tableau de règle
@@ -148,7 +149,7 @@ if( file_exists('views/'.$nav_en_cours.'.phtml') ) {
 				            $erreur = 'Erreur lors de l\'insertion en bdd.';
 				        }
 				        else{
-				            $message = 'Message publié !';
+				            $message = 'Message correctement envoyé, il sera publié dès sa vérification !';
 				            // mise à jour de la liste des messages
 				            // $tab_messages = $oMessages->getMessageFromPage($page_actuelle);
 				        }			        	
@@ -243,7 +244,10 @@ else {
 		        $newsSectionPage[$id]['texte'] = substr($newsSectionPage[$id]['texte'], 0, 50) . '...';
 		    }
 			// construction du menu de pagination
-		    $menu_pagination = $oArticles->pagination_menu($page_actuelle,$tabNombreNewsSection[$oSections->fields['id']]);
+			if($tabNombreNewsSection[$oSections->fields['id']] > $config['news_par_page'])
+		    	$menu_pagination = $oArticles->pagination_menu($page_actuelle,$tabNombreNewsSection[$oSections->fields['id']]);
+		    else
+		    	$menu_pagination = '';
 		}
 	    include 'views/section.phtml';
 	}

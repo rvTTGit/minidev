@@ -1,6 +1,6 @@
 <?php include('header.phtml') ?>
 <main>
-	<img id="logoBG" src="img/pastilleArbreHover3.png">
+	<img id="logoBG" src="img/robinetHover.png">
 	<!-- <h2 class="titrePage">Contact</h2> -->
 
      <div id="contactPage">
@@ -11,7 +11,7 @@
          <?= $message; ?> 
          <?php endif ?>          
 
-          <h4>Nous Situer</h4>
+          <h4><?= $oSections->fields['texte'] ?></h4>
           <!-- carte -->
           <iframe src="<?=$config['url_google_map']?>" width="50%" height="50%" frameborder="0" allowfullscreen>
           </iframe>

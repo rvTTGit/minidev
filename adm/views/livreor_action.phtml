@@ -21,6 +21,28 @@
     <input type="hidden" name="id" value="<?= $oMessages->fields['id'] ?>" />
    
 <?php else : ?>
+    <!-- formulaire édition -->
+    <div class="well">
+        <h3>De <?= $oMessages->fields['prenom']?>&nbsp;<?= $oMessages->fields['nom']?> le <?= date("j M Y à H\hi", strtotime($oMessages->fields['date'])) ?></h3>
+    </div> 
+
+    <div class="form-group<?=isset($erreurs_champs_form['text']) ? ' has-error' : '' ?>">
+        <label for="field_texte">Message : </label>
+        <textarea id="field_texte" name="text" class="form-control"><?= $valeurs_tableau_form['text'] ?></textarea>
+        <?php if(isset($erreurs_champs_form['text'])) : ?>
+          <p style="color:red;"><?= $erreurs_champs_form['text'] ?></p>
+        <?php endif ?>     
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Publier ? </label>
+        <label class="radio-inline">
+            <input type="radio" name="visible_livreor" id="inlineRadio1" value="1" <?=($valeurs_tableau_form['visible_livreor']) ? '  checked' : '' ?>> Oui
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="visible_livreor" id="inlineRadio2" value="0" <?= !($valeurs_tableau_form['visible_livreor']) ? '  checked' : '' ?>> Non
+        </label>            
+    </div>    
 
 <?php endif ?>
 

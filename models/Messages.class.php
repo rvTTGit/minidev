@@ -32,14 +32,16 @@ class Messages extends Model{
     }
 
     /**
-    * Cette méthode retourne le nombre de message par type
+    * Cette méthode retourne le nombre de message par type et visibilité
     *
     * @param string $type type des messages (livreor, form_contact)
     * @return tableau contenant pour clef l'id de l auteur et en valeur son nombre de news
     */
-    public function countMessages($type){
+    public function countMessages($type,$visible=true){
         $retour = '';
         $query = 'SELECT count(*) as nb FROM ' . $this->table . ' WHERE type_message = '.$this->db->quote($type);
+        if($type=='livreor')
+            $query .= ' AND ' . $this->table . '.visible_livreor='.$this->db->quote($visible);
         $this->query = $query;
         $query_result = $this->db->query($query);
         if(!$query_result){
@@ -72,6 +74,8 @@ class Messages extends Model{
         $query = 'SELECT ' . $this->table . '.*, contacts.prenom FROM ' . $this->table . ' ';
         $query .= ' JOIN `contacts` ON ' . $this->table . '.contact = `contacts`.id ';
         $query .= ' WHERE ' . $this->table . '.type_message='.$this->db->quote($type); 
+        if($type=='livreor')
+            $query .= ' AND ' . $this->table . '.visible_livreor=1 ';
         $query .= ' ORDER BY `date` DESC LIMIT ' . $offset .', '. $config['news_par_page'];
 
         $this->query = $query;

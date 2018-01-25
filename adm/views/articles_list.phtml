@@ -5,7 +5,7 @@ include('header_admin.phtml'); ?>
 <?php 
 
     // var_dump($_SESSION);
-    // var_dump($oArticles);
+    // var_dump($list_articles);
     // var_dump($oSections->getListHasItem());
 
 if($erreur != ""):
@@ -72,7 +72,7 @@ if($erreur != ""):
                 <img src="../img/thumb/<?= $article['image']?>" alt="<?= $article['titre']?>" height="50"> 
             </td>
             <td data-title="Titre">
-                <a href="../item/<?= $article['id']?>/<?= urlencode($article['titre'])?>" title="Accéder à la news" target="_blank"><?= $article['titre']?></a>
+                <a href="../<?= $article['tag']?>/<?= $article['id']?>/<?= urlencode($article['titre'])?>" title="Accéder à la news" target="_blank"><?= $article['titre']?></a>
             </td>
             <td data-title="Section">
                 <?= $article['section']?>

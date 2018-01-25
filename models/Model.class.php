@@ -93,10 +93,11 @@ abstract class Model{
 
             $status = $this->db->exec($query);
             if($status){
+                // throw new PDOException('insertion: '.$query);
                 return true;
             }
             else{
-                // throw new PDOException('Erreur durant l\'insertion');
+                // throw new PDOException('Erreur durant l\'insertion: '.$query);
                 return false;
             }            
         }

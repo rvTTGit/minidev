@@ -8,16 +8,16 @@ include('header.phtml');
 <main>
 	<?php if($erreur == '') : ?>
 	<div class="blog-slide">
+	        <h2 class="blog-slide-title"><?= $oArticles->fields['titre']?></h2>
 	        <div class="blog-slide-img">
 	            <img src="img/thumb/<?= $oArticles->fields['image']?>" alt="">
 	        </div>
-	        <h2 class="blog-slide-title"><?= $oArticles->fields['titre']?></h2>
+	        <p class="blog-slide-text"><?= htmlspecialchars_decode($oArticles->fields['texte'])?></p>
 	        <p class="blog-slide-info">
 	        Posted on: <?= $oArticles->fields['date']?><br>
 	        Posted by: <?= $oArticles->fields['auteur']?><br/>
         	Posted in: <?= $oArticles->fields['section_nom']?><br/>	        
 	        </p>
-	        <p class="blog-slide-text"><?= $oArticles->fields['texte']?></p>
 	</div>
 	<?php else : ?>
 	    <p class="error"><?= $erreur ?></p>

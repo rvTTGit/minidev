@@ -8,9 +8,11 @@ include('header.phtml');
 <main>
 	<!-- <img id="logoBG" src="img/logoBG.png"> -->
 	<h2><?= $oSections->fields['texte'] ?></h2>
-	<div class="flexslider"> 
+    <?php if(!empty($newsSection)) : ?>
+	<div class="flexslider">
         <?php include('flexslider.phtml');?>
 	</div>
+    <?php endif ?>
 	<div class="clear"></div>
 
 <?php if($erreur == '') : 
@@ -22,8 +24,8 @@ include('header.phtml');
         <div class="blog-slide-img">
             <img src="img/thumb/<?= $news['image']?>" alt="">
         </div>
-        <p class="blog-slide-text"><?= $news['texte']?>
-            <a href="item/<?= $news['id']?>/<?= urlencode($news['titre'])?>" title="">lire plus</a>
+        <p class="blog-slide-text"><?= htmlspecialchars_decode($news['texte'])?>
+            <a href="<?= $oSections->fields['tag'] ?>/<?= $news['id']?>/<?= urlencode($news['titre'])?>" title="lire <?= $news['titre'] ?>">lire plus</a>
         </p>
         <p class="blog-slide-info">
         Posté le: <?= $news['date']?><br>

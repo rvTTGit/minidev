@@ -24,7 +24,9 @@ if(!in_array($page_category, ["news", "home"])){
 	// exit;
 	if($_SESSION['droit'] > 2){
 	    $_SESSION['message'] = 'Vous n\'êtes pas autorisé à accéder à cette page.';
-		$url_redirect = $_SERVER['HTTP_REFERER'];
+		// $url_redirect = $_SERVER['HTTP_REFERER'];
+		// var_dump($_SERVER);
+		$url_redirect = str_replace(basename($_SERVER['SCRIPT_NAME']), 'index.php', $_SERVER['SCRIPT_NAME']);		
 	    header("Location: $url_redirect");
 	    die();
 	}

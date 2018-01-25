@@ -54,7 +54,7 @@ strong{
 .spacer {
 	text-align: center;
 	min-height: 100px;
-	background-color: #B7D771; /*#B7D771 #ABBC56 #C0D45C*/
+	background-color: #77c3ef; /*#B7D771 #ABBC56 #C0D45C*/
 }
 .spacer.s0 {
 	min-height: 1px;
@@ -105,7 +105,7 @@ main{
 /* ********* ECRAN 1 - ACCUEIL *********/
 /*******************************************************/
 #ecran1{
-	background-color: #DAEFC9;
+	background-color: #e1ecff;
 	text-align: center;
 }
 #containerAccueil{
@@ -122,18 +122,27 @@ main{
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9f5e3+0,f7edb9+42,ffffff+100&1+0,0+58 */
 	/* FF3.6-15 */
 	/*background: -moz-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%, rgba(247,237,185,0.28) 42%, rgba(249,242,204,0) 58%, rgba(255,255,255,0) 100%); */
-	background: -moz-radial-gradient(center, ellipse cover, rgba(241, 242, 190, 1) 0%, rgba(155, 223, 110,0.28) 42%, rgba(200, 231, 108,0) 100%, rgba(255,255,255,0) 100%); 
+	/*background: -moz-radial-gradient(center, ellipse cover, rgba(241, 242, 190, 1) 0%, rgba(155, 223, 110,0.28) 42%, rgba(200, 231, 108,0) 100%, rgba(255,255,255,0) 100%); */
 	/* Chrome10-25,Safari5.1-6 */
 	/*background: -webkit-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); */
-	background: -webkit-radial-gradient(center, ellipse cover, rgba(241, 242, 190, 1) 0%, rgba(155, 223, 110,0.28) 42%, rgba(200, 231, 108,0) 100%, rgba(255,255,255,0) 100%); 
+	/*background: -webkit-radial-gradient(center, ellipse cover, rgba(241, 242, 190, 1) 0%, rgba(155, 223, 110,0.28) 42%, rgba(200, 231, 108,0) 100%, rgba(255,255,255,0) 100%); */
 	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	/*background: radial-gradient(ellipse at center, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); */
-	background: radial-gradient(ellipse at center, rgba(241, 242, 190, 1) 0%, rgba(155, 223, 110,0.28) 42%, rgba(200, 231, 108,0) 100%, rgba(255,255,255,0) 100%); 
+	/*background: radial-gradient(ellipse at center, rgba(241, 242, 190, 1) 0%, rgba(155, 223, 110,0.28) 42%, rgba(200, 231, 108,0) 100%, rgba(255,255,255,0) 100%); */
 	/* IE6-9 fallback on horizontal gradient */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f5e3', endColorstr='#00ffffff',GradientType=1 ); 
+	/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f5e3', endColorstr='#00ffffff',GradientType=1 ); */
+
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b2e1ff+0,66b6fc+100;Blue+3D+%236 */
+	background: rgb(178,225,255); /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, rgba(178,225,255,1) 0%, rgba(102,182,252,1) 100%); /* FF3.6-15 */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: radial-gradient(ellipse at center, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', endColorstr='#66b6fc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
-	background-size: 2104% 45%;
+	background-size: 150% 45%;
 }
 
 #navPC li{
@@ -178,7 +187,7 @@ main{
 /* ********* ECRAN 2 - GNav picto 1st *********/
 /*******************************************************/
 #ecran2{
-    background-color: #A8F5A0;
+    background-color: #bdd6ff;
   }
 
 
@@ -228,7 +237,7 @@ main{
 /* ********* ECRAN 3 - Nav picto 2sd *********/
 /*******************************************************/
   #ecran3{
-    background-color: #7FE696;
+    background-color: #9ec3ff;
   }
 
 #containerScreen3{
@@ -267,7 +276,7 @@ main{
 /* ********* ECRAN 4 - Contact *********/
 /*******************************************************/
 #ecran4{
-	background-color: #6AB37F;
+	background-color: #7eafff;
 }
 #containerContact{
 	width: 70%;
@@ -288,7 +297,7 @@ main{
 #contactMap iframe{
 	width: 70%; 
 	height: 22%; 
-	border: 3px solid #0F5300;
+	border: 3px solid #3a97d4;
 	border-radius: 10px;
 }
 #contactMap p{
@@ -326,6 +335,9 @@ main{
 	padding: 0% 1%;
 }
 
+#menuBas{
+	margin-top: 15%;
+}
 
 
 /*******************************************************/
@@ -418,10 +430,10 @@ main .flexslider{
 	text-decoration: none;
 }
 .pagination a:hover, .pagination a:focus{
-	background-color: #CCD897;
+	background-color: #4c93d1;
 }
 .active a{
-	background-color: #CCD897;
+	background-color: #4c93d1;
 
 }
 
@@ -547,7 +559,7 @@ table a:hover, table a:focus{
 }
 #contactPage iframe{
 	float: left;
-	border: 5px solid #0F5300;
+	border: 5px solid #3a97d4;
 	border-radius: 10px;
 }
 #contactPage p{
@@ -573,12 +585,12 @@ table a:hover, table a:focus{
 
 .boutonOr a{
 	padding: 3%;
-	border: 1px solid #fefad8;
+	border: 1px solid #3a97d4;
 	border-radius: 10px;
-	background-color: #3c7b51;
-	-webkit-box-shadow: 0px 0px 0px 3px #52a44e;
-    -moz-box-shadow: 0px 0px 0px 3px #52a44e;
-    box-shadow: 0px 0px 0px 3px #52a44e;
+	background-color: #b0b3bc;
+	-webkit-box-shadow: 0px 0px 0px 3px #3a97d4;
+    -moz-box-shadow: 0px 0px 0px 3px #3a97d4;
+    box-shadow: 0px 0px 0px 3px #3a97d4;
     transition-property:background-color, box-shadow;
 	transition-duration: 0.5s, 0.5s;
 }
@@ -643,7 +655,7 @@ form label {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     margin: 0px 0px 10px 0px;
-    border: 1px solid #FDF8A1;
+    border: 1px solid #3a97d4;
     padding: 20px;
     /*background: #80A874;*/
     box-shadow: inset 0px 0px 15px #DEF883;
@@ -673,8 +685,8 @@ form label {
 }
 .formStyle  input[type=submit],
 .formStyle  input[type=button]{
-    background: #3c7b51;
-    border: 1px solid #52a44e;
+	background: #71b2ef;
+    border: 1px solid #3a97d4;
     padding: 5px 15px 5px 15px;
     color: #fefad8;
     border-radius: 10px;
@@ -683,8 +695,8 @@ form label {
 .formStyle  input[type=submit]:hover,
 .formStyle  input[type=button]:hover{
 	cursor:  pointer;
-	background: #E6D383;
-    color: #4E845E;
+    background: #3c7b51;
+    color: #3a97d4;
 }
 
 

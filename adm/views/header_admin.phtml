@@ -5,7 +5,7 @@
         <title>Admin <?=$config['nom_site']?></title>
         <meta name="description" content="Section d'aminitration du site <?=$config['nom_site']?>">
         <meta name="viewport" content="width=device-width">
-        <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+        <!-- <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'> -->
         <!-- ajout de la meta base à cause de rewrite url -->
         <!-- <base href="/repertoire/adm/"> -->
         <base href="<?=str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME'])?>">
@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.css">
         <script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
         
-
         <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/admin.css">
         <style type="text/css">
             #main-container{margin-top: 50px;}
@@ -32,4 +31,5 @@
         <main>
         <?php endif ?>
         <div class="container" id="main-container">
-            <?php var_dump($_GET) ?>
+            <img id="logoBG" src="../img/goutte.png">
+            <?php //var_dump($_GET) ?>

@@ -1,4 +1,4 @@
-#logoBG{
+/*#logoBG{
 	position: fixed;
 	display: block;
 	margin: 0 auto;
@@ -6,7 +6,16 @@
 	margin-left: 250px;
 	z-index: 0;
 }
+*/
 
+#logoBG{
+	position: fixed;
+	display: block;
+	margin: 0 auto;
+	margin-left: 25%;
+	z-index: -1;
+	opacity: 0.3;
+}
 
 /* CONNEXION */
 
@@ -17,6 +26,7 @@ fieldset#connexion {
 	height: 130px;
 	margin: 50px auto;
 	background: #EFEFEF url(../../../img/login/main.png) 30px 50% no-repeat;
+	z-index: 10;
 }
 
 fieldset#connexion input {

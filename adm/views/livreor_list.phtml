@@ -34,6 +34,7 @@ if($erreur != ""):
             <th>Nom</th>
             <th>Date</th>
             <th>Message</th>
+            <th>Visible</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -47,10 +48,18 @@ if($erreur != ""):
                 <?= date("j M Y à H\hi", strtotime($message['date'])) ?>
             </td>
             <td data-title="Message">
-                <?= $message['text'] ?>
+                <?= substr($message['text'], 0, 50) . '...' ?>
             </td>
+            <td data-title="Visible">
+                <?php if($message['visible_livreor']):?>
+                    <span class="glyphicon glyphicon-ok-circle" style="color:green"></span>
+                <?php else : ?>
+                    <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
+                <?php endif?>
+            </td>             
             <td data-title="Action">
-                <a href="livreor/del/<?= $message['id']?>/" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
+                <a href="livreor/del/<?= $message['id']?>/" class="btn btn-danger"  title="Suppression"><span class="glyphicon glyphicon-trash"></span></a>
+                <a href="livreor/mod/<?= $message['id']?>/" class="btn btn-success"title="Editer"><span class="glyphicon glyphicon-pencil"></span></a>                
             </td>
         </tr>
     <?php endforeach ?>

@@ -12,6 +12,13 @@
                                 Déconnexion  <?= $_SESSION['login'] ?>
                             </a>
                         </li>
+                        <?php if($message_livreor_check > 0) :?>
+                        <li class="active">
+                            <a href="livreor/list/" style="color:red">
+                                <?= $message_livreor_check ?> message(s) dans le livre d'Or à valider.
+                            </a>
+                        </li>
+                        <?php endif ?>
                     </ul>
                 </div>
             </nav>

@@ -182,7 +182,10 @@ switch ($_GET['action']) {
 
 		//traitement du retour du formulaire
 		if(count($_POST) > 0){
-		    $suppression = $oUser->delete();
+			if($oUser->fields['id'] != 1)
+		    	$suppression = $oUser->delete();
+		    else
+		    	$suppression = false;
 
 		    if(!$suppression){
 		        $erreur = "Problème lors de la suppression de l'utilisateur &laquo;";

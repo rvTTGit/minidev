@@ -88,7 +88,7 @@ class News extends Model{
         $retour = [];
         $limit = $config['news_par_page'];
 
-        $query = 'SELECT `news`.* FROM '. $this->table ;
+        $query = 'SELECT `news`.*, `sections`.nom as nomSection, `sections`.tag as tagSection FROM '. $this->table ;
         $query .= ' JOIN `sections` ON `news`.section = `sections`.id ';
         $query .= ' WHERE `sections`.tag='.$this->db->quote($section);
         $query .= ' AND `news`.visible=1';
@@ -166,7 +166,7 @@ class News extends Model{
         // definition de l offset
         $offset = ($page-1) * $config['news_par_page'];
 
-        $query = 'SELECT news.*, sections.`nom` AS section, sections.`nom` AS tag , users.nom AS auteur, users.droit AS droit ';
+        $query = 'SELECT news.*, sections.`nom` AS section, sections.`tag` AS tag , users.nom AS auteur, users.droit AS droit ';
         $query .= 'FROM news INNER JOIN users ON news.auteur = users.id ';
         $query .= 'JOIN `sections` ON `news`.section = `sections`.id ';
         // $query .= 'WHERE ';        
@@ -176,7 +176,7 @@ class News extends Model{
             // $query .= ' `sections`.id='.$this->db->quote($section);        
 
         $query .= ' ORDER BY date DESC LIMIT ' . $offset .', '. $config['news_par_page'];
-        echo "query:" . $query . "<br/>"; 
+        // echo "query:" . $query . "<br/>"; 
         $this->query = $query;
         $query_result = $this->db->query($query);
         if(!$query_result){

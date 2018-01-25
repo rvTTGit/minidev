@@ -35,7 +35,15 @@ class Sections extends Model{
 
     public function getListAll(){
         // définition de la requete
-        $query = 'SELECT * FROM ' . $this->table . ' ORDER BY `position` ASC';
+        $query = 'SELECT * FROM ' . $this->table ;
+        //récupération de la liste des modules actifs
+        $oConfigs = new Configs();
+        $tab_modules = $oConfigs->getConfigModules();
+        // si le module livreor n'est pas actif, on retire cette section de la liste
+        if(!$tab_modules['livreor'])
+            $query .= ' WHERE  `tag` != "livreor"';
+
+        $query .= ' ORDER BY `position` ASC';
         $this->query = $query;
         // éxécution de la requete
         $resultat = $this->db->query($query);

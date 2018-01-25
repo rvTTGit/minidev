@@ -1,6 +1,6 @@
 <?php
 include('header_admin.phtml'); ?>
-<img id="logoBG" src="../img/logoBG.png">
+<img id="logoBG" src="../img/goutte.png">
 <h2>Home de l'admin</h2>
 <?php 
 if($erreur != ""):
@@ -27,6 +27,7 @@ if($erreur != ""):
 <!-- <div class="container"> -->
 <div class="container-fluid">
     <div class="row">
+        <?php if($_SESSION['droit'] <=2  && $tab_modules['users']) : ?>
         <div class="col-md-3">
         <p>
         <a href="users/add/" class="btn btn-info btn-lg">
@@ -34,7 +35,9 @@ if($erreur != ""):
         </a>
         </p> 
         </div>
+        <?php endif ?>
 
+        <?php if($_SESSION['droit'] <=2  && $tab_modules['configs']) : ?>
         <div class="col-md-3">
         <p>
         <a href="configs/list/" class="btn btn-info btn-lg">
@@ -42,9 +45,9 @@ if($erreur != ""):
         </a>
         </p> 
         </div>
-    </div>
-    
-    <div class="row">
+        <?php endif ?>
+
+        <?php if($_SESSION['droit'] <=2  && $tab_modules['sections']) : ?>
         <div class="col-md-3">
         <p>
         <a href="sections/add/" class="btn btn-info btn-lg">
@@ -52,7 +55,8 @@ if($erreur != ""):
         </a>
         </p>   
         </div>
-    </div> 
+        <?php endif ?>
+
         <div class="col-md-3">
         <p>
         <a href="articles/add/" class="btn btn-info btn-lg">

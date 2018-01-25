@@ -24,8 +24,6 @@
      </br>
     <div class="formStyle" <?= !empty($message) ? 'style="display:none"' : '' ?>>
         <h3>Ecrivez dans le livre d'Or:</h3>
-<!--        <p class="paragraphePage" style="font-size: 2vh;">Ceci n'est pas un formulaire de contact. C'est un espace publique où chacun(e) partage son avis et/ou son expérience de l'institut. </br>
-       Si vous n'avez pas trouver l'information que vous cherchez sur ce site, merci de contacter Anne Boucher, l'esthéticenne, par téléphone au 03 29 25 21 62.</p> -->
        <form method="post">
        <fieldset>
         <label for="field_titre">Nom : </label>
@@ -55,9 +53,10 @@
           <p style="color:red;"><?= $erreurs_champs_form['text'] ?></p>
         <?php endif ?>     
       </fieldset>
+      <input type="hidden" name="visible_livreor" value="0" />
       <br/>
       <input id="field_title" type="submit" value="Publier"/>
-
+    </form>
     </div>
 
 </main>

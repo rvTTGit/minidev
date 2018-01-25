@@ -11,17 +11,17 @@ allow from all
 
 
 #Personnalisation de l'erreur 404
-#exemple si on tape : "http://localhost/wonder/blig.php"
 #il faut mettre le chemin complet depuis la racine du serveur apache
-ErrorDocument 404 /arbreetnature/404.html
+ErrorDocument 404 /ludh2o/404.html
 
 #gestion de l'erreur 403 (Forbidden) et redirection ver la 404 :
-ErrorDocument 403 /arbreetnature/404.php
+ErrorDocument 403 /ludh2o/404.php
 
 
 #re ecriture des urls, transforme nimportequoi.html en paramètre pour l index
 RewriteEngine on
-RewriteRule "item/([0-9]+)/"  "index.php?section=item&id=$1"  [QSA,L]
+#RewriteRule "item/([0-9]+)/"  "index.php?section=item&id=$1"  [QSA,L]
+RewriteRule "([a-z]+)/([0-9]+)/"  "index.php?section=item&id=$2"  [QSA,L]
 RewriteRule "(.*).html"  "index.php?section=$1"  [QSA,L]
 
 #RewriteRule "item.html/([0-9]+)/"  "index.php?section=item&id=$1"  [QSA,L]

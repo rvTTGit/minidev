@@ -1,13 +1,8 @@
 <?php
 session_start();
 
-// issue de config.php wonder n9
-$config = [];
-
-$config['dbname'] = 'arbreetnature';
-$config['dbhost'] = 'localhost';
-$config['dbuser'] = 'arbreetnature';
-$config['dbpassword'] = 'ZyezyzyWpnk6JeNo';
+// chargement de la conf bdd
+include('../script/config.php');
 
 /*-----------------------------------------------------------------------------------------*/
 
@@ -27,6 +22,10 @@ try{
     $oTarifs = new Tarifs();
     $oContacts = new Contacts();
     $oMessages = new Messages();
+
+    //message du footer pour le livre d'or
+    $message_livreor_check = $oMessages->countMessages('livreor', false);
+
 }
 catch(PDOException $e){
     include('views/header.phtml');

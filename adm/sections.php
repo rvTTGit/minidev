@@ -92,7 +92,7 @@ switch ($_GET['action']) {
 	
 	/*---------------------------------------------------------------------*/
 	case 'list':
-		// chargement de la liste des utilisateurs
+		// chargement de la liste des sections
 		$list_sections = $oSections->getListAll();
 		break;
 	/*---------------------------------------------------------------------*/

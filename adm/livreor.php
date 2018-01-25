@@ -48,7 +48,17 @@ switch ($_GET['action']) {
 	case 'del':
 		$action_txt = 'Supprimer';
 		break;
-	
+	/*---------------------------------------------------------------------*/
+	case 'mod':
+		$action_txt = 'Modifier';
+		$regles = ['text' => ['required' => true, 'min' => 10],
+		           'visible_livreor' => ['required' => true, 'max' => 1]
+		          ];
+		// on pré remplit le tableau valeurs_tableau_form avec les clef du tableau de règle
+		foreach ($regles as $key => $value) {
+		    $valeurs_tableau_form[$key] = $oMessages->fields[$key];
+		}
+		break;			
 	/*---------------------------------------------------------------------*/
 	case 'list':
 		// chargement de la liste des messages
@@ -84,11 +94,54 @@ if(count($_POST)) {
 			}
 			break;
 		/*---------------------------------------------------------------------*/
+		case 'mod':
+			if(count($_POST)) {
+			    $form_validation = validate_form($_POST, $regles);
+			    $erreur = $form_validation['erreur'];
+			    $erreurs_champs_form = $form_validation['erreurs_champs'];
+			    $valeurs_tableau_form = $form_validation['valeurs_nettoyees'];
+
+			    // si nous n'avons pas d'erreur, on peut tenter l'enregistrement
+			    if($erreur == ''){
+			    	// si il n y a pas eu de modification on simule l'update poue éviter la suuression inutile des valeurs 
+			    	if(($oMessages->fields['text'] != $valeurs_tableau_form['text']) || ($oMessages->fields['visible_livreor'] != $valeurs_tableau_form['visible_livreor'])){
+				    	//suppression des clefs dans fields inutiles pour l update
+				    	// et chargée lors du get
+				    	unset($oMessages->fields['date']);
+				    	unset($oMessages->fields['contact']);
+				    	unset($oMessages->fields['type']);
+				    	unset($oMessages->fields['prenom']);
+				    	unset($oMessages->fields['nom']);
+				    	unset($oMessages->fields['mail']);
+
+			            $oMessages->fields['text'] = $valeurs_tableau_form['text'];
+			            $oMessages->fields['visible_livreor'] = $valeurs_tableau_form['visible_livreor'];
+
+			            // on enregistre le message
+			        	$insertMsg = $oMessages->save();
+				        if(!$insertMsg){
+				            $erreur = 'Erreur lors de l\'insertion en bdd.';
+				        }
+				        else{
+				            if($oMessages->fields['visible_livreor'])
+				            	$message = 'Message publié!';
+				            else
+				            	$message = 'Message masqué!';
+				            	
+				        }			        	
+			    	}
+			    	else{
+			    		$message = 'Aucune mise à jour effectuée.';
+			    	}
+			    }
+			}		
+			break;
+		/*---------------------------------------------------------------------*/
 		default:
 			break;
 	}
 	//log
-	$oLogs->logAction($_GET['action']." ".$page_category.": ".$message);	
+	$oLogs->logAction($_GET['action']." ".$page_category.": ".$message." - id :".$oMessages->fields['id']);	
 }
 
 //chargement de la vue

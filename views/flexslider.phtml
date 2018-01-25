@@ -1,11 +1,14 @@
 	  <ul class="slides">
 	   <?php foreach($newsSection as $key => $news):?>
 	    <li>
-	      <a href="item/<?= $news['id']?>/<?= urlencode(htmlentities($news['titre']))?>">
+	      <a href="<?= $oSections->fields['tag'] ?>/<?= $news['id']?>/<?= urlencode(htmlentities($news['titre']))?>">
 	      <img src="img/thumb/<?= $news['image'] ?>" alt="<?= $news['titre'] ?>"/>
 
 	      <div class="textFlexslider">
-		      <h4><?= $news['titre'] ?></h4>
+	      	<?php if($nav_en_cours != $news['tagSection']) :?>
+		  		<h3><?= $news['nomSection'] ?>:</h3>
+		  	<?php endif ?>
+		    <h4><?= $news['titre'] ?></h4>
 		      <div class="clear"></div>
 		       <p><?= substr($news['texte'], 0, 50) ?>
 		          ...

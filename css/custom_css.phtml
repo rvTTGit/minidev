@@ -1,15 +1,14 @@
-<!-- ------------------ font ---------------------- --> 
 <?php if(array_key_exists('import_url', $config)) : ?>
 <link href="<?=$config['import_url']?>" rel="stylesheet">
-<?php endif?>
+<?php endif ?>
 <style type="text/css">
   @font-face {
     /*******************************************************/
     /* ********* Sortir le code dur dans style.css *********/
     /*******************************************************/
     /*test 1*/
-    /*font-family: "script-mt-bold";*/
-    /*src: url("fonts/SCRIPTBL.TTF");*/
+    /*font-family: "script-mt-bold";
+    src: url("fonts/SCRIPTBL.TTF");*/
 
     /*test 2*/
     /*font-family: "brush-script-mt-bold";*/
@@ -117,4 +116,9 @@
   #menuBas li a:hover, #menuBas li a:focus{
     color: #<?=$config['couleur_lien_actif'] ?>;
   }
+
+.activeMenu a{
+  color: #<?=$config['couleur_lien_actif'] ?> !important;
+}
+  
 </style>
