@@ -1,7 +1,7 @@
 	  <ul class="slides">
 	   <?php foreach($newsSection as $key => $news):?>
 	    <li>
-	      <a href="<?= $oSections->fields['tag'] ?>/<?= $news['id']?>/<?= urlencode(htmlentities($news['titre']))?>">
+	      <a href="<?= $news['tagSection'] ?>/<?= $news['id']?>/<?= urlencode(htmlentities($news['titre']))?>">
 	      <img src="img/thumb/<?= $news['image'] ?>" alt="<?= $news['titre'] ?>"/>
 
 	      <div class="textFlexslider">
