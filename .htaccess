@@ -11,7 +11,7 @@ allow from all
 
 
 #Personnalisation de l'erreur 404
-#il faut mettre le chemin complet depuis la racine du serveur apache
+#mettre le chemin complet depuis la racine du serveur apache
 ErrorDocument 404 /ludh2o/404.html
 
 #gestion de l'erreur 403 (Forbidden) et redirection ver la 404 :
