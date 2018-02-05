@@ -158,7 +158,10 @@ if( file_exists('views/'.$nav_en_cours.'.phtml') ) {
 			}
 
 			$tab_messages = $oMessages->getMessageFromPageType($page_actuelle,'livreor');
-			$menu_pagination = $oMessages->pagination_menu($page_actuelle,$oMessages->countMessages('livreor'));
+			if($oMessages->countMessages('livreor') > $config['news_par_page'])
+				$menu_pagination = $oMessages->pagination_menu($page_actuelle,$oMessages->countMessages('livreor'));
+		    else
+		    	$menu_pagination = '';			
 		}
 
 		//formulaire de contact
