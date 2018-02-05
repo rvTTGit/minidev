@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Jeu 25 Janvier 2018 à 20:00
--- Version du serveur :  5.5.52-0+deb8u1
--- Version de PHP :  5.6.27-0+deb8u1
+-- Généré le :  Lun 05 Février 2018 à 19:09
+-- Version du serveur :  5.5.59-0+deb8u1
+-- Version de PHP :  5.6.33-0+deb8u1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `ludh2o`
 --
-CREATE DATABASE IF NOT EXISTS `ludh2o` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `ludh2o`;
 
 -- --------------------------------------------------------
 
@@ -138,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `logs` (
   `date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `ip` varchar(100) NOT NULL DEFAULT '',
   `action` varchar(255) NOT NULL DEFAULT ''
-) ENGINE=InnoDB AUTO_INCREMENT=751 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=768 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `logs`
@@ -840,7 +838,24 @@ INSERT INTO `logs` (`id`, `user`, `date`, `ip`, `action`) VALUES
 (747, 1, '2018-01-24 21:39:19', '192.168.10.50', 'list news: '),
 (748, 1, '2018-01-24 21:40:21', '192.168.10.50', 'list news: '),
 (749, 1, '2018-01-24 21:40:28', '192.168.10.50', 'list news: '),
-(750, 1, '2018-01-25 18:37:40', '192.168.10.50', 'Authentification, ip:192.168.10.50');
+(750, 1, '2018-01-25 18:37:40', '192.168.10.50', 'Authentification, ip:192.168.10.50'),
+(751, 1, '2018-01-26 09:33:39', '192.168.10.50', 'Authentification, ip:192.168.10.50'),
+(752, 1, '2018-02-01 09:38:01', '192.168.10.50', 'Authentification, ip:192.168.10.50'),
+(753, 1, '2018-02-05 13:54:23', '192.168.10.50', 'Authentification, ip:192.168.10.50'),
+(754, 24, '2018-02-05 14:30:56', '83.194.125.248', 'Authentification, ip:83.194.125.248'),
+(755, 1, '2018-02-05 15:48:03', '192.168.10.50', 'Authentification, ip:192.168.10.50'),
+(756, 2, '2018-02-05 16:06:04', '192.168.10.50', 'Authentification, ip:192.168.10.50'),
+(757, 1, '2018-02-05 17:04:05', '192.168.10.50', 'mod news: L''article "Twido" est bien en bdd, il porte l''id : 96'),
+(758, 1, '2018-02-05 17:04:47', '192.168.10.50', 'mod news: L''article "Innover" est bien en bdd, il porte l''id : 95'),
+(759, 1, '2018-02-05 17:05:03', '192.168.10.50', 'mod news: L''article "Innover" est bien en bdd, il porte l''id : 95'),
+(760, 1, '2018-02-05 17:48:04', '192.168.10.50', 'mod news: L''article "Twido" est bien en bdd, il porte l''id : 96'),
+(761, 1, '2018-02-05 17:52:08', '192.168.10.50', 'mod news: L''article "Twido" est bien en bdd, il porte l''id : 96'),
+(762, 1, '2018-02-05 17:53:13', '192.168.10.50', 'mod news: '),
+(763, 1, '2018-02-05 17:54:58', '192.168.10.50', 'mod news: L''article "Innover" est bien en bdd, il porte l''id : 95'),
+(764, 1, '2018-02-05 17:55:22', '192.168.10.50', 'mod news: L''article "Innover" est bien en bdd, il porte l''id : 95'),
+(765, 1, '2018-02-05 17:55:47', '192.168.10.50', 'mod news: L''article "Adouci''Eure" est bien en bdd, il porte l''id : 93'),
+(766, 1, '2018-02-05 17:57:14', '192.168.10.50', 'list news: '),
+(767, 1, '2018-02-05 17:57:35', '192.168.10.50', 'mod news: L''article "Mabille" est bien en bdd, il porte l''id : 94');
 
 -- --------------------------------------------------------
 
@@ -912,27 +927,29 @@ CREATE TABLE IF NOT EXISTS `news` (
   `date` datetime NOT NULL,
   `image` varchar(100) NOT NULL,
   `section` smallint(5) unsigned NOT NULL,
-  `visible` tinyint(1) NOT NULL
+  `visible` tinyint(1) NOT NULL,
+  `url_externe` text NOT NULL,
+  `code_video_youtube` text NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `news`
 --
 
-INSERT INTO `news` (`id`, `titre`, `texte`, `auteur`, `date`, `image`, `section`, `visible`) VALUES
-(69, 'pillage des noisetiers', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2018-01-22 20:36:05', '20170416_185127.jpg', 1, 0),
-(70, 'plantage de capucines,  soucis et bourrache', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2018-01-22 10:25:16', '20170416_185007.jpg', 1, 0),
-(73, 'Pour canards', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et commodo orci. Vivamus eu diam tristique, luctus diam volutpat, blandit ex. Sed in diam volutpat, faucibus ligula nec, placerat erat. Mauris a risus lacinia, elementum elit id, venenatis dolor. Vestibulum quis odio rutrum, condimentum nisl non, porta velit. Quisque lacinia commodo mollis. Quisque eu bibendum arcu, non varius nisl. Pellentesque sed massa dignissim, finibus dolor id, tincidunt diam. Nunc laoreet quam quis sapien placerat, nec pulvinar velit efficitur. Proin ac augue ante. Nunc in vestibulum urna. Pellentesque congue vestibulum lectus vel dignissim. Praesent ut facilisis nibh, vel tristique lorem. Cras in mauris nulla. Proin mattis, magna nec elementum eleifend, erat lectus pellentesque tortor, luctus posuere augue enim id massa. Suspendisse sed euismod metus, sed commodo nisl', 1, '2018-01-22 20:36:55', '20170409_114957.jpg', 8, 1),
-(87, 'Plein de cuivre cintré!', 'c''est beau mais c''est du boulot!!', 2, '2018-01-22 01:38:27', 'WP_20170615_003.jpg', 25, 1),
-(88, 'Pose d''un chauffe eau', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.\r\n', 2, '2018-01-23 12:54:14', 'WP_20170510_002.jpg', 27, 1),
-(89, 'des tuyaux', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.\r\n', 2, '2018-01-24 00:28:15', 'WP_20170510_003.jpg', 26, 1),
-(90, 'installation d''un lavabo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.\r\n', 2, '2018-01-24 00:28:00', 'WP_20170609_004.jpg', 26, 1),
-(91, 'L''art d''esquiver une prise', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.\r\n', 2, '2018-01-23 12:56:25', 'WP_20170622_005.jpg', 26, 1),
-(92, 'Mise en place de plein de vannes', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.\r\n', 2, '2018-01-23 12:57:33', 'WP_20170704_002.jpg', 8, 1),
-(93, 'Adouci''Eure', 'Spécialistes de la purification et du traitement de l''eau au travers de systèmes de filtration : adoucisseurs, osmoseurs, déferrisseurs ,cartouches de filtrations,dosage de produit chimique etc...\r\n&lt;br/&gt;\r\nSitué dans l''Eure en Normandie, ils fournissent une expertise, un service et du matériel de qualité aux meilleurs prix pour les professionnels comme pour les particuliers.\r\n&lt;br/&gt;\r\n&lt;a href=&quot;http://www.adouci-eure.fr&quot; title=&quot;voir le site www.adouci-eure.fr&quot; target=&quot;_blank&quot;&gt;Visitez leur site web&lt;/a&gt;', 2, '2018-01-24 00:19:41', 'adouci-eure.png', 24, 1),
-(94, 'Mabille', 'MABILLE est une société de négoce, dont le métier est de rendre possible et facile la distribution de produits entre les fabricants, les professionnels et les particuliers.\r\n&lt;br/&gt;\r\n&lt;br/&gt;\r\n&lt;a href=&quot;http://www.mabille.fr/&quot; title=&quot;voir le site www.mabille.fr&quot; target=&quot;_blank&quot;&gt;Visitez leur site web&lt;/a&gt;', 2, '2018-01-24 00:20:31', 'mabille.jpg', 23, 1),
-(95, 'Innover', ' Entreprise reconnue\r\n&quot;Grenelle de l’environnement&quot; et &quot;QUALIBOIS&quot;\r\n&lt;br/&gt;\r\n&lt;a href=&quot;http://www.innover.eu/&quot; title=&quot;voir le site www.innover.eu&quot; target=&quot;_blank&quot;&gt;Visitez leur site web&lt;/a&gt;', 2, '2018-01-24 19:46:50', 'innover.png', 24, 1),
-(96, 'Twido', 'Une solution innovante et bien pensée pour votre chauffe eau.\r\n\r\n&lt;iframe width=&quot;450&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/qo8Seg0D28k&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen&gt;&lt;/iframe&gt;\r\n\r\n&lt;br/&gt; &lt;a href=&quot;https://www.twido.fr/&quot; title=&quot;voir le site www.twido.fr&quot; target=&quot;_blank&quot;&gt;Visitez leur site web&lt;/a&gt;', 2, '2018-01-24 22:35:21', 'twido.png', 24, 1);
+INSERT INTO `news` (`id`, `titre`, `texte`, `auteur`, `date`, `image`, `section`, `visible`, `url_externe`, `code_video_youtube`) VALUES
+(69, 'pillage des noisetiers', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2018-01-22 20:36:05', '20170416_185127.jpg', 1, 0, '', ''),
+(70, 'plantage de capucines,  soucis et bourrache', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.', 1, '2018-01-22 10:25:16', '20170416_185007.jpg', 1, 0, '', ''),
+(73, 'Pour canards', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et commodo orci. Vivamus eu diam tristique, luctus diam volutpat, blandit ex. Sed in diam volutpat, faucibus ligula nec, placerat erat. Mauris a risus lacinia, elementum elit id, venenatis dolor. Vestibulum quis odio rutrum, condimentum nisl non, porta velit. Quisque lacinia commodo mollis. Quisque eu bibendum arcu, non varius nisl. Pellentesque sed massa dignissim, finibus dolor id, tincidunt diam. Nunc laoreet quam quis sapien placerat, nec pulvinar velit efficitur. Proin ac augue ante. Nunc in vestibulum urna. Pellentesque congue vestibulum lectus vel dignissim. Praesent ut facilisis nibh, vel tristique lorem. Cras in mauris nulla. Proin mattis, magna nec elementum eleifend, erat lectus pellentesque tortor, luctus posuere augue enim id massa. Suspendisse sed euismod metus, sed commodo nisl', 1, '2018-01-22 20:36:55', '20170409_114957.jpg', 8, 1, '', ''),
+(87, 'Plein de cuivre cintré!', 'c''est beau mais c''est du boulot!!', 2, '2018-01-22 01:38:27', 'WP_20170615_003.jpg', 25, 1, '', ''),
+(88, 'Pose d''un chauffe eau', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.\r\n', 2, '2018-01-23 12:54:14', 'WP_20170510_002.jpg', 27, 1, '', ''),
+(89, 'des tuyaux', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.\r\n', 2, '2018-01-24 00:28:15', 'WP_20170510_003.jpg', 26, 1, '', ''),
+(90, 'installation d''un lavabo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.\r\n', 2, '2018-01-24 00:28:00', 'WP_20170609_004.jpg', 26, 1, '', ''),
+(91, 'L''art d''esquiver une prise', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.\r\n', 2, '2018-01-23 12:56:25', 'WP_20170622_005.jpg', 26, 1, '', ''),
+(92, 'Mise en place de plein de vannes', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum.\r\n', 2, '2018-01-23 12:57:33', 'WP_20170704_002.jpg', 8, 1, '', ''),
+(93, 'Adouci''Eure', 'Spécialistes de la purification et du traitement de l''eau au travers de systèmes de filtration : adoucisseurs, osmoseurs, déferrisseurs ,cartouches de filtrations,dosage de produit chimique etc...\r\n&lt;br/&gt;\r\nSitué dans l''Eure en Normandie, ils fournissent une expertise, un service et du matériel de qualité aux meilleurs prix pour les professionnels comme pour les particuliers.\r\n', 2, '2018-02-05 18:55:47', 'adouci-eure.png', 24, 1, 'http://www.adouci-eure.fr', ''),
+(94, 'Mabille', 'MABILLE est une société de négoce, dont le métier est de rendre possible et facile la distribution de produits entre les fabricants, les professionnels et les particuliers.\r\n', 2, '2018-02-05 18:57:35', 'mabille.jpg', 23, 1, 'http://www.mabille.fr', ''),
+(95, 'Innover', ' Entreprise reconnue\r\n&quot;Grenelle de l’environnement&quot; et &quot;QUALIBOIS&quot;\r\n&lt;br/&gt;', 2, '2018-02-05 18:55:22', 'innover.png', 24, 1, 'http://www.innover.eu/', ''),
+(96, 'Twido', 'Une solution innovante et bien pensée pour votre chauffe eau.\r\n', 2, '2018-02-05 18:52:08', 'twido.png', 24, 1, 'https://www.twido.fr/', 'qo8Seg0D28k');
 
 -- --------------------------------------------------------
 
@@ -1141,7 +1158,7 @@ MODIFY `id` int(5) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT pour la table `logs`
 --
 ALTER TABLE `logs`
-MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=751;
+MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=768;
 --
 -- AUTO_INCREMENT pour la table `messages`
 --

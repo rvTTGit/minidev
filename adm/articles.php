@@ -91,6 +91,8 @@ switch ($_GET['action']) {
 		           'auteur' => ['required' => true, 'max' => 50],
 		           'section' => ['required' => true, 'max' => 50],
 		           'texte' => ['required' => true, 'min' => 10],
+		           'url_externe' => ['required' => false],
+		           'code_video_youtube' => ['required' => false],
 		           'visible' => ['required' => false, 'max' => 1],
 		           'image' => ['uploaded' => true, 'function' => 'is_image']
 		          ];
@@ -107,6 +109,8 @@ switch ($_GET['action']) {
 		           'auteur' => ['required' => true, 'max' => 50],
 		           'section' => ['required' => true, 'max' => 50],
 		           'texte' => ['required' => true, 'min' => 10],
+		           'url_externe' => ['required' => false],
+		           'code_video_youtube' => ['required' => false],
 		           'visible' => ['required' => false, 'max' => 1],
 		           // mettre « false » à uploaded va vérifier l’upload, mais ne
 		           // va pas provoquer d’erreur si aucun fichier n’est envoyé

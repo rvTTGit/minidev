@@ -19,6 +19,14 @@
     <p>Postée par <?= $article['auteur'] ?> le <?= $article['date'] ?></p>
     <p><img src="../img/thumb/<?= $article['image'] ?>" alt="<?= $article['titre'] ?>"/></p>
     <p><?= $article['texte'] ?></p>
+
+    <?php if(!empty($article['code_video_youtube'])) :?>
+    <p><iframe width="450" height="315" src="https://www.youtube.com/embed/<?= $article['code_video_youtube'] ?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+    <?php endif ?>
+
+    <?php if(!empty($article['url_externe'])) :?>
+    <p><a href="<?= $article['url_externe'] ?>" title="voir le site <?= $article['url_externe'] ?>" target="_blank">Visitez leur site web</a></p>
+    <?php endif ?>
 </div>
 <?php endif ?>
 
@@ -72,6 +80,26 @@
         <label for="id_texte" class="control-label">Texte :</label>
         <textarea id="id_texte" name="texte" class="form-control"><?= $valeurs_tableau_form['texte'] ?></textarea>
         <?php if(isset($erreurs_champs_form['texte'])) { ?>
+        <p class="help-block">
+        <?= $erreurs_champs_form['texte'] ?>
+        </p>
+        <?php } ?>
+    </div>
+
+    <div class="form-group<?=isset($erreurs_champs_form['url_externe']) ? ' has-error' : '' ?>">
+        <label for="id_url_externe" class="control-label">Adresse du site web:</label>
+        <input type="text" id="id_url_externe" name="url_externe" class="form-control" value="<?= $valeurs_tableau_form['url_externe'] ?>" />
+        <?php if(isset($erreurs_champs_form['url_externe'])) { ?>
+        <p class="help-block">
+        <?= $erreurs_champs_form['url_externe'] ?>
+        </p>
+        <?php } ?>
+    </div>
+
+    <div class="form-group<?=isset($erreurs_champs_form['code_video_youtube']) ? ' has-error' : '' ?>">
+        <label for="id_code_video_youtube" class="control-label">Code de la vidéo youtube:</label>
+        <input type="text" id="id_code_video_youtube" name="code_video_youtube" class="form-control" value="<?= $valeurs_tableau_form['code_video_youtube'] ?>" />
+        <?php if(isset($erreurs_champs_form['code_video_youtube'])) { ?>
         <p class="help-block">
         <?= $erreurs_champs_form['texte'] ?>
         </p>
