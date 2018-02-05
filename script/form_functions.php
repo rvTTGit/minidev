@@ -239,8 +239,10 @@ function create_thumbnail($file) {
     //stockage de l original
     $image->writeImage('../img/item/'.$nom_fichier);
     // création de la miniature
-    $image->cropThumbnailImage($config['taille_miniatures'][0],
-                               $config['taille_miniatures'][1]);
+    // $image->cropThumbnailImage($config['taille_miniatures'][0],
+    //                           $config['taille_miniatures'][1]);
+    $image->resizeImage($config['taille_miniatures'][0],$config['taille_miniatures'][1],Imagick::FILTER_LANCZOS,1);    
     $image->writeImage('../img/thumb/'.$nom_fichier);
+    $image->destroy();
     return $nom_fichier;
 }
