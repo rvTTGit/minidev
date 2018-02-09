@@ -51,6 +51,12 @@ a{
 a:hover{
 	color: #ea904e;
 }
+a:active{
+	color: #862020;
+}
+.activeMenu a{
+		color: #862020;
+}
 .clear{
 	clear: both;
 }
@@ -336,9 +342,10 @@ main{
 	padding-bottom: 2%;
 }
 #contactMap{
-	width: 40%;
+	width: 45%;
 	height: 72%;
-	float: left;
+	/*float: left;*/
+	display: inline-block;
 }
 #contactMap iframe{
 	width: 70%; 
@@ -366,6 +373,7 @@ main{
 #livreOr{
 	width: 45%;
 	float: right;
+	/*display: inline-block;*/
 }
 #livreOr li{
 	width: 90%;
@@ -419,7 +427,7 @@ main{
 /* ********* HEADER *********/
 /*******************************************************/
 header{
-	width: 60%;
+	width: 100%;
 	margin: 0 auto;
 	position: relative;
 	z-index: 1;
@@ -429,6 +437,25 @@ header li{
 	padding-left: 5px;
 }
 
+#containerAccueilSection{
+	/*padding-top: 9%;*/
+    margin: 0 auto;
+	width: 100%;
+	height: 100%;
+}
+#containerHeadSection{
+	width: 100%;
+	height: 15%;
+	display: block;
+	text-align: center;
+	background-color: #e7f5f9;
+}
+#containerHeadSection #containerHeadTxt{
+ 	padding-top: 0%;
+}
+#containerAccueilSection #navPC{
+	text-align: center;
+}
 /*******************************************************/
 /* ********* FOOTER *********/
 /*******************************************************/

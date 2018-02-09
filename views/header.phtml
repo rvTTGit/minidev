@@ -62,20 +62,27 @@
 
 <body>
 <header>
-      <a class="btn btn-navbar" id="btnMenu" href="#menuBas">
+     <!--  <a class="btn btn-navbar" id="btnMenu" href="#menuBas">
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
-  </a>
+  </a> -->
   <nav id="navMobile">
     <?php include('menu.phtml');?>
   </nav>
-      
-  <h1><a href="home.html"><img id="logoPage" src="img/logoNew.png" alt="Logo <?=$config['nom_site']?>" /></a><?=$config['nom_site']?></h1>
-  <!-- <nav class="navPcPage"> -->
-  <nav class="navPcPage">
-    <?php include('menu.phtml');?>
-  </nav>
+    <div id="containerAccueilSection">
+      <div id="containerHeadSection">
+        <div id="containerHeadTxt">
+          <img id="logoHome" src="img/logoH2oSansFond.png" alt="Logo <?=$config['nom_site']?>">
+          <h1 id="h1Home"><?=$config['titre_home']?><h1>
+          <h4 id="h4Home"><?=$config['slogan']?></h4>
+          <!-- <h5 id="h5Home"><?=$config['sous_titre_home']?></h2> -->
+        </div>
+    </div>
+    <nav id="navPC">
+      <?php include('menu.phtml');?>
+    </nav>
+
   <div class="clear"></div>
 
 </header>
