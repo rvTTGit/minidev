@@ -264,6 +264,12 @@ function create_thumbnail_section($file) {
     $nom_fichier = get_unique_filename(htmlspecialchars($file['name']),'section');
     //stockage de l original
     $image->writeImage('../img/section/'.$nom_fichier);
+
+    //modification de l'image => flou
+    $image->blurImage(0,8);    
+    $image->writeImage('../img/section/hover_'.$nom_fichier);
+
+
     // création de la miniature
     // $image->resizeImage($config['taille_miniatures'][0],$config['taille_miniatures'][1],Imagick::FILTER_LANCZOS,1);    
     // $image->writeImage('../img/thumb/'.$nom_fichier);

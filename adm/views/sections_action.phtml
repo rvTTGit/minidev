@@ -126,6 +126,13 @@
 
     <div class="form-group<?=isset($erreurs_champs_form['image']) ? ' has-error' : '' ?>">
         <label for="id_image" class="control-label">Image :</label>
+
+        <?php if($valeurs_tableau_form['image'] != ''):?>
+            <img src="../img/section/<?= $valeurs_tableau_form['image']?>" alt="<?= $valeurs_tableau_form['nom']?>" height="50"> 
+        <?php else : ?>
+            <span class="glyphicon glyphicon-ban-circle" style="color:red"></span>
+        <?php endif?>
+        
         <input type="file" id="id_image" name="image" />
         <?php if(isset($erreurs_champs_form['image'])) { ?>
         <p class="help-block">
