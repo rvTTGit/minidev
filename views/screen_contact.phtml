@@ -5,47 +5,56 @@
           <iframe src="<?=$config['url_google_map']?>" frameborder="0" allowfullscreen>
           </iframe>
           <p><?=$config['adresse']?> <br/> <?=$config['cp']?> <?=$config['ville']?>
-          <br/>Nos horaires :
-          <br/>Lundi : Fermé
+          <br/><?=$config['tel']?>
+          </p>
+
+          <h5>Nos horaires :</h5>
+          <p>
+          Lundi : Fermé
           <br/>Mardi, Mercredi, Jeudi et Vendredi : 9h00 à 12h00 - 14h00 à 19h00
           <br/>Samedi : 10h00 à 14h00 
           <br/>Dimanche : Fermé
-          <br/><?=$config['tel']?>
           </p>
         </div>
 
+        <!-- module livreor -->
         <?php if($tab_modules['livreor']) : ?>
         <div id="livreOr">
           <h4>Livre d'Or</h4>
           <ul>
            <?php foreach($tab_messages as $message):?> 
             <li>
-              <p>Posté par <span style="width:50%; color: #EE7A91;"> <?= $message['prenom'] ?> </span> le <?= date("j M Y à H\hi", strtotime($message['date'])) ?></p>
+              <p>Posté par <span style="width:50%; color: #c95500;"> <?= $message['prenom'] ?> </span> le <?= date("j M Y à H\hi", strtotime($message['date'])) ?></p>
               <p><?= $message['text'] ?></p>
             </li>
           <?php endforeach ?>
-          </ul>
-          
+          </ul>          
         </div>
+        <?php endif ?>      
         <div class="clear"></div>
-        <div class="boutonOr lienLivreOrContact"><a href="livreor.html">Ecrivez dans le Livre d'Or</a></div>
-        <?php endif ?>
-
-        <!-- formulaire de contact -->
+          
+        <!-- module formulaire de contact -->
         <?php if($tab_modules['form_contact']) : ?>
-        <div class="clear"></div>
         <div class="boutonOr lienLivreOrContact"><a href="contact.html">Formulaire de contact</a></div>
-        <?php endif ?>        
+        <?php endif ?>  
+
+        <!-- module livreor -->
+        <?php if($tab_modules['livreor']) : ?>
+        <div class="boutonOr lienLivreOrContact"><a href="livreor.html">Ecrivez dans le Livre d'Or</a></div>
+        <?php endif ?>      
 
         <div class="clear"></div>
+
+       
+
+       
         <noscript>
           <nav id="menuBas">
             <?php include('menu.phtml');?>          
           </nav>
         </noscript>
 
-        <nav id="menuBas">
-          <?php include('menu.phtml');?>
-        </nav>
-
+          <nav id="menuBas">
+            <?php include('menu.phtml');?>
+          </nav>
       </div>

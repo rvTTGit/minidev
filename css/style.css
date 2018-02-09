@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Bubbler+One|Dancing+Script|El+Messiri|Grand+Hotel|Marck+Script|Pompiere|Tangerine|The+Girl+Next+Door');
+@import url('https://fonts.googleapis.com/css?family=Bubbler+One|Dancing+Script|Josefin+Sans|El+Messiri|Grand+Hotel|Marck+Script|Pompiere|Tangerine|The+Girl+Next+Door');
 
 body,html{
 	width: 100%;
@@ -13,20 +13,25 @@ body,html{
     /*font-family: 'Pompiere', cursive;*/
 
 }
+	#indexHtml, #indexhtml body{
+		background-color: #e7f5f9;
+	}
 
 h1{
-	font-size: 6vh;
+	font-size: 5vh;
 	font-weight: 200;
+	margin: 0;
 }
 h2{
 	margin: 0;
 	padding: 1%;
+	color: #e7f5f9;
 }
 h3{
 	font-size: 3vh;
 }
 h4{
-	font-size: 2.5vh;
+	font-size: 2vh;
 	margin: 0;
 }
 p{
@@ -34,11 +39,18 @@ p{
 }
 li{
 	list-style-type: none;
+	color: #e7f5f9;
 }
 strong{
 	font-weight: normal; 
 }
-
+a{
+	text-decoration:none;
+	color: #297da4;
+}
+a:hover{
+	color: #ea904e;
+}
 .clear{
 	clear: both;
 }
@@ -54,7 +66,7 @@ strong{
 .spacer {
 	text-align: center;
 	min-height: 100px;
-	background-color: #77c3ef; /*#B7D771 #ABBC56 #C0D45C*/
+	background-color: #183c5d; /*#B7D771 #ABBC56 #C0D45C*/
 }
 .spacer.s0 {
 	min-height: 1px;
@@ -74,9 +86,7 @@ strong{
 	opacity:0;
 }
 
-#containerHead{
-	display: inline;
-}
+
 main{
 	width: 60%;
 	min-height: 70%;
@@ -89,6 +99,7 @@ main{
 	width: 10%;
 	/*padding: 2% 0%;*/
 }
+
 
 /*******************************************************/
 /* ********* NAV MOBILE *********/
@@ -105,44 +116,92 @@ main{
 /* ********* ECRAN 1 - ACCUEIL *********/
 /*******************************************************/
 #ecran1{
-	background-color: #e1ecff;
+	  background-color: #9ac3dd;
+}
+
+.motifScreen{
+	width: 100%;
+	height: 100%;
+	background :radial-gradient(#ffffff1a 15%, transparent 15%) 0 0, 
+	radial-gradient(#ffffff4d 15%, transparent 15%) 16px 16px, 
+	radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px, 
+	radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 16px 17px;
+  background-size: 32px 32px;
+	/* Rayures : 
+	background: repeating-linear-gradient(45deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 10px,
+    rgba(0, 0, 0, 0.3) 10px,
+    rgba(0, 0, 0, 0.3) 20px) 100% 100%;*/
 	text-align: center;
 }
+
 #containerAccueil{
-	padding-top: 10%;
+	padding-top: 9%;
     margin: 0 auto;
-	width: 60%;
+	width: 100%;
 	height: 100%;
+}
+#containerHead{
+	width: 100%;
+	height: 15%;
+	display: block;
+	text-align: center;
+	background-color: #e7f5f9;
+}
+#containerHeadTxt{
+ width: 30%;
+ margin: 0 auto;
+ padding-top: 3%;
+}
+#logoHome{
+	margin: 0 auto;
+	width: 8%;
+	/*padding-top: 4%;*/
+/*	background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 20%); /* FF3.6-15 */
+/*background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 20%); /* Chrome10-25,Safari5.1-6 */
+/*background: radial-gradient(ellipse at center, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 20%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+#logoHome, #h1Home, #h4Home, #h5Home{
+	display: block;
+}
+#h1Home{
+	color: #00aeff;
+	/*margin-top: -3%;*/
+}
+#h4Home{
+	color: #ea904e;
+	margin-top:-5%;
+}
+#h5Home{
+	font-family: Josefin Sans, sans-serif;
+	font-weight: 200;
+
+}
+
+#h2Home{
+	width: 39%;
+	vertical-align: top;
 }
 
 
 /***** NAV *****/
 #navPC{
-	padding: 2%;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9f5e3+0,f7edb9+42,ffffff+100&1+0,0+58 */
-	/* FF3.6-15 */
-	/*background: -moz-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%, rgba(247,237,185,0.28) 42%, rgba(249,242,204,0) 58%, rgba(255,255,255,0) 100%); */
-	/*background: -moz-radial-gradient(center, ellipse cover, rgba(241, 242, 190, 1) 0%, rgba(155, 223, 110,0.28) 42%, rgba(200, 231, 108,0) 100%, rgba(255,255,255,0) 100%); */
-	/* Chrome10-25,Safari5.1-6 */
-	/*background: -webkit-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); */
-	/*background: -webkit-radial-gradient(center, ellipse cover, rgba(241, 242, 190, 1) 0%, rgba(155, 223, 110,0.28) 42%, rgba(200, 231, 108,0) 100%, rgba(255,255,255,0) 100%); */
-	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	/*background: radial-gradient(ellipse at center, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); */
-	/*background: radial-gradient(ellipse at center, rgba(241, 242, 190, 1) 0%, rgba(155, 223, 110,0.28) 42%, rgba(200, 231, 108,0) 100%, rgba(255,255,255,0) 100%); */
-	/* IE6-9 fallback on horizontal gradient */
-	/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f5e3', endColorstr='#00ffffff',GradientType=1 ); */
+	/*margin-top: -2%;*/
+	padding: 0.5%;
+	background-color: #0e1c24;
+/*	background: rgb(178,225,255); /* Old browsers */
+	/*background: -moz-radial-gradient(center, ellipse cover, rgba(178,225,255,1) 0%, rgba(102,182,252,1) 100%); /* FF3.6-15 */
+	/*background: -webkit-radial-gradient(center, ellipse cover, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	/*background: radial-gradient(ellipse at center, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', endColorstr='#66b6fc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
-
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b2e1ff+0,66b6fc+100;Blue+3D+%236 */
-	background: rgb(178,225,255); /* Old browsers */
-	background: -moz-radial-gradient(center, ellipse cover, rgba(178,225,255,1) 0%, rgba(102,182,252,1) 100%); /* FF3.6-15 */
-	background: -webkit-radial-gradient(center, ellipse cover, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: radial-gradient(ellipse at center, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b2e1ff', endColorstr='#66b6fc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	background-size: 150% 45%;
+	/*background-repeat: no-repeat;*/
+	/*background-position: 50% 50%;*/
+	/*background-size: 150% 45%;*/
 }
 
 #navPC li{
@@ -157,7 +216,7 @@ main{
 /***** FLEXSLIDER *****/
 .flexslider{
 	margin: 0 auto;
-	width: 100%;
+	width: 50%;
 }
 .flexslider h4{
 	padding: 0;
@@ -167,27 +226,12 @@ main{
 
 
 
-#logoHome{
-	margin: 0 auto;
-	width: 10%;
-	padding: 0% 2%;
-}
-
-#logoHome, #h1Home{
-	display: inline-block;
-}
-
-#h2Home{
-	width: 39%;
-	vertical-align: top;
-}
-
 
 /*******************************************************/
 /* ********* ECRAN 2 - GNav picto 1st *********/
 /*******************************************************/
 #ecran2{
-    background-color: #bdd6ff;
+    background-color: #88c1e6;
   }
 
 
@@ -237,7 +281,7 @@ main{
 /* ********* ECRAN 3 - Nav picto 2sd *********/
 /*******************************************************/
   #ecran3{
-    background-color: #9ec3ff;
+    background-color: #54a1d1;
   }
 
 #containerScreen3{
@@ -276,34 +320,47 @@ main{
 /* ********* ECRAN 4 - Contact *********/
 /*******************************************************/
 #ecran4{
-	background-color: #7eafff;
+	background-color: #3383b6;
 }
 #containerContact{
 	width: 70%;
+	height: 45%;
 	margin: 0 auto;
-	padding-top: 56%;
+	padding-top: 55%;
 	text-align: center;
 	font-size: 2vh;
 }
 #containerContact h4{
 	font-size: 3vh;
-	color: #262024;
+	color: #e7f5f9;
 	padding-bottom: 2%;
 }
 #contactMap{
 	width: 40%;
+	height: 72%;
 	float: left;
 }
 #contactMap iframe{
 	width: 70%; 
-	height: 22%; 
-	border: 3px solid #3a97d4;
-	border-radius: 10px;
+	height: 45%; 
+	border: 7px solid #95deff;
+	border-radius: 2px;
 }
 #contactMap p{
-	width: 100%;
+	width: 70%;
 	text-align: left;
-	margin-top: 11%;
+	margin:0 auto;
+	font-family: Josefin Sans, sans-serif;
+	font-weight: 200;
+	line-height: 123%;
+	font-size: 75%;
+}
+#contactMap h5{
+	width: 70%;
+	margin: 0 auto;
+	text-align: left;
+	padding-top: 4%;
+	font-size: 130%;
 }
 
 #livreOr{
@@ -313,30 +370,48 @@ main{
 #livreOr li{
 	width: 90%;
 	margin: 0 auto;
-	margin-top: 10px;
+	/*margin-top: 10px;*/
 	padding: 1% 0%;
-	border-radius: 10px;
+	/*border-radius: 10px;*/
 	list-style-type: none;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9f5e3+0,f7edb9+42,ffffff+100&1+0,0+58 */
-	background: -moz-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%, rgba(247,237,185,0.28) 42%, rgba(249,242,204,0) 58%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
-	background: -webkit-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: radial-gradient(ellipse at center, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f5e3', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	background-size: 200% 200%;
+	background-color: #95deff;
 }
+#livreOr li:nth-child(even) {
+  background: #6cceff;
+}
+#livreOr li p:last-child{
+	font-size: 80%;
+}
+
 #livreOr p {
+	font-family: Josefin Sans, sans-serif;
+	/*font-size: 123%;*/
+		font-weight: 200;
+	color: #00427b;
 	padding: 2% 5% 0% 5%;
+}
+
+#containerFootContact{
+	width: 90%;
+	margin: 0 auto;
 }
 
 #menuBas li{
 	display: inline-block;
 	padding: 0% 1%;
+ 
+}
+#menuBas li a{
+	color: #262024;
+}
+#menuBas li a:hover{
+	color:#ea904e;
 }
 
 #menuBas{
-	margin-top: 15%;
+	width: 70%;
+	position: absolute;
+	bottom: 0;
 }
 
 
@@ -386,6 +461,7 @@ footer{
 	width: 45%;
 	float: right;
 	text-align: right;
+
 }
 
 
@@ -567,11 +643,12 @@ table a:hover, table a:focus{
 	float: right;
 }
 .lienLivreOrContact{
-	width: 30%;
+	width: 25%;
 	margin: 0 auto;
 	position: relative;
-	padding: 5% 0% 10%;
+	padding: 3% 0% 2%;
 	text-align: center;
+	display: inline-block;
 }
 
 #logoBG{
@@ -587,18 +664,20 @@ table a:hover, table a:focus{
 	padding: 3%;
 	border: 1px solid #3a97d4;
 	border-radius: 10px;
-	background-color: #b0b3bc;
-	-webkit-box-shadow: 0px 0px 0px 3px #3a97d4;
-    -moz-box-shadow: 0px 0px 0px 3px #3a97d4;
-    box-shadow: 0px 0px 0px 3px #3a97d4;
+	background-color: #183d5d;
+	-webkit-box-shadow: 0px 0px 0px 3px #6dbcd2;
+    -moz-box-shadow: 0px 0px 0px 3px #6dbcd2;
+    box-shadow: 0px 0px 0px 3px #6dbcd2;
     transition-property:background-color, box-shadow;
 	transition-duration: 0.5s, 0.5s;
+	color: #e7f5f9;
 }
 .boutonOr a:hover, .boutonOr a:focus{
-	background-color: #E6D383;
-    -webkit-box-shadow: 0px 0px 0px 3px #FBF9A1;
-    -moz-box-shadow: 0px 0px 0px 3px #FBF9A1;
-    box-shadow: 0px 0px 0px 3px #FBF9A1;
+	background-color: #5acaff;
+	color: #183d5d;
+    -webkit-box-shadow: 0px 0px 0px 3px #183d5d;
+    -moz-box-shadow: 0px 0px 0px 3px #183d5d;
+    box-shadow: 0px 0px 0px 3px #183d5d;
 }
 
 
