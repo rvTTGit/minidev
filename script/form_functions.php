@@ -208,9 +208,10 @@ function is_image($file) {
 *
 * @param string $nom le nom de fichier à tester
 * @return string un nom de fichier n’existant pas dans le dossier
+* @return string un nom de repertoire 
 */
-function get_unique_filename($nom){
-    if(file_exists('../img/' . $nom)){
+function get_unique_filename($nom,$rep){
+    if(file_exists('../img/'. $rep . '/' . $nom)){
         // microtime renvoie une ',' dans la valeur, on la remplace par rien
         $unique = str_replace('.', '', microtime(true));
 
@@ -235,7 +236,7 @@ function get_unique_filename($nom){
 function create_thumbnail($file) {
     global $config;
     $image = new Imagick($file['tmp_name']);
-    $nom_fichier = get_unique_filename(htmlspecialchars($file['name']));
+    $nom_fichier = get_unique_filename(htmlspecialchars($file['name']),'item');
     //stockage de l original
     $image->writeImage('../img/item/'.$nom_fichier);
     // création de la miniature
@@ -243,6 +244,29 @@ function create_thumbnail($file) {
     //                           $config['taille_miniatures'][1]);
     $image->resizeImage($config['taille_miniatures'][0],$config['taille_miniatures'][1],Imagick::FILTER_LANCZOS,1);    
     $image->writeImage('../img/thumb/'.$nom_fichier);
+    $image->destroy();
+    return $nom_fichier;
+}
+
+
+/**
+ * Cette fonction enregistre une image uploadée dans son dossier définitif,
+ * après l’avoir croppée et redimensionnée, en s’assurant que son nom
+ * est unique.
+ *
+ * @param array $file le tableau associatif issu de $_FILES représentant
+ * le fichier
+ * @return string le nom définitif du fichier tel qu’enregistré
+ */
+function create_thumbnail_section($file) {
+    global $config;
+    $image = new Imagick($file['tmp_name']);
+    $nom_fichier = get_unique_filename(htmlspecialchars($file['name']),'section');
+    //stockage de l original
+    $image->writeImage('../img/section/'.$nom_fichier);
+    // création de la miniature
+    // $image->resizeImage($config['taille_miniatures'][0],$config['taille_miniatures'][1],Imagick::FILTER_LANCZOS,1);    
+    // $image->writeImage('../img/thumb/'.$nom_fichier);
     $image->destroy();
     return $nom_fichier;
 }

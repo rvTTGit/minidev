@@ -119,11 +119,11 @@ if(count($_POST)) {
 			        if($valeurs_tableau_form['image']['name'] == '') {
 			            $nom_fichier = null;
 			        } else {
-			            if(file_exists('../img/'.$news_item['image'])) {
+			            if(file_exists('../img/section/'.$valeurs_tableau_form['image']['name'])) {
 			                //suppression de l'ancien fichier image
-			                // unlink('../img/'.$news_item['image']);
+			                //unlink('../img/section/'.$valeurs_tableau_form['image']['name']);
 			            }
-			            $nom_fichier = create_thumbnail($valeurs_tableau_form['image']);
+			            $nom_fichier = create_thumbnail_section($valeurs_tableau_form['image']);
 			            // modification du tableau pour l'objet $oSections avant update
 			            $valeurs_tableau_form['image'] = $nom_fichier;
 			        }
