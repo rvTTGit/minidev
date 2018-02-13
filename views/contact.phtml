@@ -11,10 +11,11 @@
          <?= $message; ?> 
          <?php endif ?>          
 
-          <h4><?= $oSections->fields['texte'] ?></h4>
+          <h3><?= $oSections->fields['texte'] ?></h3>
           <!-- carte -->
-          <iframe src="<?=$config['url_google_map']?>" width="50%" height="50%" frameborder="0" allowfullscreen>
-          </iframe>
+          <div id="contactPageMap">
+            <iframe src="<?=$config['url_google_map']?>" frameborder="0" allowfullscreen></iframe>            
+          </div>
 
           <!-- infos -->
           <p><?=$config['nom_site']?>
@@ -28,20 +29,26 @@
           </br>Samedi : 10h00 à 14h00 
           </br>Dimanche : Fermé</p>
           </br>
-          
-          <div class="clear"></div>
-          <!-- form contact -->
-          <?php
-          if($tab_modules['form_contact']) 
-               include('form_contact.phtml') 
-          ?>
-     </div>
 
-<div class="clear"></div>
+    
+        <div class="clear"></div>
+        <!-- form contact -->
+        <?php
+        if($tab_modules['form_contact']) 
+             include('form_contact.phtml') 
+        ?>
 
-<?php if($tab_modules['livreor']) : ?>
-     <div class="boutonOr lienLivreOrContact"><a href="livreor.html">Ecrivez dans le Livre d'Or</a></div>
-<?php endif ?>
+        <div class="clear"></div>
+
+        <?php if($tab_modules['livreor']) : ?>
+             <div class="bouton lienItem"><a href="livreor.html">Ecrivez dans le Livre d'Or</a></div>
+        <?php endif ?>
+    </div>
+
+
+    <nav id="menuBasSection">
+      <?php include('menu.phtml');?>
+    </nav>
 </main>
 
 

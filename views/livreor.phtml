@@ -8,7 +8,7 @@
     <?= $message; ?> 
     <?php endif ?>
     <br/><br/>
-	  <div id="livreOrPage">
+	  <div id="livreOr">
          <ul>
            <?php foreach($tab_messages as $msg):?> 
             <li>
@@ -17,12 +17,11 @@
             </li>
           <?php endforeach ?>
           </ul> 
+         <div ><?php echo $menu_pagination; ?></div>
       </div>
-     </br>
-     <div ><?php echo $menu_pagination; ?></div>
-     </br>
-     </br>
-    <div class="formStyle" <?= !empty($message) ? 'style="display:none"' : '' ?>>
+      
+
+    <div class="formStyle" id="formLivreOr"> <?= !empty($message) ? 'style="display:none"' : '' ?>
         <h3>Ecrivez dans le livre d'Or:</h3>
        <form method="post">
        <fieldset>
@@ -58,6 +57,10 @@
       <input id="field_title" type="submit" value="Publier"/>
     </form>
     </div>
+
+    <nav id="menuBasSection">
+      <?php include('menu.phtml');?>
+    </nav>
 
 </main>
 

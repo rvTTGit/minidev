@@ -9,29 +9,25 @@ include('header.phtml');
 	<?php if($erreur == '') : ?>
 	<div class="blog-slide">
 	        <h2 class="blog-slide-title"><?= $oArticles->fields['titre']?></h2>
+	        <p class="blog-slide-info">
+				Posté le <?= $oArticles->fields['date']?> par <?= $oArticles->fields['auteur']?> dans <?= $oArticles->fields['section_nom']?>       
+	        </p>
 	        <div class="blog-slide-img">
-	        	<a class="imgFancybox" href="img/item/<?= $oArticles->fields['image']?>" title="Cliquez pour agrandir">
-	            <img src="img/thumb/<?= $oArticles->fields['image']?>" alt="">
+	            <a class="imgFancybox" href="img/item/<?= $oArticles->fields['image']?>" title="Cliquez pour agrandir">
+ 	            	<img src="img/thumb/<?= $oArticles->fields['image']?>" alt="">
 	        	</a>
 	        </div>
 	        <p class="blog-slide-text"><?= htmlspecialchars_decode($oArticles->fields['texte'])?></p>
-
-		    <?php if(!empty($oArticles->fields['code_video_youtube'])) :?>
-		    <p class="blog-slide-text"><iframe width="450" height="315" src="https://www.youtube.com/embed/<?= $oArticles->fields['code_video_youtube'] ?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
-		    <?php endif ?>	        
-
-		    <?php if(!empty($oArticles->fields['url_externe'])) :?>
-		    <p class="blog-slide-text"><a href="<?= $oArticles->fields['url_externe'] ?>" title="voir le site <?= $oArticles->fields['url_externe'] ?>" target="_blank">Visitez leur site web</a></p>
-		    <?php endif ?>	        
-
-	        <p class="blog-slide-info">
-	        Posté le <?= $oArticles->fields['date']?> par <?= $oArticles->fields['auteur']?> dans <?= $oArticles->fields['section_nom']?>
-	        </p>
 	</div>
 	<?php else : ?>
 	    <p class="error"><?= $erreur ?></p>
 	<?php endif; ?>
-	<a href="<?= $oSections->fields['tag']?>.html">Retour à la liste</a>
+	<div class="bouton lienItem"><a href="<?= $oSections->fields['tag']?>.html">Retour à la liste</a></div>
+
+	<nav id="menuBasSection">
+      <?php include('menu.phtml');?>
+    </nav>
+
 </main>
 <?php
 include('footer.phtml'); 

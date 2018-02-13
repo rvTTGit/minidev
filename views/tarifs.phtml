@@ -5,29 +5,29 @@ include('header.phtml');
 // var_dump($tabTarifs);
 ?>
 <main>
-	<!-- <img id="logoBG" src="img/logoBG.png"> -->
+<br/><br/>
 	<h4><?= $oSections->fields['texte'] ?></h4>
 
-<?php foreach($oTypeTarifs->getListAll() as $type):?> 
+    <?php foreach($oTypeTarifs->getListAll() as $type):?> 
 
-    <table class="listeTarifs">
-        <caption><?= $type['nom'] ?></caption>
-        <thead>
-            <th>Prestation</th>
-            <th>Prix</th>
-        </thead>
+        <table class="listeTarifs">
+            <caption><?= $type['nom'] ?></caption>
+            <thead>
+                <th>Prestation</th>
+                <th>Prix</th>
+            </thead>
 
-        <tbody>
-        <?php foreach($oTarifs->getListType($type['id']) as $tarif):?> 
-            <tr>
-                <td><?= $tarif['prestation'] ?></td>
-                <td><?= $tarif['prix'] ?> €</a></td>
-            </tr>
-        <?php endforeach ?>
-        </tbody>
-    </table>        
-    </br>
-<?php endforeach ?>
+            <tbody>
+            <?php foreach($oTarifs->getListType($type['id']) as $tarif):?> 
+                <tr>
+                    <td><?= $tarif['prestation'] ?></td>
+                    <td><?= $tarif['prix'] ?> €</a></td>
+                </tr>
+            <?php endforeach ?>
+            </tbody>
+        </table>        
+        </br>
+    <?php endforeach ?>
 
 </main>
 <?php include('footer.phtml') ?>
