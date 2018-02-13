@@ -81,11 +81,79 @@ a:active{
 	position:absolute;
 	top:0;
 	left:0;
-	-webkit-transition: opacity 1s ease;
-	transition: opacity 1s ease;
+	-webkit-transition:all .5s cubic-bezier(.6,2,.4,1);
+    -moz-transition:all .5s cubic-bezier(.6,2,.4,1);
+     -ms-transition:all .5s cubic-bezier(.6,2,.4,1);
+      -o-transition:all .5s cubic-bezier(.6,2,.4,1);
+         transition:all .5s cubic-bezier(.6,2,.4,1);
+/*  animation: animationFrames ease-in 2s;
+  animation-iteration-count: 1;
+  transform-origin: 50% 50%;
+  -webkit-animation: animationFrames ease-in 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-transform-origin: 50% 50%;
+  -moz-animation: animationFrames ease-in 2s;
+  -moz-animation-iteration-count: 1;
+  -moz-transform-origin: 50% 50%;
+  -o-animation: animationFrames ease-in 2s;
+  -o-animation-iteration-count: 1;
+  -o-transform-origin: 50% 50%;
+  -ms-animation: animationFrames ease-in 2s;
+  -ms-animation-iteration-count: 1;
+  -ms-transform-origin: 50% 50%;*/
 }
+
+/*@keyframes animationFrames{
+  0% {
+    transform:  rotate(0deg) scaleX(1.00) scaleY(1.00) ;
+  }
+  100% {
+    transform:  rotate(10deg) scaleX(1.15) scaleY(1.16) ;
+  }
+}
+
+@-moz-keyframes animationFrames{
+  0% {
+    -moz-transform:  rotate(0deg) scaleX(1.00) scaleY(1.00) ;
+  }
+  100% {
+    -moz-transform:  rotate(10deg) scaleX(1.15) scaleY(1.16) ;
+  }
+}
+
+@-webkit-keyframes animationFrames {
+  0% {
+    -webkit-transform:  rotate(0deg) scaleX(1.00) scaleY(1.00) ;
+  }
+  100% {
+    -webkit-transform:  rotate(10deg) scaleX(1.15) scaleY(1.16) ;
+  }
+}
+
+@-o-keyframes animationFrames {
+  0% {
+    -o-transform:  rotate(0deg) scaleX(1.00) scaleY(1.00) ;
+  }
+  100% {
+    -o-transform:  rotate(10deg) scaleX(1.15) scaleY(1.16) ;
+  }
+}
+
+@-ms-keyframes animationFrames {
+  0% {
+    -ms-transform:  rotate(0deg) scaleX(1.00) scaleY(1.00) ;
+  }
+  100% {
+    -ms-transform:  rotate(10deg) scaleX(1.15) scaleY(1.16) ;
+  }
+}*/
+
 .container:hover .image1, .container:focus .image1{
-	opacity:0;
+	-webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+     -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+         transform: scale(1.1);
 }
 
 
@@ -773,7 +841,7 @@ table a:hover, table a:focus{
 	float: right;
 }
 #contactPage .formStyle{
-	width: 90%;
+	width: 100%;
 	margin: 0 auto;
 	display: block;
 }
