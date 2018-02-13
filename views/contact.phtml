@@ -14,7 +14,7 @@
           <h3><?= $oSections->fields['texte'] ?></h3>
           <!-- carte -->
           <div id="contactPageMap">
-            <iframe src="<?=$config['url_google_map']?>" frameborder="0" allowfullscreen></iframe>            
+            <iframe src="<?= htmlspecialchars_decode($config['url_google_map'])?>" frameborder="0" allowfullscreen></iframe>            
           </div>
 
           <!-- infos -->

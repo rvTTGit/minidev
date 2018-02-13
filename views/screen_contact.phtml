@@ -3,7 +3,7 @@
 
           <div id="contactMap">
             <h4>Nous Situer</h4>
-            <iframe src="<?=$config['url_google_map']?>" frameborder="0" allowfullscreen>
+            <iframe src="<?= htmlspecialchars_decode($config['url_google_map'])?>" frameborder="0" allowfullscreen>
             </iframe>
             <p><?=$config['adresse']?> <br/> <?=$config['cp']?> <?=$config['ville']?>
             <br/><?=$config['tel']?>
