@@ -266,7 +266,17 @@ function create_thumbnail_section($file) {
     $image->writeImage('../img/section/'.$nom_fichier);
 
     //modification de l'image => flou
-    $image->blurImage(0,8);    
+    // marche bien
+    // $image->blurImage(0,8);
+
+    // bof
+    // $image->adaptiveBlurImage(5,3);    
+
+    // $image->radialBlurImage(2);
+    // $image->radialBlurImage(5);
+    // $image->radialBlurImage(7);
+
+    // $image->polaroidImage(new ImagickDraw(), 25);
     $image->writeImage('../img/section/hover_'.$nom_fichier);
 
 
