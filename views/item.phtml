@@ -23,9 +23,7 @@ include('header.phtml');
 		    <?php endif ?>	        
 
 	        <p class="blog-slide-info">
-	        Posted on: <?= $oArticles->fields['date']?><br>
-	        Posted by: <?= $oArticles->fields['auteur']?><br/>
-        	Posted in: <?= $oArticles->fields['section_nom']?><br/>	        
+	        Posté le <?= $oArticles->fields['date']?> par <?= $oArticles->fields['auteur']?> dans <?= $oArticles->fields['section_nom']?>
 	        </p>
 	</div>
 	<?php else : ?>

@@ -32,7 +32,7 @@ include('header.phtml');
             <h2 class="blog-slide-title"><?= $news['titre']?></h2>
             </a>
             <p class="blog-slide-info">
-            Posté le: <?= $news['date']?> Posté par: <?= $news['auteur']?>
+            Posté le <?= $news['date']?> par <?= $news['auteur']?>
             </p>
             <p class="blog-slide-text"><?= htmlspecialchars_decode($news['texte'])?>
                 <a href="<?= $oSections->fields['tag'] ?>/<?= $news['id']?>/<?= urlencode($news['titre'])?>" title="lire <?= $news['titre'] ?>">lire plus</a>

@@ -80,7 +80,7 @@ if( file_exists('views/'.$nav_en_cours.'.phtml') ) {
 					$nav_en_cours = $oSections->fields['tag'];
 		            // on reformate la date
 		            $date = new DateTime($oArticles->fields['date']);
-		            $oArticles->fields['date'] = $date->format('M j, Y');
+		            $oArticles->fields['date'] = $date->format("d-m-Y à H:i:s");
 		        }
 		    }
 		    else{
