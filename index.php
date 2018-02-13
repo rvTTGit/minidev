@@ -39,7 +39,7 @@ try{
 		$tabSectionScreen3 = $oSections->getListScreen3();
 
 		// chargement des message pour ecran_contact
-		$tab_messages = $oMessages->getLastMessages(2);
+		$tab_messages = $oMessages->getLastMessages(3);
 		//récupération de la liste des modules
 		$tab_modules = $oConfigs->getConfigModules();
 	}
