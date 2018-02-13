@@ -18,6 +18,15 @@ include('header.phtml');
 	        	</a>
 	        </div>
 	        <p class="blog-slide-text"><?= htmlspecialchars_decode($oArticles->fields['texte'])?></p>
+
+		    <?php if(!empty($oArticles->fields['code_video_youtube'])) :?>
+		    <p class="blog-slide-text"><iframe width="450" height="315" src="https://www.youtube.com/embed/<?= $oArticles->fields['code_video_youtube'] ?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+		    <?php endif ?>	        
+
+		    <?php if(!empty($oArticles->fields['url_externe'])) :?>
+		    <p class="blog-slide-text"><a href="<?= $oArticles->fields['url_externe'] ?>" title="voir le site <?= $oArticles->fields['url_externe'] ?>" target="_blank">Visitez leur site web</a></p>
+			<?php endif ?>	
+
 	</div>
 	<?php else : ?>
 	    <p class="error"><?= $erreur ?></p>
