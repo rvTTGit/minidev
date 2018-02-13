@@ -9,7 +9,10 @@ include('header.phtml');
 <main>
 
 	<!-- <img id="logoBG" src="img/logoBG.png"> -->
-	<h2><?= $oSections->fields['texte'] ?></h2>
+	<h2><?= $oSections->fields['nom'] ?></h2>
+
+    <h4>Dernières publications</h4>
+
     <?php if(!empty($newsSection)) : ?>
 	<div class="flexslider">
         <?php include('flexslider.phtml');?>
@@ -17,28 +20,28 @@ include('header.phtml');
     <?php endif ?>
 	<div class="clear"></div>
 
-<?php if($erreur == '') : 
-    echo $menu_pagination;
-    // affciahge des news de la page correspondante 
-    foreach ($newsSectionPage as $key => $news) : ?>
-<div class="blog-slide">
-        <h2 class="blog-slide-title"><?= $news['titre']?></h2>
-        <div class="blog-slide-img">
-            <img src="img/thumb/<?= $news['image']?>" alt="">
+    <?php if($erreur == '') : 
+        echo $menu_pagination;
+        // affciahge des news de la page correspondante 
+        foreach ($newsSectionPage as $key => $news) : ?>
+        <div class="blog-slide">
+            <div class="blog-slide-img">
+                <img src="img/thumb/<?= $news['image']?>" alt="">
+            </div>
+            <h2 class="blog-slide-title"><?= $news['titre']?></h2>
+            <p class="blog-slide-info">
+            Posté le: <?= $news['date']?> Posté par: <?= $news['auteur']?>
+            </p>
+            <p class="blog-slide-text"><?= htmlspecialchars_decode($news['texte'])?>
+                <a href="<?= $oSections->fields['tag'] ?>/<?= $news['id']?>/<?= urlencode($news['titre'])?>" title="lire <?= $news['titre'] ?>">lire plus</a>
+            </p>
         </div>
-        <p class="blog-slide-text"><?= htmlspecialchars_decode($news['texte'])?>
-            <a href="<?= $oSections->fields['tag'] ?>/<?= $news['id']?>/<?= urlencode($news['titre'])?>" title="lire <?= $news['titre'] ?>">lire plus</a>
-        </p>
-        <p class="blog-slide-info">
-        Posté le: <?= $news['date']?><br>
-        Posté par: <?= $news['auteur']?><br/>
-        </p>
-</div>
   <?php endforeach ?>
+
   <?= $menu_pagination ?>
-<?php else : ?>
+    <?php else : ?>
     <p class="error"><?= $erreur ?></p>
-<?php endif; ?>
+    <?php endif; ?>
 
 </main>
 <?php include('footer.phtml') ?>

@@ -3,9 +3,9 @@
 body,html{
 	width: 100%;
     height:100%;
-    /*font-size: 2vh; /* a virer*/ 
     padding: 0;
     margin: 0;
+    background-color: #c4dff1;
     /*font-family: 'El Messiri', sans-serif;*/
     /*font-family: 'Bubbler One', sans-serif;*/
     /*font-family: 'Tangerine', cursive;*/
@@ -55,7 +55,8 @@ a:active{
 	color: #862020;
 }
 .activeMenu a{
-		color: #862020;
+	color: #6dd3df;
+	font-weight: bold;
 }
 .clear{
 	clear: both;
@@ -125,14 +126,26 @@ main{
 	  background-color: #9ac3dd;
 }
 
-.motifScreen{
+.motifScreen1{
 	width: 100%;
 	height: 100%;
+  
+  background: 
+    repeating-radial-gradient(
+      circle at 0 0, 
+      transparent 0,
+      #eeeeee1a 10px
+    ),
+    repeating-linear-gradient(
+      #ccc3,
+      #7773
+    );
+/* Pointillés :;
 	background :radial-gradient(#ffffff1a 15%, transparent 15%) 0 0, 
 	radial-gradient(#ffffff4d 15%, transparent 15%) 16px 16px, 
 	radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px, 
 	radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 16px 17px;
-  background-size: 32px 32px;
+  background-size: 32px 32px;*/
 	/* Rayures : 
 	background: repeating-linear-gradient(45deg,
     rgba(0, 0, 0, 0.2),
@@ -140,6 +153,21 @@ main{
     rgba(0, 0, 0, 0.3) 10px,
     rgba(0, 0, 0, 0.3) 20px) 100% 100%;*/
 	text-align: center;
+}
+.motifScreen2{
+	width: 100%;
+	height: 100%;
+  
+  background: 
+    repeating-radial-gradient(
+      circle at bottom right, 
+      transparent 0,
+      #eeeeee1a 10px
+    ),
+    repeating-linear-gradient(
+      #ccc3,
+      #7773
+    );
 }
 
 #containerAccueil{
@@ -198,7 +226,7 @@ main{
 #navPC{
 	/*margin-top: -2%;*/
 	padding: 0.5%;
-	background-color: #0e1c24;
+	background-color: #0e3145;
 /*	background: rgb(178,225,255); /* Old browsers */
 	/*background: -moz-radial-gradient(center, ellipse cover, rgba(178,225,255,1) 0%, rgba(102,182,252,1) 100%); /* FF3.6-15 */
 	/*background: -webkit-radial-gradient(center, ellipse cover, rgba(178,225,255,1) 0%,rgba(102,182,252,1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -222,14 +250,39 @@ main{
 /***** FLEXSLIDER *****/
 .flexslider{
 	margin: 0 auto;
-	width: 50%;
+	width: 100%;
+	height: 30%;
+	font-family: Josefin Sans, sans-serif;
 }
 .flexslider h4{
 	padding: 0;
 	margin: 1%;
 }
-
-
+.flexslider h3{
+	font-family: 'The Girl Next Door', cursive;
+}
+.textFlexslider{
+	float: none !important;
+	width: 40% !important;
+	height: 50%;
+	color: #0E3145;
+	/*padding-top: 7% !important; */
+}
+.slides{
+	height: 100%;
+}
+.flexslider .slides > li{
+	height: 100%;
+}
+.flexslider .slides img{
+	width: auto !important;
+	height: 100%;
+	/*padding: 2%;*/
+}
+/*.flexslider .slides a{
+	width: 100%;
+	height: 100%;
+}*/
 
 
 
@@ -237,7 +290,7 @@ main{
 /* ********* ECRAN 2 - GNav picto 1st *********/
 /*******************************************************/
 #ecran2{
-    background-color: #88c1e6;
+    background-color: #6db4e1;
   }
 
 
@@ -287,7 +340,7 @@ main{
 /* ********* ECRAN 3 - Nav picto 2sd *********/
 /*******************************************************/
   #ecran3{
-    background-color: #54a1d1;
+    background-color: #3d97cf;
   }
 
 #containerScreen3{
@@ -376,16 +429,16 @@ main{
 	/*display: inline-block;*/
 }
 #livreOr li{
-	width: 90%;
+	width: 100%;
 	margin: 0 auto;
 	/*margin-top: 10px;*/
 	padding: 1% 0%;
 	/*border-radius: 10px;*/
 	list-style-type: none;
-	background-color: #95deff;
+	background-color: #95deffb3;
 }
 #livreOr li:nth-child(even) {
-  background: #6cceff;
+  background: #6cceff99;
 }
 #livreOr li p:last-child{
 	font-size: 80%;
@@ -417,9 +470,11 @@ main{
 }
 
 #menuBas{
-	width: 70%;
+	width: 100%;
 	position: absolute;
 	bottom: 0;
+	text-align: center;
+	background-color: #3383b6;
 }
 
 
@@ -496,21 +551,33 @@ footer{
 /* ********* ITEM *********/
 /*******************************************************/
 .blog-slide {
-  background: #4b4b4b80;
-  padding: 1%;
+  background: #E7F5F9;
+  /*padding: 1%;*/
+  margin: 3% 20%;
+  border: 25px solid #E7F5F9;
 }
-.blog-slide:nth-child(odd){
+/*.blog-slide:nth-child(odd){
   background: #F0F0F080;
+}*/
+.blog-slide-title{
+	font-size: 5vh;
+	color:#0e3145;
+	text-align: left;
 }
 .blog-slide-text, .blog-slide-img{
-	width: 49%;
-	display: inline-block;
+	width: 100%;
+	margin: 0 auto;
+	/*display: inline-block;*/
 
 }
 .blog-slide-text{
-	width:40%;
-	float: right;
-	font-size: 2.2vh;
+	width: 100%;
+	/*float: right;*/
+	font-size: 2vh;
+
+}
+.blog-slide-text, .blog-slide-info{
+	font-family: Josefin Sans, sans-serif;
 }
 .blog-slide-img img{
 	width: 100%;
@@ -537,7 +604,11 @@ main .flexslider{
 }
 .active a{
 	background-color: #4c93d1;
-
+}
+main h2{
+	color: #0078ad;
+	font-size: 4vh;
+	text-align: center;
 }
 
 /*******************************************************/
@@ -545,17 +616,17 @@ main .flexslider{
 /*******************************************************/
 
 caption{
-	/*color: #b79262;*/
+	color: #002674;
 	font-size: 3vh;
 	padding: 2%;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9f5e3+0,f7edb9+42,ffffff+100&1+0,0+58 */
-	background: -moz-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%, rgba(247,237,185,0.28) 42%, rgba(249,242,204,0) 58%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
-	background: -webkit-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: radial-gradient(ellipse at center, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f5e3', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	background-size: 85% 100%;
+	/*background: -moz-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%, rgba(247,237,185,0.28) 42%, rgba(249,242,204,0) 58%, rgba(255,255,255,0) 100%); /* FF3.6-15 */*/
+	/*background: -webkit-radial-gradient(center, ellipse cover, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */*/
+	/*background: radial-gradient(ellipse at center, rgba(249,245,227,1) 0%,rgba(247,237,185,0.28) 42%,rgba(249,242,204,0) 58%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */*/
+	/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f5e3', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */*/
+	/*background-repeat: no-repeat;*/
+	/*background-position: 50% 50%;*/
+	/*background-size: 85% 100%;*/
 }
 /*caption a{
 	color: #b79262 !important;
@@ -577,8 +648,8 @@ caption a:hover, caption a:focus{
 }
 
 .listeTarifs th {
-  color:#fccfc0;
-  background:#222620;
+  color:#86b7fc;
+  background:#183C5D;
   border-bottom:4px solid #9ea7af;
   border-right: 1px solid #343a45;
   font-size:23px;
@@ -614,7 +685,7 @@ caption a:hover, caption a:focus{
 }
  
 .listeTarifs tr:nth-child(odd) td {
-  background: #DEEFD4;
+  background: #D4ECEF;
 }
  
 
@@ -627,7 +698,7 @@ caption a:hover, caption a:focus{
 }
  
 .listeTarifs td {
-  background:#8C9D82;
+  background:#A5C9D4;
   padding:20px;
   text-align:left;
   vertical-align:middle;
