@@ -50,7 +50,18 @@
             e.preventDefault();
           });
         });
+      
+      //plugin fancy Box
+      $(".imgFancybox").fancybox({
+        openEffect  : 'elastic',
+        closeEffect : 'elastic',
 
+        helpers : {
+          title : {
+            type : 'inside'
+          }
+        }
+      });
 
 });
 

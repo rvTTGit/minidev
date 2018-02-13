@@ -26,7 +26,9 @@ include('header.phtml');
         foreach ($newsSectionPage as $key => $news) : ?>
         <div class="blog-slide">
             <div class="blog-slide-img">
+                <a href="<?= $oSections->fields['tag'] ?>/<?= $news['id']?>/<?= urlencode($news['titre'])?>" title="lire <?= $news['titre'] ?>">
                 <img src="img/thumb/<?= $news['image']?>" alt="">
+                </a>
             </div>
             <a href="<?= $oSections->fields['tag'] ?>/<?= $news['id']?>/<?= urlencode($news['titre'])?>" title="lire <?= $news['titre'] ?>">
             <h2 class="blog-slide-title"><?= $news['titre']?></h2>
