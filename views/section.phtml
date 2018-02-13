@@ -11,9 +11,9 @@ include('header.phtml');
 	<!-- <img id="logoBG" src="img/logoBG.png"> -->
 	<h2><?= $oSections->fields['nom'] ?></h2>
 
-    <h4>Dernières publications</h4>
 
-    <?php if(!empty($newsSection)) : ?>
+    <?php if(!empty($newsSection) && count($newsSection) > 1) : ?>
+    <h4>Dernières publications</h4>
 	<div class="flexslider">
         <?php include('flexslider.phtml');?>
 	</div>
@@ -28,7 +28,9 @@ include('header.phtml');
             <div class="blog-slide-img">
                 <img src="img/thumb/<?= $news['image']?>" alt="">
             </div>
+            <a href="<?= $oSections->fields['tag'] ?>/<?= $news['id']?>/<?= urlencode($news['titre'])?>" title="lire <?= $news['titre'] ?>">
             <h2 class="blog-slide-title"><?= $news['titre']?></h2>
+            </a>
             <p class="blog-slide-info">
             Posté le: <?= $news['date']?> Posté par: <?= $news['auteur']?>
             </p>
